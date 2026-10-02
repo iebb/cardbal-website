@@ -1,6 +1,6 @@
 # CardBal website
 
-The public CardBal landing page for **cardb.al**, hosted as a static **Cloudflare Pages** project named `cardbal-website` in the **Kitta Labs** account. Repository: [iebb/cardbal-website](https://github.com/iebb/cardbal-website). Production and default branch: `master`.
+The public CardBal landing page for **cardb.al**. Repository: [iebb/cardbal-website](https://github.com/iebb/cardbal-website). Production and default branch: `master`. The native Git deployment target is the static **Cloudflare Pages** project `cardbal-website` in **Kitta Labs**.
 
 ## Build and preview
 
@@ -13,7 +13,7 @@ Open `http://127.0.0.1:4173`. Node.js 22 or later is required; `.node-version` s
 
 ## Automatic deployment
 
-Cloudflare Pages connects directly to this GitHub repository and builds pushes to `master`. The Pages build settings are:
+Connect Cloudflare Pages directly to this GitHub repository to build pushes to `master`. Use these Pages build settings:
 
 - Production branch: `master`
 - Build command: `npm run build`
@@ -21,7 +21,9 @@ Cloudflare Pages connects directly to this GitHub repository and builds pushes t
 - Root directory: repository root
 - Preview deployments: enabled for other branches
 
-Push website changes to `master` to publish them. Cloudflare's native Git integration handles builds and deployment; there are no GitHub Actions workflows or deploy-hook secrets. The output is static `dist/` files, with no `functions/` directory or `_worker.js`. The report API remains at `cardbal.ieb.app`.
+After the connection is active, push website changes to `master` to publish them. Cloudflare's native Git integration handles builds and deployment; there are no GitHub Actions workflows or deploy-hook secrets. The output is static `dist/` files, with no `functions/` directory or `_worker.js`. The report API remains at `cardbal.ieb.app`.
+
+Setup status on 2026-10-02: the public repository is pushed and builds successfully. Creating the Git-connected Pages project returned Cloudflare error `8000011` about the Git installation. Dashboard security-key verification and GitHub installation access verification are pending; Git deployment has not yet been activated or verified.
 
 ## Languages and content
 
@@ -43,4 +45,4 @@ The site uses local assets and system fonts, without third-party scripts or cook
 
 Attach `cardb.al` under the Pages project's **Custom domains**, with the zone in Kitta Labs. Point the registrar to the zone's assigned Cloudflare nameservers and create the apex CNAME to the project's actual `.pages.dev` hostname. Do not replace email, TXT, or unrelated DNS records. Check both domain validation and public HTTPS after activation.
 
-The original direct-upload project is `cardbal.pages.dev`; native Git deployment uses `cardbal-website.pages.dev` because Cloudflare does not allow converting a direct-upload project into a Git-connected project. The intended custom domain is `cardb.al`. During the initial 2026-10-02 deployment its registrar delegated to `park1.uwsdns.com` and `park2.uwsdns.com`, with Pages validation pending (`CNAME record not set`). Recheck DNS and domain validation before claiming the custom domain is live.
+The original direct-upload project is `cardbal.pages.dev`; the native Git deployment target is `cardbal-website.pages.dev` because Cloudflare does not allow converting a direct-upload project into a Git-connected project. The intended custom domain is `cardb.al`. During the initial 2026-10-02 deployment its registrar delegated to `park1.uwsdns.com` and `park2.uwsdns.com`, with Pages validation pending (`CNAME record not set`). Recheck DNS and domain validation before claiming the custom domain is live.
