@@ -1,0 +1,44 @@
+{
+  "appId": 6760978958,
+  "appStoreUrl": "https://apps.apple.com/us/app/cardbal/id6760978958",
+  "listingVersion": "2.3.0",
+  "retrievedOn": "2026-10-02",
+  "screenshots": [
+    {
+      "file": "wallet.jpg",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c5/a3/e4/c5a3e4e0-03fe-9d97-b5c5-84e1052e885f/IMG_5528.PNG/1200x2600bb.jpg",
+      "lookupUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c5/a3/e4/c5a3e4e0-03fe-9d97-b5c5-84e1052e885f/IMG_5528.PNG/320x480bb.jpg",
+      "sha256": "051713a4180c07ee5418053bae71481e2dec314d20da797e2e08d6371f8fd320",
+      "width": 1197,
+      "height": 2600,
+      "interfaceLanguage": "en"
+    },
+    {
+      "file": "edy.jpg",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d7/48/9e/d7489ea2-64c5-9602-1da2-744de9261f6b/IMG_5526.PNG/1200x2600bb.jpg",
+      "lookupUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d7/48/9e/d7489ea2-64c5-9602-1da2-744de9261f6b/IMG_5526.PNG/320x480bb.jpg",
+      "sha256": "acac8b55ee5745de9a49ca4cafa641e5ffd8f093c3d10218e80ef9aa7e0d9a21",
+      "width": 1197,
+      "height": 2600,
+      "interfaceLanguage": "en"
+    },
+    {
+      "file": "climate.jpg",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/da/cf/96/dacf966d-4e31-6fad-2a7c-aa46cc0104ac/IMG_5525.PNG/1200x2600bb.jpg",
+      "lookupUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/da/cf/96/dacf966d-4e31-6fad-2a7c-aa46cc0104ac/IMG_5525.PNG/320x480bb.jpg",
+      "sha256": "f91b55a6ff2743d6b8b28f350d2cf50618a97e7d384a5fdc99880cfa09c21c09",
+      "width": 1197,
+      "height": 2600,
+      "interfaceLanguage": "en"
+    },
+    {
+      "file": "octopus.jpg",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8f/14/99/8f149923-123c-5e58-a6d1-7cc81cbd8d5a/IMG_5529.PNG/1200x2600bb.jpg",
+      "lookupUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8f/14/99/8f149923-123c-5e58-a6d1-7cc81cbd8d5a/IMG_5529.PNG/320x480bb.jpg",
+      "sha256": "c05155bdbb8e3e0b13bbb00bc50b64319420915b0c70da1442b161dec3885018",
+      "width": 1197,
+      "height": 2600,
+      "interfaceLanguage": "en"
+    }
+  ]
+}

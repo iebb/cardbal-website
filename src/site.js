@@ -17,30 +17,12 @@
     }
   }
 
-  const preview = document.querySelector('[data-preview]');
-  const panels = [...document.querySelectorAll('[data-panel]')];
-  const tabs = [...document.querySelectorAll('[data-card]')];
-  const scan = document.querySelector('[data-scan]');
-  const status = document.querySelector('[data-scan-status]');
-  let scanTimer;
-  function resetScan() {
-    clearTimeout(scanTimer);
-    preview?.classList.remove('is-scanning');
-    if (scan) scan.disabled = false;
-    if (status) status.querySelector('span').textContent = status.dataset.ready;
-  }
+  const panels = [...document.querySelectorAll('[data-screen-panel]')];
+  const tabs = [...document.querySelectorAll('[data-screen]')];
   tabs.forEach(button => button.addEventListener('click', () => {
-    resetScan();
     tabs.forEach(tab => tab.setAttribute('aria-pressed', String(tab === button)));
-    panels.forEach(panel => { panel.hidden = panel.dataset.panel !== button.dataset.card; });
-    preview.dataset.card = button.dataset.card;
+    panels.forEach(panel => { panel.hidden = panel.dataset.screenPanel !== button.dataset.screen; });
   }));
-  scan?.addEventListener('click', () => {
-    preview.classList.add('is-scanning');
-    scan.disabled = true;
-    status.querySelector('span').textContent = status.dataset.reading;
-    scanTimer = setTimeout(resetScan, 1200);
-  });
 
   document.querySelectorAll('.language-picker').forEach(picker => {
     document.addEventListener('click', event => { if (!picker.contains(event.target)) picker.open = false; });

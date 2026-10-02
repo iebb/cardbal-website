@@ -37,7 +37,11 @@ Each language has a complete, indexable static page, including its demo, FAQ, me
 
 The root includes the complete English page. When JavaScript is enabled, it chooses a supported browser language or a previously selected language. Explicit language URLs always take priority. Language selection remains available without JavaScript, as do the main content, App Store links, and expandable FAQs.
 
-Edit `src/locales.mjs`, `src/site.css`, and `src/site.js`. The build rejects incomplete locale keys or section counts. The card preview uses illustrative sample data, and its scan animation does not read NFC in the browser. Supported-card copy is based on the app and its live App Store listing (`6760978958`); the website's Mongolian localization does not claim the native app is localized in Mongolian.
+Edit `src/locales.mjs`, `src/site.css`, and `src/site.js`. The build rejects incomplete locale keys or section counts. The hero preview and screenshot gallery use real, unaltered iPhone screenshots from the app's public App Store listing (`6760978958`). The images show the English interface in every website locale; captions and alternate text are translated. `src/assets/screenshots/manifest.json` records each Apple CDN source, resolution, retrieval date, and checksum. The website does not perform an NFC scan.
+
+CardBal can read supported Apple Wallet transit cards on another iPhone or Apple Watch when Service Mode is enabled there. The website explains the two-device flow and links to Apple's localized setup guides. Availability and readable information depend on the card and issuer. Japanese Wallet calls the setting Help Mode (`ヘルプモード`).
+
+Supported-card copy is based on the app, the user's confirmed Service Mode behavior, and its live App Store listing. The website's Mongolian localization does not claim the native app is localized in Mongolian.
 
 The site uses local assets and system fonts, without third-party scripts or cookies. Its privacy link points to the app's published privacy policy, including Firebase Analytics and optional contributions.
 
