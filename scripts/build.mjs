@@ -37,12 +37,12 @@ const regions = [
   { code: 'mn', std: 'KS X 6924' },
   { code: 'fr', std: 'Calypso' }
 ];
-// Callouts on the real wallet screenshot; y is the card row's position as a share of the screenshot height.
+// Callouts on the wallet screenshot; y is the card row's position as a share of the screenshot height.
 const annotations = [
-  { code: 'FR', std: 'Calypso', y: 15 },
-  { code: 'KR', std: 'KS X 6924', y: 21.1 },
-  { code: 'JP', std: 'FeliCa', y: 27.2 },
-  { code: 'HK', std: 'FeliCa', y: 51.4 }
+  { code: 'KR', std: 'KS X 6924', y: 22.7 },
+  { code: 'CN', std: 'T-Union', y: 50.1 },
+  { code: 'MN', std: 'KS X 6924', y: 72.1 },
+  { code: 'JP', std: 'FeliCa', y: 79.4 }
 ];
 // Split-flap rows: card (13 cells), standard (9 cells), region.
 const boardRows = [
@@ -63,7 +63,10 @@ const chapters = [
 ];
 const sourceRows = [['FeliCa', '0003', 'Suica · PASMO · ICOCA'], ['FeliCa', '8008', 'Octopus'], ['KS X 6924', 'ISO 7816', 'T-money · EZL · Cashbee · U-Money']];
 const tripRegions = ['jp', 'kr', 'cn', 'hk', 'mn'];
-const screenshots = ['wallet', 'edy', 'climate', 'octopus'];
+// App Store listing screenshots (1197×2600) and CardBal 2.4 captures (1206×2622, `pro-` prefix).
+const screenshots = ['edy', 'climate', 'octopus', 'pro-wallet', 'pro-rides', 'pro-map', 'pro-atlas', 'pro-detail'];
+const proShots = ['pro-rides', 'pro-map', 'pro-atlas', 'pro-detail'];
+const shotSize = (name) => name.startsWith('pro-') ? [1206, 2622] : [1197, 2600];
 
 // Runs before first paint: marks JS support and sends "/" to a remembered or browser language.
 const boot = `document.documentElement.classList.add('js');if(location.pathname==='/'){var s=${JSON.stringify(Object.keys(locales))},p=null;try{p=localStorage.getItem('cardbal-language')}catch(e){}if(s.indexOf(p)<0){p=null;var l=navigator.languages||[navigator.language];for(var i=0;i<l.length&&!p;i++){var c=String(l[i]||'').split('-')[0].toLowerCase();if(s.indexOf(c)>-1)p=c}}if(p&&p!=='en')location.replace('/'+p+'/'+location.search+location.hash)}`;
@@ -74,11 +77,14 @@ const storeButton = (t, cls = '') => `<a class="store${cls ? ` ${cls}` : ''}" hr
 const stn = (number) => `<span class="stn" aria-hidden="true"><b>CB</b><i>${number}</i></span>`;
 const kicker = (number, text) => `<p class="kicker">${stn(number)}<span>${esc(text)}</span></p>`;
 const title = ([first, second], cls = 't2') => `<span>${esc(first)}</span> <span class="${cls}">${esc(second)}</span>`;
-const shot = (name, alt, { priority = false, sizes = '(max-width: 960px) 270px, 340px', cls = '' } = {}) => `<img${cls ? ` class="${cls}"` : ''} src="/assets/screenshots/${name}-900.jpg" srcset="/assets/screenshots/${name}-640.jpg 640w, /assets/screenshots/${name}-900.jpg 900w, /assets/screenshots/${name}.jpg 1197w" sizes="${sizes}" width="1197" height="2600" alt="${esc(alt)}" ${priority ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
+const shot = (name, alt, { priority = false, sizes = '(max-width: 960px) 270px, 340px', cls = '' } = {}) => {
+  const [width, height] = shotSize(name);
+  return `<img${cls ? ` class="${cls}"` : ''} src="/assets/screenshots/${name}-900.jpg" srcset="/assets/screenshots/${name}-640.jpg 640w, /assets/screenshots/${name}-900.jpg 900w, /assets/screenshots/${name}.jpg ${width}w" sizes="${sizes}" width="${width}" height="${height}" alt="${esc(alt)}" ${priority ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
+};
 const phone = (screen, { cls = '', extra = '' } = {}) => `<div class="phone${cls ? ` ${cls}` : ''}"><div class="phone-screen">${screen}</div><span class="phone-island" aria-hidden="true"></span>${extra}</div>`;
 const flaps = (text, cells, cls) => `<span class="flaps ${cls}">${[...text.padEnd(cells)].slice(0, cells).map((char) => `<span class="f">${char === ' ' ? '' : esc(char)}</span>`).join('')}</span>`;
 const languageLinks = (current) => Object.entries(locales).map(([code, t]) => `<li><a href="/${code}/" lang="${t.htmlLang}" hreflang="${t.htmlLang}" data-language="${code}"${code === current ? ' aria-current="page"' : ''}>${esc(t.name)}</a></li>`).join('');
-const navTargets = ['read', 'cards', 'service-mode', 'faq'];
+const navTargets = ['read', 'pro', 'cards', 'service-mode', 'faq'];
 // Keeps brand names and standards from breaking across lines in visible text (attributes are untouched).
 const typeset = (html) => html.replace(/>([^<]+)</g, (match, text) => `>${text
   .replace(/\b([TU])-(money|Money|Union)\b|\bNFC-(capable)/g, (term) => term.replace('-', '\u2011'))
@@ -114,7 +120,7 @@ function render(code) {
       </div>
       <div class="hero-visual">
         <div class="hero-glow" aria-hidden="true"></div>
-        ${phone(shot('wallet', h.alt, { priority: true, sizes: '(max-width: 960px) 270px, 340px' }), { cls: 'hero-phone', extra: annotationsMarkup })}
+        ${phone(shot('pro-wallet', h.alt, { priority: true, sizes: '(max-width: 960px) 270px, 340px' }), { cls: 'hero-phone', extra: annotationsMarkup })}
       </div>
     </div>
   </section>`;
@@ -163,10 +169,23 @@ function render(code) {
     </div>
   </section>`;
 
+  const p = t.pro;
+  const pro = `<section class="section night pro" id="pro" aria-labelledby="pro-title">
+    <div class="wrap">
+      <header class="section-head reveal">${kicker('02', p.kicker)}<h2 class="h2" id="pro-title">${title(p.title)}</h2><p class="section-intro">${esc(p.intro)}</p></header>
+      <ol class="pro-grid">${proShots.map((name, i) => `<li class="pro-item reveal">
+        <figure>${phone(shot(name, p.items[i].alt, { sizes: '(max-width: 680px) 72vw, (max-width: 1180px) 300px, 280px' }))}
+          <figcaption><span class="pro-no">0${i + 1}</span><strong>${esc(p.items[i].title)}</strong><span>${esc(p.items[i].body)}</span></figcaption>
+        </figure>
+      </li>`).join('')}</ol>
+      <p class="pro-note">${icons.info}<span>${esc(p.note)}</span></p>
+    </div>
+  </section>`;
+
   const j = m.journeys;
   const more = `<section class="section paper more" id="more" aria-labelledby="more-title">
     <div class="wrap">
-      <header class="section-head reveal">${kicker('02', m.kicker)}<h2 class="h2" id="more-title">${title(m.title)}</h2></header>
+      <header class="section-head reveal">${kicker('03', m.kicker)}<h2 class="h2" id="more-title">${title(m.title)}</h2></header>
       <div class="bento">
         <article class="tile tile-journeys reveal">
           <div class="tile-text"><h3>${esc(j.title)}</h3><p>${esc(j.body)}</p></div>
@@ -203,7 +222,7 @@ function render(code) {
 
   const network = `<section class="section night network" id="cards" aria-labelledby="cards-title">
     <div class="wrap">
-      <header class="section-head reveal">${kicker('03', c.kicker)}<h2 class="h2" id="cards-title">${title(c.title)}</h2><p class="section-intro">${esc(c.intro)}</p></header>
+      <header class="section-head reveal">${kicker('04', c.kicker)}<h2 class="h2" id="cards-title">${title(c.title)}</h2><p class="section-intro">${esc(c.intro)}</p></header>
       <div class="lines">${regions.map((region, i) => {
         const data = c.regions[i];
         return `<article class="line line-${region.code} r-${region.code} reveal">
@@ -219,7 +238,7 @@ function render(code) {
   const steps = (list) => `<ol class="way-steps">${list.map(([name, body], i) => `<li><span class="step-no">${i + 1}</span><div><h4>${esc(name)}</h4><p>${esc(body)}</p></div></li>`).join('')}</ol>`;
   const ways = `<section class="section paper ways" id="ways" aria-labelledby="ways-title">
     <div class="wrap">
-      <header class="section-head reveal">${kicker('04', w.kicker)}<h2 class="h2" id="ways-title">${title(w.title)}</h2><p class="section-intro">${esc(w.intro)}</p></header>
+      <header class="section-head reveal">${kicker('05', w.kicker)}<h2 class="h2" id="ways-title">${title(w.title)}</h2><p class="section-intro">${esc(w.intro)}</p></header>
       <div class="ways-grid">
         <article class="way reveal" id="physical"><header class="way-head"><span class="way-letter">A</span><h3>${esc(w.physical.label)}</h3></header><div class="way-art">${artPhysical}</div>${steps(w.physical.steps)}</article>
         <article class="way way-wallet reveal" id="service-mode"><header class="way-head"><span class="way-letter">B</span><h3>${esc(w.wallet.label)}</h3></header><div class="way-art">${artWallet}</div>${steps(w.wallet.steps)}<p class="way-note">${icons.info}<span>${esc(w.wallet.note)}</span></p><a class="link-arrow way-link" href="${esc(w.wallet.linkUrl)}">${esc(w.wallet.link)}${icons.arrow}</a></article>
@@ -229,7 +248,7 @@ function render(code) {
 
   const faq = `<section class="section paper faq" id="faq" aria-labelledby="faq-title">
     <div class="wrap faq-layout">
-      <header class="faq-head reveal">${kicker('05', f.kicker)}<h2 class="h2" id="faq-title">${esc(f.title)}</h2><a class="link-arrow" href="https://cardbal.ieb.app/">${esc(f.reports)}${icons.arrow}</a></header>
+      <header class="faq-head reveal">${kicker('06', f.kicker)}<h2 class="h2" id="faq-title">${esc(f.title)}</h2><a class="link-arrow" href="https://cardbal.ieb.app/">${esc(f.reports)}${icons.arrow}</a></header>
       <div class="faq-list">${f.items.map(([question, answer], i) => `<details class="faq-item"><summary><span class="faq-no">Q${String(i + 1).padStart(2, '0')}</span><span class="faq-q">${esc(question)}</span><span class="faq-icon">${icons.plus}</span></summary><p>${esc(answer)}</p></details>`).join('')}</div>
     </div>
   </section>`;
@@ -237,14 +256,14 @@ function render(code) {
   const end = `<section class="cta" aria-labelledby="end-title">
     <div class="wrap cta-grid">
       <div class="cta-copy reveal">
-        ${kicker('06', t.end.kicker)}
+        ${kicker('07', t.end.kicker)}
         <h2 class="cta-title" id="end-title">${title(t.end.title)}</h2>
         <p class="cta-body">${esc(t.end.body)}</p>
         ${storeButton(t, 'store-dark')}
         <p class="cta-meta">${esc(t.end.meta)}</p>
       </div>
       <div class="sign reveal" aria-hidden="true">
-        <div class="sign-top"><span class="sign-arrow">${icons.exit}</span><span class="sign-code">CB<b>06</b></span></div>
+        <div class="sign-top"><span class="sign-arrow">${icons.exit}</span><span class="sign-code">CB<b>07</b></span></div>
         <img src="/assets/icon-180.png" width="180" height="180" alt="" loading="lazy" decoding="async">
         <p class="sign-name">App Store</p>
         <p class="sign-sub">CardBal · iPhone</p>
@@ -276,7 +295,7 @@ function render(code) {
   <meta property="og:type" content="website"><meta property="og:site_name" content="CardBal"><meta property="og:title" content="${esc(t.title)}"><meta property="og:description" content="${esc(t.description)}"><meta property="og:url" content="https://cardb.al/${code}/"><meta property="og:image" content="https://cardb.al/assets/og/${code}.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:locale" content="${t.ogLocale}">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(t.title)}"><meta name="twitter:description" content="${esc(t.description)}"><meta name="twitter:image" content="https://cardb.al/assets/og/${code}.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png"><link rel="apple-touch-icon" href="/assets/icon-180.png">
-  <link rel="preload" as="image" href="/assets/screenshots/wallet-900.jpg" imagesrcset="/assets/screenshots/wallet-640.jpg 640w, /assets/screenshots/wallet-900.jpg 900w, /assets/screenshots/wallet.jpg 1197w" imagesizes="(max-width: 960px) 270px, 340px">
+  <link rel="preload" as="image" href="/assets/screenshots/pro-wallet-900.jpg" imagesrcset="/assets/screenshots/pro-wallet-640.jpg 640w, /assets/screenshots/pro-wallet-900.jpg 900w, /assets/screenshots/pro-wallet.jpg 1206w" imagesizes="(max-width: 960px) 270px, 340px">
   <link rel="stylesheet" href="/assets/site.css"><script src="/assets/site.js" defer></script>
 </head>
 ${typeset(`<body id="top">
@@ -297,6 +316,7 @@ ${typeset(`<body id="top">
   ${hero}
   ${board}
   ${read}
+  ${pro}
   ${more}
   ${network}
   ${ways}
@@ -345,7 +365,7 @@ function checkShape(reference, value, where) {
   }
 }
 for (const [code, t] of Object.entries(locales)) checkShape(locales.en, t, code);
-if (locales.en.cards.regions.length !== regions.length || locales.en.read.chapters.length !== chapters.length) throw new Error('Locale lists do not match the page structure');
+if (locales.en.cards.regions.length !== regions.length || locales.en.read.chapters.length !== chapters.length || locales.en.pro.items.length !== proShots.length || locales.en.nav.length !== navTargets.length) throw new Error('Locale lists do not match the page structure');
 
 await rm(output, { recursive: true, force: true });
 await mkdir(path.join(output, 'assets'), { recursive: true });

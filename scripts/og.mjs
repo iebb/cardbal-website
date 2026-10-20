@@ -38,7 +38,7 @@ h1 span{display:block}h1 span+span{color:#ffd200}
 <div class="copy"><p class="kicker"><span class="stn"><b>CB</b><i>00</i></span>${esc(t.hero.kicker)}</p><h1><span>${esc(t.hero.title[0])}</span><span>${esc(t.hero.title[1])}</span></h1></div>
 <div class="lines">${lines.map(([id, bg, fg]) => `<span style="background:${bg};color:${fg}">${id.toUpperCase()}</span>`).join('')}</div>
 <p class="url">cardb.al</p>
-<div class="phone"><div><img src="${asset('assets/screenshots/wallet.jpg')}"></div><span class="island"></span></div>
+<div class="phone"><div><img src="${asset('assets/screenshots/pro-wallet.jpg')}"></div><span class="island"></span></div>
 </body></html>`;
 
 const work = await mkdtemp(path.join(tmpdir(), 'cardbal-og-'));

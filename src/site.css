@@ -309,6 +309,21 @@ html:is([lang=ja], [lang=zh-Hans], [lang=ko]) .readout dt { font-family: var(--l
   .stage-caption [data-stage-index] { color: var(--ink); font-weight: 700; }
 }
 
+/* Pro tools: real 2.4 screens */
+.pro-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 24px; align-items: start; }
+.pro-item figure { display: grid; justify-items: center; gap: 26px; }
+.pro-item .phone { --pw: min(280px, 100%); }
+.pro-item:nth-child(even) { margin-top: 72px; }
+.pro-item figcaption { display: grid; gap: 8px; width: 100%; max-width: 280px; }
+.pro-no { color: var(--signal); font: 600 12px/1 var(--mono); letter-spacing: .04em; }
+.pro-item strong { font-size: 20px; font-weight: 650; line-height: 1.2; letter-spacing: -.02em; }
+.pro-item figcaption span:last-child { color: var(--mute-d); font-size: 15px; line-height: 1.55; }
+.pro-note { display: flex; gap: 10px; max-width: 760px; margin-top: 48px; color: var(--dim-d); font-size: 14px; line-height: 1.55; }
+.pro-note .i { width: 18px; height: 18px; margin-top: 1px; }
+.reveal-ready .pro-grid .reveal:nth-child(2) { transition-delay: .08s; }
+.reveal-ready .pro-grid .reveal:nth-child(3) { transition-delay: .16s; }
+.reveal-ready .pro-grid .reveal:nth-child(4) { transition-delay: .24s; }
+
 /* Bento */
 .bento { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; }
 .tile { position: relative; display: flex; flex-direction: column; gap: 28px; min-height: 440px; padding: clamp(26px, 2.8vw, 40px); overflow: hidden; border: 1px solid var(--rule); border-radius: 26px; background: var(--white); }
@@ -528,6 +543,8 @@ html:is([lang=ja], [lang=zh-Hans], [lang=ko]) .footer-title { font-family: inher
   .line-kr, .line-cn, .line-hk, .line-mn, .line-fr { grid-column: span 3; }
   .line-fr { grid-column: 1 / -1; }
   .ways-grid { grid-template-columns: minmax(0, 1fr); }
+  .pro-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 64px; }
+  .pro-item:nth-child(even) { margin-top: 0; }
   .faq-layout { grid-template-columns: minmax(0, 1fr); gap: 40px; }
   .faq-head { position: static; }
   .cta-grid { grid-template-columns: minmax(0, 1fr); }
@@ -582,6 +599,11 @@ html:is([lang=ja], [lang=zh-Hans], [lang=ko]) .footer-title { font-family: inher
   .trips li:nth-child(n+4) { display: none; }
   .fan { height: 190px; }
   .lines { gap: 12px; }
+  .pro-grid { display: flex; gap: 16px; overflow-x: auto; margin-inline: calc(-1 * var(--gutter)); padding: 4px var(--gutter) 8px; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); scrollbar-width: none; }
+  .pro-grid::-webkit-scrollbar { display: none; }
+  .pro-item { flex: 0 0 min(76%, 300px); scroll-snap-align: start; }
+  .pro-item .phone { --pw: min(260px, 66vw); }
+  .pro-note { margin-top: 32px; }
   .line, .line-kr, .line-cn, .line-hk, .line-mn, .line-fr { grid-column: 1 / -1; }
   .stations { row-gap: 22px; margin: 28px 0 24px; }
   .stations li { padding-right: 18px; font-size: 14.5px; }

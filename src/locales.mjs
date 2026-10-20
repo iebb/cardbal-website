@@ -6,7 +6,7 @@ export const locales = {
     title: 'CardBal — Transit cards, decoded. For iPhone.',
     description: 'Read supported transit and stored-value cards with your iPhone. See balances, trip history, card details and raw data for cards from Japan, South Korea, China, Hong Kong, Mongolia and France — including Apple Wallet cards on another device in Service Mode.',
     skip: 'Skip to content', language: 'Choose language', menu: 'Menu', navLabel: 'Sections',
-    nav: ['The read', 'Cards', 'Service Mode', 'FAQ'],
+    nav: ['The read', 'Pro', 'Cards', 'Service Mode', 'FAQ'],
     download: 'Get CardBal', appStore: ['Download on the', 'App Store'],
     hero: {
       kicker: 'Pro transit card reader for iPhone',
@@ -14,7 +14,7 @@ export const locales = {
       body: 'Hold a card to your iPhone and CardBal reads what the chip stores: the balance, trips where available, card details and raw data. From Suica to T-money, Octopus to Lignes d’Azur.',
       secondary: 'See supported cards', meta: 'NFC-capable iPhone · iOS 16 or later',
       service: 'Also reads Apple Wallet cards in Service Mode',
-      alt: 'CardBal’s real card collection screen with saved transit cards from France, South Korea, Japan and Hong Kong, and their balances.'
+      alt: 'CardBal’s card collection with T-money, City Union, Climate Card, U-Money, OKICA and Hayakaken cards and their balances.'
     },
     board: {
       label: 'Now reading', note: 'A sample of the card families CardBal reads.',
@@ -31,6 +31,17 @@ export const locales = {
         { title: 'Every field, decoded.', body: 'Card family, number, issue date and type: CardBal turns the card’s own data structures into fields you can read. Values it can’t name are shown as raw codes.', shot: 'Seoul Climate Card', alt: 'CardBal showing a Seoul Climate Card and its decoded card information.' },
         { title: 'Raw data, when you want it.', body: 'Open Raw Data to see the structured payload behind each parsed value. For KS X 6924 cards, an optional Developer Mode probes further with read-only commands and keeps every readable record.', shot: 'Octopus', alt: 'CardBal showing an Octopus card’s balance, details and raw data.' }
       ]
+    },
+    pro: {
+      kicker: 'Pro tools', title: ['Every ride, mapped.', 'Every city, counted.'],
+      intro: 'Beyond the balance, CardBal turns what your cards remember into a personal transit record: a ride map, a transit atlas and a ride-by-ride log.',
+      items: [
+        { title: 'Ride history', body: 'Each tap on and off, with station, line, distance and fare where the card stores them.', alt: 'CardBal ride history for a T-money card, with tap-on and tap-off records, stations, distances and fares.' },
+        { title: 'Ride Map', body: 'The routes your cards remember, drawn on a map and filtered by card.', alt: 'CardBal Ride Map with ride clusters across East Asia and card, route, station and record counts.' },
+        { title: 'Transit Atlas', body: 'Every city and province you have ridden in, with record counts for each place.', alt: 'CardBal Transit Atlas globe highlighting cities and provinces with recorded rides.' },
+        { title: 'Card details', body: 'Balance, technology, brand and every decoded field, with a full hex export.', alt: 'CardBal card details for a T-money card with balance, last scan time, technology and brand.' }
+      ],
+      note: 'Screens from CardBal 2.4 with real cards. Card numbers are masked by the app’s privacy setting.'
     },
     more: {
       kicker: 'Beyond the balance', title: ['Made for the commute.', 'Ready for the trip.'],
@@ -93,7 +104,7 @@ export const locales = {
     title: 'CardBal — 你的交通卡，一读就懂。',
     description: '用 iPhone 读取支持的交通卡与储值卡：查看余额、乘车记录、卡片详情与原始数据，覆盖日本、韩国、中国大陆、中国香港、蒙古国和法国，也能读取另一台设备上开启服务模式的 Apple 钱包交通卡。',
     skip: '跳至正文', language: '选择语言', menu: '菜单', navLabel: '页面导航',
-    nav: ['读卡解析', '支持的卡', '服务模式', '常见问题'],
+    nav: ['读卡解析', '专业功能', '支持的卡', '服务模式', '常见问题'],
     download: '下载 CardBal', appStore: ['下载于', 'App Store'],
     hero: {
       kicker: 'iPhone 专业交通卡读卡器',
@@ -101,7 +112,7 @@ export const locales = {
       body: '把卡片靠近 iPhone，CardBal 就能读出芯片里存储的内容：余额、可读取的行程、卡片详情与原始数据。从 Suica 到 T-money，从八达通到 Lignes d’Azur。',
       secondary: '查看支持的卡', meta: '支持 NFC 的 iPhone · iOS 16 及以上',
       service: '也能读取服务模式下的 Apple 钱包交通卡',
-      alt: 'CardBal 的真实卡片收藏界面，展示来自法国、韩国、日本和中国香港的交通卡及其余额。'
+      alt: 'CardBal 的卡片收藏界面，展示 T-money、城市一卡通、气候同行卡、U-Money、OKICA 和 Hayakaken 等卡片及其余额。'
     },
     board: {
       label: '正在读取', note: 'CardBal 支持的部分卡片。',
@@ -118,6 +129,17 @@ export const locales = {
         { title: '每个字段，都已解析。', body: '卡片类型、卡号、发卡日期与卡种：CardBal 把卡片自身的数据结构转换成可读的字段。无法识别的值，会以原始代码如实显示。', shot: '首尔气候同行卡', alt: 'CardBal 展示首尔气候同行卡及解析后的卡片信息。' },
         { title: '原始数据，随时查看。', body: '打开 Raw Data，查看每个解析值背后的结构化数据。对于 KS X 6924 卡片，可选的开发者模式会以只读指令进一步探测，并保留所有可读取的记录。', shot: '八达通', alt: 'CardBal 展示八达通卡的余额、卡片详情与原始数据。' }
       ]
+    },
+    pro: {
+      kicker: '专业工具', title: ['每一程，都在地图上。', '每座城市，都有记录。'],
+      intro: '除了余额，CardBal 还会把卡里保存的记录整理成你的个人出行档案：乘车地图、交通地图集和逐笔乘车记录。',
+      items: [
+        { title: '乘车记录', body: '每一次进出站或上下车，在卡内有保存时显示站点、线路、距离与票价。', alt: 'CardBal 中 T-money 卡的乘车记录，显示进出站、站点、距离与票价。' },
+        { title: '乘车地图', body: '把卡片记住的路线绘制在地图上，并可按卡片筛选。', alt: 'CardBal 乘车地图，显示东亚各地的乘车分布，以及卡片、路线、站点和记录数量。' },
+        { title: '交通地图集', body: '你乘车经过的每个城市和省份，以及各地的记录数量。', alt: 'CardBal 交通地图集地球视图，标出有乘车记录的城市与省份。' },
+        { title: '卡片详情', body: '余额、技术、品牌与所有已解析字段，还可导出完整十六进制数据。', alt: 'CardBal 中 T-money 卡的详情，显示余额、上次读取时间、技术与品牌。' }
+      ],
+      note: '来自 CardBal 2.4 与真实卡片的界面；卡号已通过应用的隐私设置隐藏。'
     },
     more: {
       kicker: '不止余额', title: ['为每天通勤而做。', '为远行做好准备。'],
@@ -180,7 +202,7 @@ export const locales = {
     title: 'CardBal — 交通系ICカードを、読み解く。',
     description: 'iPhoneで対応する交通系ICカードや電子マネーを読み取り。残高、利用履歴、カード情報、生データまで確認できます。日本、韓国、中国本土、香港、モンゴル、フランスのカードに対応。別のデバイスのAppleウォレットにあるカードも、ヘルプモードで読み取れます。',
     skip: '本文へ移動', language: '言語を選択', menu: 'メニュー', navLabel: 'ページ内の項目',
-    nav: ['読み取り', '対応カード', 'ヘルプモード', 'よくある質問'],
+    nav: ['読み取り', 'プロ機能', '対応カード', 'ヘルプモード', 'よくある質問'],
     download: 'CardBalを入手', appStore: ['ダウンロードは', 'App Store'],
     hero: {
       kicker: 'iPhoneのためのプロ仕様ICカードリーダー',
@@ -188,7 +210,7 @@ export const locales = {
       body: 'カードをiPhoneにかざすだけで、CardBalがチップに保存された情報を読み取ります。残高、読み取れる利用履歴、カード情報、そして生データまで。SuicaからT-money、OctopusからLignes d’Azurまで。',
       secondary: '対応カードを見る', meta: 'NFC対応iPhone · iOS 16以降',
       service: 'Appleウォレットのカードもヘルプモードで読み取り',
-      alt: 'フランス、韓国、日本、香港の交通系ICカードと残高を表示する、CardBalの実際のカードコレクション画面。'
+      alt: 'T-money、City Union、気候同行カード、U-Money、OKICA、はやかけんなどのカードと残高を表示する、CardBalのカードコレクション画面。'
     },
     board: {
       label: '読み取り中', note: 'CardBalが対応するカードの一部です。',
@@ -205,6 +227,17 @@ export const locales = {
         { title: 'すべての項目を、読み解く。', body: 'カード種別、番号、発行日、タイプ。CardBalはカード独自のデータ構造を、読める項目に変換します。名前のわからない値は、元のコードのまま表示します。', shot: 'ソウルの気候同行カード', alt: 'ソウルの気候同行カードと読み取った情報を表示するCardBal。' },
         { title: '生データも、見たいときに。', body: '「Raw Data」を開けば、解析された値の元になる構造化データを確認できます。KS X 6924のカードでは、任意の開発者モードが読み取り専用のコマンドでさらに探索し、読み取れたすべてのレコードを保存します。', shot: 'Octopus', alt: 'Octopusカードの残高、カード情報、生データを表示するCardBal。' }
       ]
+    },
+    pro: {
+      kicker: 'プロ向け機能', title: ['すべての乗車を、地図に。', 'すべての街を、記録に。'],
+      intro: '残高だけでなく、カードに残る記録をあなただけの移動記録に。乗車マップ、トランジットアトラス、そして1件ずつの乗車履歴。',
+      items: [
+        { title: '乗車履歴', body: 'タッチした駅や停留所、路線、距離、運賃を、カードに記録がある範囲で表示します。', alt: 'T-moneyカードの乗車・降車記録、駅、距離、運賃を表示するCardBalの乗車履歴。' },
+        { title: '乗車マップ', body: 'カードに残るルートを地図に描き、カードごとに絞り込めます。', alt: '東アジア各地の乗車の分布と、カード・ルート・駅・記録の件数を表示するCardBalの乗車マップ。' },
+        { title: 'トランジットアトラス', body: '乗車した都市や地域を、記録件数とともに表示します。', alt: '乗車記録のある都市や地域を表示するCardBalのトランジットアトラス。' },
+        { title: 'カード詳細', body: '残高、技術、ブランド、解析したすべての項目。16進データの書き出しにも対応。', alt: '残高、最終読み取り日時、技術、ブランドを表示するCardBalのT-moneyカード詳細。' }
+      ],
+      note: '実際のカードを使ったCardBal 2.4の画面です。カード番号はアプリのプライバシー設定で伏せています。'
     },
     more: {
       kicker: '残高の、その先へ', title: ['毎日の通勤にも。', '遠くへの旅にも。'],
@@ -267,7 +300,7 @@ export const locales = {
     title: 'CardBal — 교통카드, 제대로 읽다.',
     description: 'iPhone으로 지원되는 교통카드와 선불카드를 읽어보세요. 일본, 한국, 중국 본토, 홍콩, 몽골, 프랑스 카드의 잔액, 이용 내역, 카드 정보, 원시 데이터를 확인하고, 다른 기기의 Apple 지갑 카드도 서비스 모드에서 읽을 수 있어요.',
     skip: '본문으로 이동', language: '언어 선택', menu: '메뉴', navLabel: '페이지 섹션',
-    nav: ['읽기', '지원 카드', '서비스 모드', '자주 묻는 질문'],
+    nav: ['읽기', '프로 기능', '지원 카드', '서비스 모드', '자주 묻는 질문'],
     download: 'CardBal 다운로드', appStore: ['다운로드하기', 'App Store'],
     hero: {
       kicker: 'iPhone을 위한 프로 교통카드 리더',
@@ -275,7 +308,7 @@ export const locales = {
       body: '카드를 iPhone에 가까이 대면 CardBal이 칩에 저장된 정보를 읽어요. 잔액, 확인 가능한 이용 내역, 카드 정보, 그리고 원시 데이터까지. Suica부터 티머니, 옥토퍼스부터 Lignes d’Azur까지.',
       secondary: '지원 카드 보기', meta: 'NFC 지원 iPhone · iOS 16 이상',
       service: 'Apple 지갑 카드도 서비스 모드에서 읽어요',
-      alt: '프랑스, 한국, 일본, 홍콩의 교통카드와 잔액을 보여주는 CardBal의 실제 카드 모음 화면.'
+      alt: '티머니, City Union, 기후동행카드, U-Money, OKICA, 하야카켄 등 카드와 잔액을 보여주는 CardBal 카드 모음 화면.'
     },
     board: {
       label: '지금 읽는 중', note: 'CardBal이 지원하는 카드 중 일부예요.',
@@ -292,6 +325,17 @@ export const locales = {
         { title: '모든 항목을, 해석해서.', body: '카드 종류, 번호, 발급일, 유형까지. CardBal은 카드 고유의 데이터 구조를 읽을 수 있는 항목으로 바꿔줘요. 이름을 알 수 없는 값은 원래 코드 그대로 보여줘요.', shot: '서울 기후동행카드', alt: '서울 기후동행카드와 읽은 카드 정보를 보여주는 CardBal.' },
         { title: '원시 데이터도, 원할 때.', body: 'Raw Data를 열면 해석된 값 뒤에 있는 구조화된 데이터를 볼 수 있어요. KS X 6924 카드는 선택 사항인 개발자 모드에서 읽기 전용 명령으로 더 깊이 탐색하고, 읽을 수 있는 모든 레코드를 보관해요.', shot: '옥토퍼스', alt: '옥토퍼스 카드의 잔액, 카드 정보, 원시 데이터를 보여주는 CardBal.' }
       ]
+    },
+    pro: {
+      kicker: '프로 기능', title: ['모든 이동을 지도에.', '모든 도시를 기록으로.'],
+      intro: '잔액을 넘어, 카드에 남은 기록을 나만의 이동 기록으로 정리해요. 승차 지도, 트랜짓 아틀라스, 그리고 한 건 한 건의 승차 내역까지.',
+      items: [
+        { title: '승차 내역', body: '카드에 저장된 경우 승하차 역과 정류장, 노선, 거리, 요금을 보여줘요.', alt: '티머니 카드의 승하차 기록, 역, 거리, 요금을 보여주는 CardBal 승차 내역.' },
+        { title: '승차 지도', body: '카드에 남은 경로를 지도에 그리고, 카드별로 걸러 볼 수 있어요.', alt: '동아시아 곳곳의 승차 분포와 카드, 경로, 역, 기록 수를 보여주는 CardBal 승차 지도.' },
+        { title: '트랜짓 아틀라스', body: '타 본 모든 도시와 지역을 지역별 기록 수와 함께 보여줘요.', alt: '승차 기록이 있는 도시와 지역을 표시한 CardBal 트랜짓 아틀라스.' },
+        { title: '카드 정보', body: '잔액, 기술, 브랜드와 해석한 모든 항목, 그리고 전체 16진 데이터 내보내기.', alt: '잔액, 마지막 읽은 시간, 기술, 브랜드를 보여주는 CardBal 티머니 카드 정보.' }
+      ],
+      note: '실제 카드로 촬영한 CardBal 2.4 화면이에요. 카드 번호는 앱의 개인정보 설정으로 가렸어요.'
     },
     more: {
       kicker: '잔액, 그 이상', title: ['매일의 출근길에도.', '먼 여행에도.'],
@@ -354,7 +398,7 @@ export const locales = {
     title: 'CardBal — Тээврийн картаа нарийн уншаарай.',
     description: 'iPhone-оор дэмжигдэх тээврийн болон урьдчилсан төлбөрт картаа уншуулаарай. Япон, Өмнөд Солонгос, Хятад, Хонконг, Монгол, Францын картын үлдэгдэл, зорчилтын түүх, картын мэдээлэл, түүхий өгөгдлийг харах боломжтой. Өөр төхөөрөмжийн Apple Wallet дахь картыг үйлчилгээний горимд ч уншина.',
     skip: 'Үндсэн хэсэг рүү очих', language: 'Хэл сонгох', menu: 'Цэс', navLabel: 'Хуудасны хэсгүүд',
-    nav: ['Уншилт', 'Картууд', 'Үйлчилгээний горим', 'Түгээмэл асуулт'],
+    nav: ['Уншилт', 'Pro', 'Картууд', 'Үйлчилгээний горим', 'Түгээмэл асуулт'],
     download: 'CardBal татах', appStore: ['Татах', 'App Store'],
     hero: {
       kicker: 'iPhone-д зориулсан мэргэжлийн карт уншигч',
@@ -362,7 +406,7 @@ export const locales = {
       body: 'Картаа iPhone-д ойртуулахад CardBal чипэд хадгалагдсан мэдээллийг уншина: үлдэгдэл, боломжтой зорчилтын түүх, картын мэдээлэл болон түүхий өгөгдөл. Suica-аас T-money, Octopus-аас Lignes d’Azur хүртэл.',
       secondary: 'Дэмжих картуудыг харах', meta: 'NFC-тэй iPhone · iOS 16 ба түүнээс дээш',
       service: 'Apple Wallet дахь картыг үйлчилгээний горимд ч уншина',
-      alt: 'Франц, Өмнөд Солонгос, Япон, Хонконгийн тээврийн картууд болон үлдэгдлийг харуулсан CardBal-ын бодит картын цуглуулгын дэлгэц.'
+      alt: 'T-money, City Union, Climate Card, U-Money, OKICA, Hayakaken зэрэг картууд болон үлдэгдлийг харуулсан CardBal-ын картын цуглуулга.'
     },
     board: {
       label: 'Одоо уншиж байна', note: 'CardBal-ын дэмждэг картуудын заримаас.',
@@ -379,6 +423,17 @@ export const locales = {
         { title: 'Талбар бүрийг тайлна.', body: 'Картын төрөл, дугаар, олгосон огноо, ангилал: CardBal картын өөрийн өгөгдлийн бүтцийг уншихад хялбар талбарууд болгон хувиргана. Нэрийг нь тодорхойлж чадаагүй утгыг түүхий кодоор нь харуулна.', shot: 'Сөүлийн Climate Card', alt: 'Сөүлийн Climate Card болон уншсан мэдээллийг харуулсан CardBal.' },
         { title: 'Түүхий өгөгдөл, хүссэн үедээ.', body: 'Raw Data-г нээж, тайлсан утга бүрийн цаадах бүтэцлэгдсэн өгөгдлийг хараарай. KS X 6924 картуудын хувьд сонголтот Developer Mode зөвхөн унших командаар илүү гүн шалгаж, уншигдах бүх бичлэгийг хадгална.', shot: 'Octopus', alt: 'Octopus картын үлдэгдэл, мэдээлэл болон түүхий өгөгдлийг харуулсан CardBal.' }
       ]
+    },
+    pro: {
+      kicker: 'Мэргэжлийн хэрэгслүүд', title: ['Зорчилт бүр газрын зураг дээр.', 'Хот бүр бүртгэлтэй.'],
+      intro: 'Үлдэгдлээс гадна CardBal картын санасан бичлэгүүдийг таны хувийн зорчилтын түүх болгоно: зорчилтын газрын зураг, тээврийн атлас, зорчилт тус бүрийн бүртгэл.',
+      items: [
+        { title: 'Зорчилтын түүх', body: 'Карт хадгалсан бол суух, буух буудал, шугам, зай, төлбөрийг харуулна.', alt: 'T-money картын суух, буух бичлэг, буудал, зай, төлбөрийг харуулсан CardBal-ын зорчилтын түүх.' },
+        { title: 'Зорчилтын газрын зураг', body: 'Картын санасан чиглэлүүдийг газрын зураг дээр зурж, картаар шүүнэ.', alt: 'Зүүн Азийн зорчилтууд болон карт, чиглэл, буудал, бичлэгийн тоог харуулсан CardBal-ын газрын зураг.' },
+        { title: 'Тээврийн атлас', body: 'Таны зорчсон бүх хот, бүс нутгийг газар тус бүрийн бичлэгийн тоотой харуулна.', alt: 'Зорчилтын бичлэгтэй хот, бүс нутгуудыг тодруулсан CardBal-ын тээврийн атлас.' },
+        { title: 'Картын дэлгэрэнгүй', body: 'Үлдэгдэл, технологи, брэнд, тайлсан бүх талбар, бүрэн hex экспорт.', alt: 'Үлдэгдэл, сүүлд уншсан цаг, технологи, брэндийг харуулсан CardBal-ын T-money картын дэлгэрэнгүй.' }
+      ],
+      note: 'Бодит картуудаар авсан CardBal 2.4-ийн дэлгэц. Картын дугаарыг аппын нууцлалын тохиргоогоор нуусан.'
     },
     more: {
       kicker: 'Үлдэгдлээс цааш', title: ['Өдөр тутмын замд.', 'Холын аялалд.'],

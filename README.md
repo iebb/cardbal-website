@@ -27,7 +27,7 @@ Setup status on 2026-10-02: the public repository is pushed and builds successfu
 
 ## Design
 
-The site is designed as a transit wayfinding system for a pro card reader: signage black, platform yellow (`--signal`), and one line colour per region (JP, KR, CN, HK, MN, FR). Sections are numbered like station stops (`CB 00`–`CB 06`). The page runs hero → split-flap "Now reading" board → scroll story (one sticky phone, three real screenshots with readouts) → feature tiles → network map of supported cards → two ways to read (physical card, Apple Wallet Service Mode) → FAQ → closing App Store sign.
+The site is designed as a transit wayfinding system for a pro card reader: signage black, platform yellow (`--signal`), and one line colour per region (JP, KR, CN, HK, MN, FR). Sections are numbered like station stops (`CB 00`–`CB 07`). The page runs hero → split-flap "Now reading" board → scroll story (one sticky phone, three real screenshots with readouts) → Pro tools (ride history, Ride Map, Transit Atlas, card details) → feature tiles → network map of supported cards → two ways to read (physical card, Apple Wallet Service Mode) → FAQ → closing App Store sign.
 
 All tokens live at the top of `src/site.css`. Motion respects `prefers-reduced-motion`, and every section reads in full without JavaScript; `src/site.js` only adds the board animation, scroll story, reveals, menus, and section highlighting.
 
@@ -43,7 +43,14 @@ Each language has a complete, indexable static page, including its demo, FAQ, me
 
 The root includes the complete English page. A small inline script in `<head>` (allowed by its SHA-256 hash in the generated CSP) chooses a previously selected or supported browser language before first paint. Explicit language URLs always take priority. Language selection remains available without JavaScript, as do the main content, App Store links, and expandable FAQs.
 
-Edit `src/locales.mjs`, `src/site.css`, `src/site.js`, and `scripts/build.mjs`. The build rejects any locale whose keys or list lengths differ from English. The hero, scroll story, and share images use real, unaltered iPhone screenshots from the app's public App Store listing (`6760978958`); `-640` and `-900` copies are plain downscales for responsive `srcset`. The images show the English interface in every website locale; captions and alternate text are translated. `src/assets/screenshots/manifest.json` records each Apple CDN source, resolution, retrieval date, checksum, and the derivative sizes. Readout values on the page are transcribed from the matching screenshots. The website does not perform an NFC scan.
+Edit `src/locales.mjs`, `src/site.css`, `src/site.js`, and `scripts/build.mjs`. The build rejects any locale whose keys or list lengths differ from English.
+
+Screenshots come from two sources, both recorded in `src/assets/screenshots/manifest.json`:
+
+- `edy`, `climate`, `octopus`: real, unaltered iPhone screenshots from the app's public App Store listing (`6760978958`), used in the scroll story.
+- `pro-*`: CardBal 2.4.0 captured on the iPhone 17 Pro Simulator in dark appearance, with the developer's own iCloud-synced cards and the app's masked serial-number setting. They power the hero, the Pro tools section, and the share images.
+
+`-640` and `-900` copies are plain downscales for responsive `srcset`. The images show the English interface in every website locale; captions and alternate text are translated. Readout values on the page are transcribed from the matching screenshots. The website does not perform an NFC scan.
 
 Supported cards and standards follow the live App Store listing (FeliCa, KS X 6924, T-Union with 300+ city cards, Calypso) and the app's public source ([iebb/TransitICReader](https://github.com/iebb/TransitICReader)) for FeliCa system codes, U-Money, raw data, and read-only Developer Mode probing.
 

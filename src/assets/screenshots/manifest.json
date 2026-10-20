@@ -5,15 +5,6 @@
   "retrievedOn": "2026-10-02",
   "screenshots": [
     {
-      "file": "wallet.jpg",
-      "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c5/a3/e4/c5a3e4e0-03fe-9d97-b5c5-84e1052e885f/IMG_5528.PNG/1200x2600bb.jpg",
-      "lookupUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c5/a3/e4/c5a3e4e0-03fe-9d97-b5c5-84e1052e885f/IMG_5528.PNG/320x480bb.jpg",
-      "sha256": "051713a4180c07ee5418053bae71481e2dec314d20da797e2e08d6371f8fd320",
-      "width": 1197,
-      "height": 2600,
-      "interfaceLanguage": "en"
-    },
-    {
       "file": "edy.jpg",
       "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d7/48/9e/d7489ea2-64c5-9602-1da2-744de9261f6b/IMG_5526.PNG/1200x2600bb.jpg",
       "lookupUrl": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d7/48/9e/d7489ea2-64c5-9602-1da2-744de9261f6b/IMG_5526.PNG/320x480bb.jpg",
@@ -49,5 +40,48 @@
     "naming": "{name}-{width}.jpg",
     "method": "ImageMagick resize to width, JPEG quality 82, progressive; content otherwise unchanged",
     "generatedOn": "2026-10-21"
+  },
+  "appCaptures": {
+    "appVersion": "2.4.0 (39)",
+    "device": "iPhone 17 Pro Simulator, dark appearance, status bar overridden to 9:41",
+    "data": "The developer's own cards, synced through iCloud and loaded into the simulator. Serial numbers use the app's masked display setting.",
+    "capturedOn": "2026-10-21",
+    "screenshots": [
+      {
+        "file": "pro-wallet.jpg",
+        "screen": "Cards tab",
+        "width": 1206,
+        "height": 2622,
+        "sha256": "7bee25d9d1570796bf5daf42fac59038bfbe6629ff939851e9068c0659dfdb46"
+      },
+      {
+        "file": "pro-rides.jpg",
+        "screen": "Transit Activity for a T-money card",
+        "width": 1206,
+        "height": 2622,
+        "sha256": "75b5d4b81ea62461d95ea23692c5aaeb80023f1668ca29e6e50a172f8fc2e477"
+      },
+      {
+        "file": "pro-map.jpg",
+        "screen": "Ride Map, all cards",
+        "width": 1206,
+        "height": 2622,
+        "sha256": "56250ee53b3aad75a3042eb8e10f507fb8ed867ac02d9e7f52554f1abb0a98aa"
+      },
+      {
+        "file": "pro-atlas.jpg",
+        "screen": "Transit Atlas",
+        "width": 1206,
+        "height": 2622,
+        "sha256": "9e9b7a8aef79525618ae27afa44a5b45c866e90a8cb0068f941f96040d0af7cd"
+      },
+      {
+        "file": "pro-detail.jpg",
+        "screen": "Card details for a T-money card",
+        "width": 1206,
+        "height": 2622,
+        "sha256": "0f4005899905343f73f43b3343f588326153cbb7d4f290277c1d69341691113f"
+      }
+    ]
   }
 }
