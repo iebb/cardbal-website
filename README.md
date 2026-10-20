@@ -25,6 +25,12 @@ After the connection is active, push website changes to `master` to publish them
 
 Setup status on 2026-10-02: the public repository is pushed and builds successfully. Creating the Git-connected Pages project returned Cloudflare error `8000011` about the Git installation. Dashboard security-key verification and GitHub installation access verification are pending; Git deployment has not yet been activated or verified.
 
+## Design
+
+The site is designed as a transit wayfinding system for a pro card reader: signage black, platform yellow (`--signal`), and one line colour per region (JP, KR, CN, HK, MN, FR). Sections are numbered like station stops (`CB 00`–`CB 06`). The page runs hero → split-flap "Now reading" board → scroll story (one sticky phone, three real screenshots with readouts) → feature tiles → network map of supported cards → two ways to read (physical card, Apple Wallet Service Mode) → FAQ → closing App Store sign.
+
+All tokens live at the top of `src/site.css`. Motion respects `prefers-reduced-motion`, and every section reads in full without JavaScript; `src/site.js` only adds the board animation, scroll story, reveals, menus, and section highlighting.
+
 ## Languages and content
 
 Each language has a complete, indexable static page, including its demo, FAQ, metadata and alternate links:
@@ -35,15 +41,19 @@ Each language has a complete, indexable static page, including its demo, FAQ, me
 - `/ko/` — Korean
 - `/mn/` — Mongolian (Cyrillic)
 
-The root includes the complete English page. When JavaScript is enabled, it chooses a supported browser language or a previously selected language. Explicit language URLs always take priority. Language selection remains available without JavaScript, as do the main content, App Store links, and expandable FAQs.
+The root includes the complete English page. A small inline script in `<head>` (allowed by its SHA-256 hash in the generated CSP) chooses a previously selected or supported browser language before first paint. Explicit language URLs always take priority. Language selection remains available without JavaScript, as do the main content, App Store links, and expandable FAQs.
 
-Edit `src/locales.mjs`, `src/site.css`, and `src/site.js`. The build rejects incomplete locale keys or section counts. The hero preview and screenshot gallery use real, unaltered iPhone screenshots from the app's public App Store listing (`6760978958`). The images show the English interface in every website locale; captions and alternate text are translated. `src/assets/screenshots/manifest.json` records each Apple CDN source, resolution, retrieval date, and checksum. The website does not perform an NFC scan.
+Edit `src/locales.mjs`, `src/site.css`, `src/site.js`, and `scripts/build.mjs`. The build rejects any locale whose keys or list lengths differ from English. The hero, scroll story, and share images use real, unaltered iPhone screenshots from the app's public App Store listing (`6760978958`); `-640` and `-900` copies are plain downscales for responsive `srcset`. The images show the English interface in every website locale; captions and alternate text are translated. `src/assets/screenshots/manifest.json` records each Apple CDN source, resolution, retrieval date, checksum, and the derivative sizes. Readout values on the page are transcribed from the matching screenshots. The website does not perform an NFC scan.
+
+Supported cards and standards follow the live App Store listing (FeliCa, KS X 6924, T-Union with 300+ city cards, Calypso) and the app's public source ([iebb/TransitICReader](https://github.com/iebb/TransitICReader)) for FeliCa system codes, U-Money, raw data, and read-only Developer Mode probing.
+
+Share images (`src/assets/og/{locale}.png`, 1200×630) are rendered from `scripts/og.mjs` with local Google Chrome. Run `npm run og` after changing hero copy and commit the PNGs; the Pages build only copies them.
 
 CardBal can read supported Apple Wallet transit cards on another iPhone or Apple Watch when Service Mode is enabled there. The website explains the two-device flow and links to Apple's localized setup guides. Availability and readable information depend on the card and issuer. Japanese Wallet calls the setting Help Mode (`ヘルプモード`).
 
-Supported-card copy is based on the app, the user's confirmed Service Mode behavior, and its live App Store listing. The website's Mongolian localization does not claim the native app is localized in Mongolian.
+The website's Mongolian localization does not claim the native app is localized in Mongolian.
 
-The site uses local assets and system fonts, without third-party scripts or cookies. Its privacy link points to the app's published privacy policy, including Firebase Analytics and optional contributions.
+The site uses local assets and system fonts (SF Pro and SF Mono on Apple devices), without third-party scripts or cookies. Its privacy link points to the app's published privacy policy, including Firebase Analytics and optional contributions.
 
 ## Custom domain
 

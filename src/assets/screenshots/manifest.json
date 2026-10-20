@@ -40,5 +40,14 @@
       "height": 2600,
       "interfaceLanguage": "en"
     }
-  ]
+  ],
+  "derivatives": {
+    "widths": [
+      640,
+      900
+    ],
+    "naming": "{name}-{width}.jpg",
+    "method": "ImageMagick resize to width, JPEG quality 82, progressive; content otherwise unchanged",
+    "generatedOn": "2026-10-21"
+  }
 }
