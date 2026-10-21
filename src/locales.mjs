@@ -1,18 +1,18 @@
 // Every locale must match the shape of `en` exactly; scripts/build.mjs rejects missing keys or list items.
-// Card, region and protocol facts follow the live App Store listing (id6760978958) and the app's public source.
+// Card, region and protocol facts follow the live App Store and Google Play listings and the app's source.
 export const locales = {
   en: {
     name: 'English', htmlLang: 'en', store: 'us', ogLocale: 'en_US',
-    title: 'CardBal — Transit cards, decoded. For iPhone.',
-    description: 'Read supported transit and stored-value cards with your iPhone. See balances, trip history, card details and raw data for cards from Japan, South Korea, China, Hong Kong, Mongolia and France — including Apple Wallet cards on another device in Service Mode.',
+    title: 'CardBal — Transit cards, decoded. For iPhone and Android.',
+    description: 'Read supported transit and stored-value cards with your iPhone or Android phone. See balances, trip history, card details and raw data for cards from Japan, South Korea, China, Hong Kong, Mongolia and France — including Apple Wallet cards on another device in Service Mode.',
     skip: 'Skip to content', language: 'Choose language', menu: 'Menu', navLabel: 'Sections',
     nav: ['The read', 'Pro', 'Cards', 'Service Mode', 'FAQ'],
-    download: 'Get CardBal', appStore: ['Download on the', 'App Store'],
+    download: 'Get CardBal', appStore: ['Download on the', 'App Store'], googlePlay: ['Get it on', 'Google Play'],
     hero: {
-      kicker: 'Pro transit card reader for iPhone',
+      kicker: 'Pro transit card reader for iPhone and Android',
       title: ['Transit cards,', 'decoded.'],
-      body: 'Hold a card to your iPhone and CardBal reads what the chip stores: the balance, trips where available, card details and raw data. From Suica to T-money, Octopus to Lignes d’Azur.',
-      secondary: 'See supported cards', meta: 'NFC-capable iPhone · iOS 16 or later',
+      body: 'Hold a card to your phone and CardBal reads what the chip stores: the balance, trips where available, card details and raw data. From Suica to T-money, Octopus to Lignes d’Azur.',
+      secondary: 'See supported cards', meta: 'iPhone with iOS 16 or later · Android 8 or later · NFC',
       service: 'Also reads Apple Wallet cards in Service Mode',
       alt: 'CardBal’s card collection with T-money, City Union, Climate Card, U-Money, OKICA and Hayakaken cards and their balances.'
     },
@@ -20,7 +20,7 @@ export const locales = {
       label: 'Now reading', note: 'A sample of the card families CardBal reads.',
       columns: ['Card', 'Standard', 'Region'],
       sr: 'Supported cards include Suica, PASMO, ICOCA, Rakuten Edy, T-money, Cashbee, Octopus, T-Union city cards, U-Money and Lignes d’Azur.',
-      stats: [['6', 'regions'], ['4', 'card standards'], ['300+', 'T-Union city cards'], ['iOS 16+', 'NFC-capable iPhone']]
+      stats: [['6', 'regions'], ['4', 'card standards'], ['300+', 'T-Union city cards'], ['iOS + Android', 'NFC phones']]
     },
     read: {
       kicker: 'Inside the read', title: ['From balance', 'to bytes.'],
@@ -52,9 +52,9 @@ export const locales = {
         routes: ['Shibuya → Shinjuku', 'Hongik Univ. → Seoul', 'Dongzhimen → Yonghegong', 'Central → Tsim Sha Tsui', 'MUBIS → Central Library']
       },
       collection: { title: 'A wallet that’s yours.', body: 'Save multiple cards, give them names and spot them instantly with your own card photos.' },
-      device: { title: 'On your device. In your iCloud.', body: 'Saved cards stay on your iPhone, with iCloud backup and file export when you need them.', labels: ['On device', 'iCloud backup', 'File export'] },
+      device: { title: 'On your device. Backed up your way.', body: 'Saved cards stay on your phone. Back up to iCloud on iPhone, or export a file that opens in CardBal on iPhone and Android.', labels: ['On device', 'iCloud backup', 'File export'] },
       reports: { title: 'Help map every station.', body: 'Report a missing station or request a station-code correction from any saved card or trip, with a map pin. Requests appear on a public list.', link: 'View station reports' },
-      source: { title: 'Open source.', body: 'See exactly how each card family is decoded. CardBal’s source code is public on GitHub.', link: 'View the source' }
+      source: { title: 'Open source, from December.', body: 'CardBal’s source code will be released after December 1, so you can see exactly how each card family is decoded.' }
     },
     cards: {
       kicker: 'Network', title: ['Six regions.', 'One reader.'],
@@ -72,7 +72,7 @@ export const locales = {
     ways: {
       kicker: 'Two ways to read', title: ['A card in hand.', 'Or one in Wallet.'],
       intro: 'Read a physical card directly, or read a supported Apple Wallet transit card from another iPhone or Apple Watch in Service Mode.',
-      physical: { label: 'Physical card', steps: [['Open CardBal', 'Tap Scan on your iPhone.'], ['Hold it near the top', 'Keep the card near the top of your iPhone until the read finishes.'], ['Read and save', 'Check the balance and available trips, then save the card to your collection.']] },
+      physical: { label: 'Physical card', steps: [['Open CardBal', 'Tap Scan on your phone.'], ['Hold it to the reader', 'Keep the card near the top of your iPhone, or the back of your Android phone, until the read finishes.'], ['Read and save', 'Check the balance and available trips, then save the card to your collection.']] },
       wallet: {
         label: 'Apple Wallet · Service Mode',
         steps: [['Choose the card', 'Open Wallet on the device that holds your transit card.'], ['Turn on Service Mode', 'On iPhone, open the card’s details and enable Service Mode. For Apple Watch, follow Apple’s guide.'], ['Scan with CardBal', 'Start a scan in CardBal on a separate iPhone, then bring the two devices close together at their NFC reading points.']],
@@ -83,18 +83,18 @@ export const locales = {
     faq: {
       kicker: 'Before you tap', title: 'Good to know.', reports: 'View station reports',
       items: [
-        ['What do I need?', 'An NFC-capable iPhone running iOS 16 or later and a supported card. Use a physical card, or a supported Apple Wallet transit card on another device with Service Mode enabled. CardBal uses the iPhone’s built-in NFC reader.'],
+        ['What do I need?', 'An NFC-capable iPhone running iOS 16 or later, or an Android phone with NFC running Android 8 or later, and a supported card. On iPhone, you can also read a supported Apple Wallet transit card on another device with Service Mode enabled. CardBal uses your phone’s built-in NFC reader.'],
         ['Can I read an Apple Wallet card on another device?', 'Yes. Put a supported transit card in Service Mode on the iPhone or Apple Watch that holds it, then scan it with CardBal on a separate iPhone. On the card-holding iPhone, open Wallet, select the card, open Card Details, and enable Service Mode where available. Card support and readable information depend on the issuer.'],
         ['Can CardBal top up my card?', 'CardBal reads card information. To add credit or pay for a journey, use the card issuer’s official services.'],
         ['Why do some cards show less history?', 'Each card family stores different information and a limited number of records. CardBal displays what it can read and decode; some stations or transactions may be unavailable.'],
-        ['How is my data handled?', 'Saved cards are stored on your device. iCloud can sync backups. Optional Korean-card contributions and station reports share the data described in their app disclosures; the app also uses Firebase Analytics. See the privacy policy for details.'],
+        ['How is my data handled?', 'Saved cards are stored on your device. On iPhone, iCloud can sync backups. Optional Korean-card contributions and station reports share the data described in their app disclosures; the iPhone app also uses Firebase Analytics. See the privacy policy for details.'],
         ['Can I help with an unrecognized station?', 'Yes. Open a saved card or trip in CardBal to report a missing station or request a station-code correction. You can add a station name, optional details, and a map pin.']
       ]
     },
-    end: { kicker: 'Next stop', title: ['Read the cards', 'you already carry.'], body: 'CardBal for iPhone. Download it on the App Store.', meta: 'Requires iOS 16 or later and an NFC-capable iPhone.' },
+    end: { kicker: 'Next stop', title: ['Read the cards', 'you already carry.'], body: 'CardBal for iPhone and Android. Download it on the App Store or Google Play.', meta: 'Requires an NFC-capable iPhone with iOS 16 or later, or an Android phone with NFC and Android 8 or later.' },
     footer: {
-      tagline: 'The pro transit card reader for iPhone.', resources: 'Resources', languages: 'Languages',
-      privacy: 'Privacy policy', reports: 'Station reports', source: 'Source code', top: 'Back to top',
+      tagline: 'The pro transit card reader for iPhone and Android.', resources: 'Resources', languages: 'Languages',
+      privacy: 'Privacy policy', reports: 'Station reports', top: 'Back to top',
       legal: 'Card names and artwork belong to their respective owners. CardBal is an independent reader and is not affiliated with transit operators.'
     },
     notFound: 'This stop isn’t on the map.', back: 'Back to CardBal'
@@ -102,15 +102,15 @@ export const locales = {
   zh: {
     name: '简体中文', htmlLang: 'zh-Hans', store: 'cn', ogLocale: 'zh_CN',
     title: 'CardBal — 你的交通卡，一读就懂。',
-    description: '用 iPhone 读取支持的交通卡与储值卡：查看余额、乘车记录、卡片详情与原始数据，覆盖日本、韩国、中国大陆、中国香港、蒙古国和法国，也能读取另一台设备上开启服务模式的 Apple 钱包交通卡。',
+    description: '用 iPhone 或 Android 手机读取支持的交通卡与储值卡：查看余额、乘车记录、卡片详情与原始数据，覆盖日本、韩国、中国大陆、中国香港、蒙古国和法国，也能读取另一台设备上开启服务模式的 Apple 钱包交通卡。',
     skip: '跳至正文', language: '选择语言', menu: '菜单', navLabel: '页面导航',
     nav: ['读卡解析', '专业功能', '支持的卡', '服务模式', '常见问题'],
-    download: '下载 CardBal', appStore: ['下载于', 'App Store'],
+    download: '下载 CardBal', appStore: ['下载于', 'App Store'], googlePlay: ['下载于', 'Google Play'],
     hero: {
-      kicker: 'iPhone 专业交通卡读卡器',
+      kicker: 'iPhone 与 Android 专业交通卡读卡器',
       title: ['你的交通卡，', '一读就懂。'],
-      body: '把卡片靠近 iPhone，CardBal 就能读出芯片里存储的内容：余额、可读取的行程、卡片详情与原始数据。从 Suica 到 T-money，从八达通到 Lignes d’Azur。',
-      secondary: '查看支持的卡', meta: '支持 NFC 的 iPhone · iOS 16 及以上',
+      body: '把卡片靠近手机，CardBal 就能读出芯片里存储的内容：余额、可读取的行程、卡片详情与原始数据。从 Suica 到 T-money，从八达通到 Lignes d’Azur。',
+      secondary: '查看支持的卡', meta: 'iOS 16 及以上的 iPhone · Android 8 及以上 · 需支持 NFC',
       service: '也能读取服务模式下的 Apple 钱包交通卡',
       alt: 'CardBal 的卡片收藏界面，展示 T-money、城市一卡通、气候同行卡、U-Money、OKICA 和 Hayakaken 等卡片及其余额。'
     },
@@ -118,7 +118,7 @@ export const locales = {
       label: '正在读取', note: 'CardBal 支持的部分卡片。',
       columns: ['卡片', '标准', '地区'],
       sr: '支持的卡片包括 Suica、PASMO、ICOCA、乐天 Edy、T-money、Cashbee、八达通、交通联合城市卡、U-Money 和 Lignes d’Azur。',
-      stats: [['6', '个地区'], ['4', '种卡片标准'], ['300+', '交通联合城市卡'], ['iOS 16+', '支持 NFC 的 iPhone']]
+      stats: [['6', '个地区'], ['4', '种卡片标准'], ['300+', '交通联合城市卡'], ['iOS + Android', '支持 NFC 的手机']]
     },
     read: {
       kicker: '读卡解析', title: ['从余额，', '到字节。'],
@@ -150,9 +150,9 @@ export const locales = {
         routes: ['涩谷 → 新宿', '弘大入口 → 首尔站', '东直门 → 雍和宫', '中环 → 尖沙咀', '蒙古国立教育大学 → 中央图书馆']
       },
       collection: { title: '钱包，也可以很有个性。', body: '保存多张卡片，为它们起名字，用自己拍的卡片照片一眼认出。' },
-      device: { title: '存在设备上，备份在 iCloud。', body: '已保存的卡片存储在你的 iPhone 上，需要时可使用 iCloud 备份或导出文件。', labels: ['设备本地', 'iCloud 备份', '文件导出'] },
+      device: { title: '存在设备上，备份随你选。', body: '已保存的卡片存储在你的手机上。iPhone 可使用 iCloud 备份，也可导出文件，在 iPhone 与 Android 版 CardBal 之间互通。', labels: ['设备本地', 'iCloud 备份', '文件导出'] },
       reports: { title: '一起完善每一个站点。', body: '在已保存的卡片或行程中，即可报告缺失站点或请求更正站点代码，并在地图上标记位置。提交的请求会显示在公开列表中。', link: '查看站点报告' },
-      source: { title: '开放源代码。', body: '每种卡片如何解析，一目了然。CardBal 的源代码在 GitHub 上公开。', link: '查看源代码' }
+      source: { title: '源代码，12 月起开放。', body: 'CardBal 的源代码将于 12 月 1 日之后发布，届时每种卡片如何解析，一目了然。' }
     },
     cards: {
       kicker: '支持网络', title: ['六个地区，', '一个读卡器。'],
@@ -170,7 +170,7 @@ export const locales = {
     ways: {
       kicker: '两种读取方式', title: ['实体卡在手，', '或在钱包里。'],
       intro: '直接读取实体卡，或在服务模式下读取另一部 iPhone 或 Apple Watch 中受支持的 Apple 钱包交通卡。',
-      physical: { label: '实体卡', steps: [['打开 CardBal', '在 iPhone 上轻点 Scan 开始读卡。'], ['靠近 iPhone 顶部', '将卡片靠近 iPhone 顶部，保持不动，直到读取完成。'], ['读取并保存', '查看余额与可读取的行程，再将卡片保存到收藏中。']] },
+      physical: { label: '实体卡', steps: [['打开 CardBal', '在手机上轻点 Scan 开始读卡。'], ['靠近读卡位置', '将卡片靠近 iPhone 顶部或 Android 手机背面，保持不动，直到读取完成。'], ['读取并保存', '查看余额与可读取的行程，再将卡片保存到收藏中。']] },
       wallet: {
         label: 'Apple 钱包 · 服务模式',
         steps: [['选择交通卡', '在存放交通卡的设备上打开“钱包”。'], ['开启服务模式', '在 iPhone 上打开卡片详细信息，再开启“服务模式”。Apple Watch 的操作请参阅 Apple 指南。'], ['用 CardBal 读取', '在另一部 iPhone 上启动 CardBal 读卡，将两台设备的 NFC 感应位置相互靠近。']],
@@ -181,18 +181,18 @@ export const locales = {
     faq: {
       kicker: '读取之前', title: '你可能想知道。', reports: '查看站点报告',
       items: [
-        ['需要什么设备？', '一部运行 iOS 16 或更新版本、支持 NFC 的 iPhone，以及一张支持的交通卡。可使用实体卡，或另一台设备上开启服务模式的受支持 Apple 钱包交通卡。CardBal 使用 iPhone 自带的 NFC 读卡功能。'],
+        ['需要什么设备？', '一部运行 iOS 16 或更新版本、支持 NFC 的 iPhone，或一部运行 Android 8 或更新版本、支持 NFC 的 Android 手机，以及一张支持的交通卡。在 iPhone 上，还可读取另一台设备上开启服务模式的受支持 Apple 钱包交通卡。CardBal 使用手机自带的 NFC 读卡功能。'],
         ['能读取另一台设备中的 Apple 钱包交通卡吗？', '可以。在存放受支持交通卡的 iPhone 或 Apple Watch 上开启服务模式，再使用另一部 iPhone 上的 CardBal 读取。在存卡的 iPhone 上，打开“钱包”，选择交通卡，进入“卡片详细信息”，并在该选项可用时开启“服务模式”。具体支持情况与可读取的信息取决于发卡方。'],
         ['CardBal 可以给卡充值吗？', 'CardBal 用于读取卡片信息。如需充值或支付车费，请使用发卡方提供的官方服务。'],
         ['为什么有些卡显示的记录较少？', '不同卡片保存的信息类型和记录数量不同。CardBal 会展示能够读取和解析的数据，部分站名或交易记录可能无法显示。'],
-        ['我的数据如何处理？', '已保存的卡片存储在设备上，备份可通过 iCloud 同步。可选的韩国卡片数据贡献与站点报告会分享应用中说明的数据；应用也使用 Firebase Analytics。详情请参阅隐私政策。'],
+        ['我的数据如何处理？', '已保存的卡片存储在设备上；在 iPhone 上，备份可通过 iCloud 同步。可选的韩国卡片数据贡献与站点报告会分享应用中说明的数据；iPhone 版应用也使用 Firebase Analytics。详情请参阅隐私政策。'],
         ['遇到无法识别的站点，能帮忙完善吗？', '可以。在 CardBal 中打开已保存的卡片或行程，即可报告缺失站点或请求更正站点代码。你可以填写站名、补充可选信息，并在地图上标记位置。']
       ]
     },
-    end: { kicker: '下一站', title: ['读懂你每天', '随身携带的卡。'], body: 'iPhone 版 CardBal，现已登陆 App Store。', meta: '需要 iOS 16 或更新版本，以及支持 NFC 的 iPhone。' },
+    end: { kicker: '下一站', title: ['读懂你每天', '随身携带的卡。'], body: 'CardBal 现已登陆 App Store 与 Google Play，支持 iPhone 与 Android。', meta: '需要 iOS 16 或更新版本、支持 NFC 的 iPhone，或 Android 8 或更新版本、支持 NFC 的 Android 手机。' },
     footer: {
-      tagline: 'iPhone 专业交通卡读卡器。', resources: '资源', languages: '语言',
-      privacy: '隐私政策', reports: '站点报告', source: '源代码', top: '返回顶部',
+      tagline: 'iPhone 与 Android 专业交通卡读卡器。', resources: '资源', languages: '语言',
+      privacy: '隐私政策', reports: '站点报告', top: '返回顶部',
       legal: '卡片名称与图案归各自所有者所有。CardBal 是独立读卡应用，与交通运营商没有隶属关系。'
     },
     notFound: '地图上没有这一站。', back: '返回 CardBal'
@@ -200,15 +200,15 @@ export const locales = {
   ja: {
     name: '日本語', htmlLang: 'ja', store: 'jp', ogLocale: 'ja_JP',
     title: 'CardBal — 交通系ICカードを、読み解く。',
-    description: 'iPhoneで対応する交通系ICカードや電子マネーを読み取り。残高、利用履歴、カード情報、生データまで確認できます。日本、韓国、中国本土、香港、モンゴル、フランスのカードに対応。別のデバイスのAppleウォレットにあるカードも、ヘルプモードで読み取れます。',
+    description: 'iPhoneやAndroidスマートフォンで対応する交通系ICカードや電子マネーを読み取り。残高、利用履歴、カード情報、生データまで確認できます。日本、韓国、中国本土、香港、モンゴル、フランスのカードに対応。別のデバイスのAppleウォレットにあるカードも、ヘルプモードで読み取れます。',
     skip: '本文へ移動', language: '言語を選択', menu: 'メニュー', navLabel: 'ページ内の項目',
     nav: ['読み取り', 'プロ機能', '対応カード', 'ヘルプモード', 'よくある質問'],
-    download: 'CardBalを入手', appStore: ['ダウンロードは', 'App Store'],
+    download: 'CardBalを入手', appStore: ['ダウンロードは', 'App Store'], googlePlay: ['ダウンロードは', 'Google Play'],
     hero: {
-      kicker: 'iPhoneのためのプロ仕様ICカードリーダー',
+      kicker: 'iPhoneとAndroidのためのプロ仕様ICカードリーダー',
       title: ['交通系ICカードを、', '読み解く。'],
-      body: 'カードをiPhoneにかざすだけで、CardBalがチップに保存された情報を読み取ります。残高、読み取れる利用履歴、カード情報、そして生データまで。SuicaからT-money、OctopusからLignes d’Azurまで。',
-      secondary: '対応カードを見る', meta: 'NFC対応iPhone · iOS 16以降',
+      body: 'カードをスマートフォンにかざすだけで、CardBalがチップに保存された情報を読み取ります。残高、読み取れる利用履歴、カード情報、そして生データまで。SuicaからT-money、OctopusからLignes d’Azurまで。',
+      secondary: '対応カードを見る', meta: 'iOS 16以降のiPhone · Android 8以降 · NFC対応',
       service: 'Appleウォレットのカードもヘルプモードで読み取り',
       alt: 'T-money、City Union、気候同行カード、U-Money、OKICA、はやかけんなどのカードと残高を表示する、CardBalのカードコレクション画面。'
     },
@@ -216,7 +216,7 @@ export const locales = {
       label: '読み取り中', note: 'CardBalが対応するカードの一部です。',
       columns: ['カード', '規格', '地域'],
       sr: '対応カードには、Suica、PASMO、ICOCA、楽天Edy、T-money、Cashbee、Octopus、交通聯合の都市カード、U-Money、Lignes d’Azurなどがあります。',
-      stats: [['6', 'つの地域'], ['4', '種類のカード規格'], ['300+', '交通聯合の都市カード'], ['iOS 16+', 'NFC対応iPhone']]
+      stats: [['6', 'つの地域'], ['4', '種類のカード規格'], ['300+', '交通聯合の都市カード'], ['iOS + Android', 'NFC対応スマホ']]
     },
     read: {
       kicker: '読み取りの中身', title: ['残高から、', 'バイトまで。'],
@@ -248,9 +248,9 @@ export const locales = {
         routes: ['渋谷 → 新宿', '弘大入口 → ソウル駅', '東直門 → 雍和宮', '中環 → 尖沙咀', 'モンゴル国立教育大学 → 中央図書館']
       },
       collection: { title: '自分らしいウォレットに。', body: '複数のカードを保存して名前を付けたり、撮影したカードの写真で、ひと目で見分けられるようにしたり。' },
-      device: { title: '端末に保存。iCloudにバックアップ。', body: '保存したカードはiPhoneに保管。必要に応じて、iCloudへのバックアップやファイルの書き出しもできます。', labels: ['端末に保存', 'iCloudバックアップ', 'ファイル書き出し'] },
+      device: { title: '端末に保存。バックアップも自由に。', body: '保存したカードはスマートフォンに保管。iPhoneではiCloudにバックアップでき、書き出したファイルはiPhoneとAndroidのCardBalで読み込めます。', labels: ['端末に保存', 'iCloudバックアップ', 'ファイル書き出し'] },
       reports: { title: 'すべての駅を、みんなで地図に。', body: '保存したカードや利用履歴から、不足している駅の報告や駅コードの修正依頼を、地図のピンと一緒に送れます。リクエストは公開リストに掲載されます。', link: '駅情報の報告を見る' },
-      source: { title: 'オープンソース。', body: 'カードごとの解析方法を、そのまま確認できます。CardBalのソースコードはGitHubで公開しています。', link: 'ソースコードを見る' }
+      source: { title: 'ソースコードは、12月から公開。', body: 'CardBalのソースコードは12月1日以降に公開予定です。カードごとの解析方法を、そのまま確認できるようになります。' }
     },
     cards: {
       kicker: '対応ネットワーク', title: ['6つの地域を、', 'ひとつのリーダーで。'],
@@ -268,7 +268,7 @@ export const locales = {
     ways: {
       kicker: '2つの読み取り方', title: ['手元のカードも。', 'ウォレットのカードも。'],
       intro: '実物のカードを直接読み取るほか、別のiPhoneやApple WatchのAppleウォレットにある対応カードを、ヘルプモードで読み取れます。',
-      physical: { label: '実物のカード', steps: [['CardBalを開く', 'iPhoneで「Scan」をタップします。'], ['iPhoneの上部に近づける', '読み取りが終わるまで、カードをiPhoneの上部に近づけたままにします。'], ['確認して保存', '残高と読み取れる履歴を確認して、コレクションに保存しましょう。']] },
+      physical: { label: '実物のカード', steps: [['CardBalを開く', 'スマートフォンで「Scan」をタップします。'], ['読み取り位置に近づける', '読み取りが終わるまで、カードをiPhoneの上部、またはAndroidスマートフォンの背面に近づけたままにします。'], ['確認して保存', '残高と読み取れる履歴を確認して、コレクションに保存しましょう。']] },
       wallet: {
         label: 'Appleウォレット · ヘルプモード',
         steps: [['カードを選ぶ', '交通系ICカードが入っているデバイスでウォレットを開きます。'], ['ヘルプモードをオンに', 'iPhoneでは「カードの詳細」からヘルプモードをオンにします。Apple Watchの操作はAppleのガイドをご覧ください。'], ['CardBalで読み取る', 'もう1台のiPhoneでCardBalの読み取りを開始し、両方のデバイスのNFC読み取り位置を近づけます。']],
@@ -279,18 +279,18 @@ export const locales = {
     faq: {
       kicker: 'かざす、その前に', title: '知っておきたいこと。', reports: '駅情報の報告を見る',
       items: [
-        ['何が必要ですか？', 'iOS 16以降を搭載したNFC対応iPhoneと、対応カードが必要です。実物のカードのほか、別のデバイスのAppleウォレットにある対応カードをヘルプモードで読み取れます。iPhone内蔵のNFCリーダーを使用します。'],
+        ['何が必要ですか？', 'iOS 16以降を搭載したNFC対応iPhone、またはAndroid 8以降のNFC対応Androidスマートフォンと、対応カードが必要です。iPhoneでは、別のデバイスのAppleウォレットにある対応カードもヘルプモードで読み取れます。端末内蔵のNFCリーダーを使用します。'],
         ['別のデバイスのAppleウォレットのカードを読めますか？', 'はい。対応する交通系ICカードが入ったiPhoneやApple Watchでヘルプモードをオンにして、別のiPhoneのCardBalで読み取れます。カードが入ったiPhoneでウォレットを開き、カードを選び、「カードの詳細」からヘルプモードをオンにしてください。対応状況や読み取れる情報は発行元によって異なります。'],
         ['カードにチャージできますか？', 'CardBalはカード情報を読み取ります。チャージや運賃の支払いには、カード発行元の公式サービスをご利用ください。'],
         ['表示される履歴が少ないのはなぜですか？', 'カードの種類によって、保存される情報や履歴の件数が異なります。CardBalは読み取り・解析できた情報を表示するため、一部の駅名や取引は表示できない場合があります。'],
-        ['データはどのように扱われますか？', '保存したカードは端末に保管され、バックアップはiCloudで同期できます。任意の韓国カードデータの提供や駅情報の報告では、アプリ内で説明したデータを送信します。また、アプリはFirebase Analyticsを使用しています。詳細はプライバシーポリシーをご覧ください。'],
+        ['データはどのように扱われますか？', '保存したカードは端末に保管され、iPhoneではバックアップをiCloudで同期できます。任意の韓国カードデータの提供や駅情報の報告では、アプリ内で説明したデータを送信します。また、iPhone版アプリはFirebase Analyticsを使用しています。詳細はプライバシーポリシーをご覧ください。'],
         ['不明な駅の情報を提供できますか？', 'はい。保存済みのカードや利用履歴から、不足している駅の報告や駅コードの修正依頼を送れます。駅名、任意の補足情報、地図上のピンを追加できます。']
       ]
     },
-    end: { kicker: '次の停車駅', title: ['毎日持ち歩くカードを、', '読み解こう。'], body: 'iPhone用CardBalは、App Storeで。', meta: 'iOS 16以降と、NFC対応iPhoneが必要です。' },
+    end: { kicker: '次の停車駅', title: ['毎日持ち歩くカードを、', '読み解こう。'], body: 'CardBalは、App StoreとGoogle Playで。', meta: 'iOS 16以降のNFC対応iPhone、またはAndroid 8以降のNFC対応Androidスマートフォンが必要です。' },
     footer: {
-      tagline: 'iPhoneのためのプロ仕様ICカードリーダー。', resources: 'リソース', languages: '言語',
-      privacy: 'プライバシーポリシー', reports: '駅情報の報告', source: 'ソースコード', top: 'ページの先頭へ',
+      tagline: 'iPhoneとAndroidのためのプロ仕様ICカードリーダー。', resources: 'リソース', languages: '言語',
+      privacy: 'プライバシーポリシー', reports: '駅情報の報告', top: 'ページの先頭へ',
       legal: 'カードの名称・デザインは各権利者に帰属します。CardBalは独立した読み取りアプリであり、交通事業者とは提携していません。'
     },
     notFound: 'この駅は、地図にないようです。', back: 'CardBalに戻る'
@@ -298,15 +298,15 @@ export const locales = {
   ko: {
     name: '한국어', htmlLang: 'ko', store: 'kr', ogLocale: 'ko_KR',
     title: 'CardBal — 교통카드, 제대로 읽다.',
-    description: 'iPhone으로 지원되는 교통카드와 선불카드를 읽어보세요. 일본, 한국, 중국 본토, 홍콩, 몽골, 프랑스 카드의 잔액, 이용 내역, 카드 정보, 원시 데이터를 확인하고, 다른 기기의 Apple 지갑 카드도 서비스 모드에서 읽을 수 있어요.',
+    description: 'iPhone이나 Android 폰으로 지원되는 교통카드와 선불카드를 읽어보세요. 일본, 한국, 중국 본토, 홍콩, 몽골, 프랑스 카드의 잔액, 이용 내역, 카드 정보, 원시 데이터를 확인하고, 다른 기기의 Apple 지갑 카드도 서비스 모드에서 읽을 수 있어요.',
     skip: '본문으로 이동', language: '언어 선택', menu: '메뉴', navLabel: '페이지 섹션',
     nav: ['읽기', '프로 기능', '지원 카드', '서비스 모드', '자주 묻는 질문'],
-    download: 'CardBal 다운로드', appStore: ['다운로드하기', 'App Store'],
+    download: 'CardBal 다운로드', appStore: ['다운로드하기', 'App Store'], googlePlay: ['다운로드하기', 'Google Play'],
     hero: {
-      kicker: 'iPhone을 위한 프로 교통카드 리더',
+      kicker: 'iPhone과 Android를 위한 프로 교통카드 리더',
       title: ['교통카드,', '제대로 읽다.'],
-      body: '카드를 iPhone에 가까이 대면 CardBal이 칩에 저장된 정보를 읽어요. 잔액, 확인 가능한 이용 내역, 카드 정보, 그리고 원시 데이터까지. Suica부터 티머니, 옥토퍼스부터 Lignes d’Azur까지.',
-      secondary: '지원 카드 보기', meta: 'NFC 지원 iPhone · iOS 16 이상',
+      body: '카드를 휴대폰에 가까이 대면 CardBal이 칩에 저장된 정보를 읽어요. 잔액, 확인 가능한 이용 내역, 카드 정보, 그리고 원시 데이터까지. Suica부터 티머니, 옥토퍼스부터 Lignes d’Azur까지.',
+      secondary: '지원 카드 보기', meta: 'iOS 16 이상 iPhone · Android 8 이상 · NFC 지원',
       service: 'Apple 지갑 카드도 서비스 모드에서 읽어요',
       alt: '티머니, City Union, 기후동행카드, U-Money, OKICA, 하야카켄 등 카드와 잔액을 보여주는 CardBal 카드 모음 화면.'
     },
@@ -314,7 +314,7 @@ export const locales = {
       label: '지금 읽는 중', note: 'CardBal이 지원하는 카드 중 일부예요.',
       columns: ['카드', '규격', '지역'],
       sr: '지원 카드에는 Suica, PASMO, ICOCA, 라쿠텐 Edy, 티머니, 캐시비, 옥토퍼스, 중국 교통연합 도시 카드, U-Money, Lignes d’Azur 등이 있어요.',
-      stats: [['6', '개 지역'], ['4', '가지 카드 규격'], ['300+', '교통연합 도시 카드'], ['iOS 16+', 'NFC 지원 iPhone']]
+      stats: [['6', '개 지역'], ['4', '가지 카드 규격'], ['300+', '교통연합 도시 카드'], ['iOS + Android', 'NFC 지원 휴대폰']]
     },
     read: {
       kicker: '읽기의 모든 것', title: ['잔액부터,', '바이트까지.'],
@@ -346,9 +346,9 @@ export const locales = {
         routes: ['시부야 → 신주쿠', '홍대입구 → 서울역', '둥즈먼 → 융허궁', '센트럴 → 침사추이', '몽골 국립교육대학교 → 중앙도서관']
       },
       collection: { title: '내 취향을 담은 지갑.', body: '여러 카드를 저장하고 이름을 붙여보세요. 직접 찍은 카드 사진으로 한눈에 구별할 수 있어요.' },
-      device: { title: '기기에 보관하고, iCloud에 백업.', body: '저장한 카드는 iPhone에 보관돼요. 필요할 때 iCloud 백업과 파일 내보내기를 사용할 수 있어요.', labels: ['기기에 보관', 'iCloud 백업', '파일 내보내기'] },
+      device: { title: '기기에 보관하고, 원하는 방식으로 백업.', body: '저장한 카드는 휴대폰에 보관돼요. iPhone에서는 iCloud에 백업할 수 있고, 내보낸 파일은 iPhone과 Android의 CardBal에서 모두 열 수 있어요.', labels: ['기기에 보관', 'iCloud 백업', '파일 내보내기'] },
       reports: { title: '모든 역을 함께 채워가요.', body: '저장한 카드나 이용 내역에서 누락된 역을 신고하거나 역 코드 수정을 요청하고, 지도 핀도 남길 수 있어요. 요청은 공개 목록에 표시돼요.', link: '역 정보 신고 보기' },
-      source: { title: '오픈 소스.', body: '카드별 해석 방식을 직접 확인해 보세요. CardBal의 소스 코드는 GitHub에 공개되어 있어요.', link: '소스 코드 보기' }
+      source: { title: '소스 코드, 12월부터 공개.', body: 'CardBal의 소스 코드는 12월 1일 이후 공개될 예정이에요. 카드별 해석 방식을 직접 확인할 수 있게 돼요.' }
     },
     cards: {
       kicker: '지원 네트워크', title: ['여섯 개 지역,', '하나의 리더.'],
@@ -366,7 +366,7 @@ export const locales = {
     ways: {
       kicker: '두 가지 읽기 방법', title: ['손에 든 카드도.', '지갑 속 카드도.'],
       intro: '실물 카드를 바로 읽거나, 다른 iPhone이나 Apple Watch의 지원 Apple 지갑 교통카드를 서비스 모드에서 읽을 수 있어요.',
-      physical: { label: '실물 카드', steps: [['CardBal 열기', 'iPhone에서 Scan을 탭하세요.'], ['iPhone 상단에 대기', '읽기가 끝날 때까지 카드를 iPhone 상단에 가까이 대고 있으세요.'], ['확인하고 저장', '잔액과 확인 가능한 이용 내역을 살펴보고 카드를 모음에 저장하세요.']] },
+      physical: { label: '실물 카드', steps: [['CardBal 열기', '휴대폰에서 Scan을 탭하세요.'], ['읽기 위치에 대기', '읽기가 끝날 때까지 카드를 iPhone 상단이나 Android 폰 뒷면에 가까이 대고 있으세요.'], ['확인하고 저장', '잔액과 확인 가능한 이용 내역을 살펴보고 카드를 모음에 저장하세요.']] },
       wallet: {
         label: 'Apple 지갑 · 서비스 모드',
         steps: [['카드 선택하기', '교통카드가 있는 기기에서 지갑 앱을 여세요.'], ['서비스 모드 켜기', 'iPhone에서는 카드 세부사항을 열고 서비스 모드를 켜세요. Apple Watch의 방법은 Apple 안내를 확인해 주세요.'], ['CardBal로 읽기', '다른 iPhone의 CardBal에서 읽기를 시작하고 두 기기의 NFC 인식 위치를 가까이 대세요.']],
@@ -377,18 +377,18 @@ export const locales = {
     faq: {
       kicker: '카드를 대기 전에', title: '미리 알아두세요.', reports: '역 정보 신고 보기',
       items: [
-        ['무엇이 필요한가요?', 'iOS 16 이상을 실행하는 NFC 지원 iPhone과 지원 카드가 필요해요. 실물 카드 또는 다른 기기에서 서비스 모드를 켠 지원 Apple 지갑 교통카드를 읽을 수 있어요. CardBal은 iPhone의 내장 NFC 리더를 사용해요.'],
+        ['무엇이 필요한가요?', 'iOS 16 이상을 실행하는 NFC 지원 iPhone 또는 Android 8 이상을 실행하는 NFC 지원 Android 폰과 지원 카드가 필요해요. iPhone에서는 다른 기기에서 서비스 모드를 켠 지원 Apple 지갑 교통카드도 읽을 수 있어요. CardBal은 휴대폰의 내장 NFC 리더를 사용해요.'],
         ['다른 기기의 Apple 지갑 카드도 읽을 수 있나요?', '네. 지원 교통카드가 있는 iPhone이나 Apple Watch에서 서비스 모드를 켜고, 다른 iPhone의 CardBal로 읽을 수 있어요. 카드가 있는 iPhone에서 지갑 앱을 열고 카드를 선택한 다음 카드 세부사항에서 서비스 모드를 켜세요. 지원 여부와 읽을 수 있는 정보는 발급사에 따라 달라요.'],
         ['카드를 충전할 수 있나요?', 'CardBal은 카드 정보를 읽는 앱이에요. 충전이나 교통 요금 결제는 카드 발급사의 공식 서비스를 이용해 주세요.'],
         ['일부 카드의 내역이 적게 보이는 이유는 무엇인가요?', '카드 종류마다 저장하는 정보와 기록 수가 달라요. CardBal은 읽고 해석할 수 있는 데이터를 표시하며, 일부 역이나 거래 정보는 확인하지 못할 수 있어요.'],
-        ['내 데이터는 어떻게 처리되나요?', '저장한 카드는 기기에 보관되며, 백업은 iCloud로 동기화할 수 있어요. 선택적인 한국 카드 데이터 기여와 역 정보 신고는 앱에 안내된 데이터를 공유해요. 앱은 Firebase Analytics도 사용해요. 자세한 내용은 개인정보 처리방침을 확인해 주세요.'],
+        ['내 데이터는 어떻게 처리되나요?', '저장한 카드는 기기에 보관되며, iPhone에서는 백업을 iCloud로 동기화할 수 있어요. 선택적인 한국 카드 데이터 기여와 역 정보 신고는 앱에 안내된 데이터를 공유해요. iPhone 앱은 Firebase Analytics도 사용해요. 자세한 내용은 개인정보 처리방침을 확인해 주세요.'],
         ['인식되지 않는 역을 알려줄 수 있나요?', '네. CardBal에서 저장한 카드나 이용 내역을 열어 누락된 역을 신고하거나 역 코드 수정을 요청할 수 있어요. 역 이름, 선택적인 추가 정보, 지도 핀을 넣을 수 있어요.']
       ]
     },
-    end: { kicker: '다음 정류장', title: ['늘 지니고 다니는 카드,', '제대로 읽어보세요.'], body: 'iPhone용 CardBal, App Store에서 만나보세요.', meta: 'iOS 16 이상과 NFC 지원 iPhone이 필요해요.' },
+    end: { kicker: '다음 정류장', title: ['늘 지니고 다니는 카드,', '제대로 읽어보세요.'], body: 'CardBal, App Store와 Google Play에서 만나보세요.', meta: 'iOS 16 이상 NFC 지원 iPhone 또는 Android 8 이상 NFC 지원 Android 폰이 필요해요.' },
     footer: {
-      tagline: 'iPhone을 위한 프로 교통카드 리더.', resources: '리소스', languages: '언어',
-      privacy: '개인정보 처리방침', reports: '역 정보 신고', source: '소스 코드', top: '맨 위로',
+      tagline: 'iPhone과 Android를 위한 프로 교통카드 리더.', resources: '리소스', languages: '언어',
+      privacy: '개인정보 처리방침', reports: '역 정보 신고', top: '맨 위로',
       legal: '카드 이름과 디자인은 각 소유자의 자산이에요. CardBal은 독립적인 카드 리더이며 교통 운영사와 제휴 관계가 없어요.'
     },
     notFound: '지도에 없는 정류장이에요.', back: 'CardBal로 돌아가기'
@@ -396,15 +396,15 @@ export const locales = {
   mn: {
     name: 'Монгол', htmlLang: 'mn', store: 'mn', ogLocale: 'mn_MN',
     title: 'CardBal — Тээврийн картаа нарийн уншаарай.',
-    description: 'iPhone-оор дэмжигдэх тээврийн болон урьдчилсан төлбөрт картаа уншуулаарай. Япон, Өмнөд Солонгос, Хятад, Хонконг, Монгол, Францын картын үлдэгдэл, зорчилтын түүх, картын мэдээлэл, түүхий өгөгдлийг харах боломжтой. Өөр төхөөрөмжийн Apple Wallet дахь картыг үйлчилгээний горимд ч уншина.',
+    description: 'iPhone эсвэл Android утсаараа дэмжигдэх тээврийн болон урьдчилсан төлбөрт картаа уншуулаарай. Япон, Өмнөд Солонгос, Хятад, Хонконг, Монгол, Францын картын үлдэгдэл, зорчилтын түүх, картын мэдээлэл, түүхий өгөгдлийг харах боломжтой. Өөр төхөөрөмжийн Apple Wallet дахь картыг үйлчилгээний горимд ч уншина.',
     skip: 'Үндсэн хэсэг рүү очих', language: 'Хэл сонгох', menu: 'Цэс', navLabel: 'Хуудасны хэсгүүд',
     nav: ['Уншилт', 'Pro', 'Картууд', 'Үйлчилгээний горим', 'Түгээмэл асуулт'],
-    download: 'CardBal татах', appStore: ['Татах', 'App Store'],
+    download: 'CardBal татах', appStore: ['Татах', 'App Store'], googlePlay: ['Татах', 'Google Play'],
     hero: {
-      kicker: 'iPhone-д зориулсан мэргэжлийн карт уншигч',
+      kicker: 'iPhone, Android-д зориулсан мэргэжлийн карт уншигч',
       title: ['Тээврийн картаа', 'нарийн уншаарай.'],
-      body: 'Картаа iPhone-д ойртуулахад CardBal чипэд хадгалагдсан мэдээллийг уншина: үлдэгдэл, боломжтой зорчилтын түүх, картын мэдээлэл болон түүхий өгөгдөл. Suica-аас T-money, Octopus-аас Lignes d’Azur хүртэл.',
-      secondary: 'Дэмжих картуудыг харах', meta: 'NFC-тэй iPhone · iOS 16 ба түүнээс дээш',
+      body: 'Картаа утсандаа ойртуулахад CardBal чипэд хадгалагдсан мэдээллийг уншина: үлдэгдэл, боломжтой зорчилтын түүх, картын мэдээлэл болон түүхий өгөгдөл. Suica-аас T-money, Octopus-аас Lignes d’Azur хүртэл.',
+      secondary: 'Дэмжих картуудыг харах', meta: 'iOS 16+ iPhone · Android 8+ · NFC шаардлагатай',
       service: 'Apple Wallet дахь картыг үйлчилгээний горимд ч уншина',
       alt: 'T-money, City Union, Climate Card, U-Money, OKICA, Hayakaken зэрэг картууд болон үлдэгдлийг харуулсан CardBal-ын картын цуглуулга.'
     },
@@ -412,7 +412,7 @@ export const locales = {
       label: 'Одоо уншиж байна', note: 'CardBal-ын дэмждэг картуудын заримаас.',
       columns: ['Карт', 'Стандарт', 'Бүс'],
       sr: 'Дэмжигдэх картуудад Suica, PASMO, ICOCA, Rakuten Edy, T-money, Cashbee, Octopus, T-Union хотын картууд, U-Money, Lignes d’Azur зэрэг багтана.',
-      stats: [['6', 'бүс нутаг'], ['4', 'картын стандарт'], ['300+', 'T-Union хотын карт'], ['iOS 16+', 'NFC-тэй iPhone']]
+      stats: [['6', 'бүс нутаг'], ['4', 'картын стандарт'], ['300+', 'T-Union хотын карт'], ['iOS + Android', 'NFC-тэй утас']]
     },
     read: {
       kicker: 'Уншилтын дотор', title: ['Үлдэгдлээс', 'байт хүртэл.'],
@@ -444,9 +444,9 @@ export const locales = {
         routes: ['Шибүяа → Шинжүкү', 'Хоник их сургууль → Сөүл', 'Дунжимэнь → Юнхэгун', 'Сентрал → Цим Ша Цуй', 'МУБИС → Төв номын сан']
       },
       collection: { title: 'Таны өнгө төрхтэй хэтэвч.', body: 'Олон карт хадгалж, нэр өгч, өөрийн авсан картын зургаар нэг харахад ялгаарай.' },
-      device: { title: 'Төхөөрөмждөө. iCloud-даа.', body: 'Хадгалсан картууд таны iPhone-д байрлана. Хэрэгтэй үед iCloud нөөцлөлт болон файл экспорт ашиглаарай.', labels: ['Төхөөрөмжид', 'iCloud нөөцлөлт', 'Файл экспорт'] },
+      device: { title: 'Төхөөрөмждөө. Нөөцөө өөрөө сонго.', body: 'Хадгалсан картууд таны утсанд байрлана. iPhone дээр iCloud-д нөөцлөх боломжтой бөгөөд экспортолсон файлыг iPhone болон Android дээрх CardBal-д нээж болно.', labels: ['Төхөөрөмжид', 'iCloud нөөцлөлт', 'Файл экспорт'] },
       reports: { title: 'Буудал бүрийг хамтдаа газрын зурагт.', body: 'Хадгалсан карт эсвэл зорчилтоос дутуу буудлыг мэдээлэх, буудлын код засуулах хүсэлтийг газрын зургийн тэмдэглэгээтэй илгээгээрэй. Хүсэлтүүд нээлттэй жагсаалтад харагдана.', link: 'Буудлын тайлангууд' },
-      source: { title: 'Нээлттэй эх код.', body: 'Картын төрөл бүрийг хэрхэн тайлдгийг яг таг хараарай. CardBal-ын эх код GitHub дээр нээлттэй.', link: 'Эх кодыг харах' }
+      source: { title: 'Эх код 12-р сараас нээлттэй.', body: 'CardBal-ын эх кодыг 12-р сарын 1-ээс хойш нийтэлнэ. Ингэснээр картын төрөл бүрийг хэрхэн тайлдгийг яг таг харах боломжтой болно.' }
     },
     cards: {
       kicker: 'Сүлжээ', title: ['Зургаан бүс нутаг.', 'Нэг уншигч.'],
@@ -464,7 +464,7 @@ export const locales = {
     ways: {
       kicker: 'Унших хоёр арга', title: ['Гартаа байгаа карт.', 'Эсвэл Wallet дахь карт.'],
       intro: 'Биет картаа шууд уншуулах, эсвэл өөр iPhone, Apple Watch дахь дэмжигдэх Apple Wallet тээврийн картыг үйлчилгээний горимд уншуулах боломжтой.',
-      physical: { label: 'Биет карт', steps: [['CardBal-ыг нээх', 'iPhone дээрээ Scan-ыг товшино уу.'], ['Дээд хэсэгт ойртуулах', 'Уншиж дуустал картаа iPhone-ы дээд хэсэгт ойртуулж барина уу.'], ['Уншаад хадгалах', 'Үлдэгдэл, боломжтой зорчилтуудаа шалгаад картаа цуглуулгадаа хадгалаарай.']] },
+      physical: { label: 'Биет карт', steps: [['CardBal-ыг нээх', 'Утсан дээрээ Scan-ыг товшино уу.'], ['Уншигчид ойртуулах', 'Уншиж дуустал картаа iPhone-ы дээд хэсэг эсвэл Android утасны ар талд ойртуулж барина уу.'], ['Уншаад хадгалах', 'Үлдэгдэл, боломжтой зорчилтуудаа шалгаад картаа цуглуулгадаа хадгалаарай.']] },
       wallet: {
         label: 'Apple Wallet · Үйлчилгээний горим',
         steps: [['Картаа сонгох', 'Тээврийн карт байгаа төхөөрөмж дээр Wallet-ыг нээнэ үү.'], ['Үйлчилгээний горимыг асаах', 'iPhone дээр картын дэлгэрэнгүй мэдээллийг нээгээд Service Mode-ыг асаана уу. Apple Watch-ын зааврыг Apple-ын гарын авлагаас үзээрэй.'], ['CardBal-аар уншуулах', 'Өөр iPhone дээр CardBal-ын уншилтыг эхлүүлж, хоёр төхөөрөмжийн NFC мэдрэгчийн хэсгийг ойртуулна уу.']],
@@ -475,18 +475,18 @@ export const locales = {
     faq: {
       kicker: 'Уншуулахаасаа өмнө', title: 'Мэдэхэд илүүдэхгүй.', reports: 'Буудлын тайлангууд',
       items: [
-        ['Юу хэрэгтэй вэ?', 'iOS 16 буюу түүнээс шинэ хувилбартай, NFC дэмждэг iPhone болон дэмжигдэх карт хэрэгтэй. Биет карт эсвэл өөр төхөөрөмжийн Apple Wallet дахь үйлчилгээний горим асаасан дэмжигдэх тээврийн картыг уншуулж болно. CardBal нь iPhone-ы суурилуулсан NFC уншигчийг ашигладаг.'],
+        ['Юу хэрэгтэй вэ?', 'iOS 16 буюу түүнээс шинэ хувилбартай NFC-тэй iPhone, эсвэл Android 8 буюу түүнээс шинэ хувилбартай NFC-тэй Android утас болон дэмжигдэх карт хэрэгтэй. iPhone дээр өөр төхөөрөмжийн Apple Wallet дахь үйлчилгээний горим асаасан дэмжигдэх тээврийн картыг ч уншуулж болно. CardBal нь утасны суурилуулсан NFC уншигчийг ашигладаг.'],
         ['Өөр төхөөрөмжийн Apple Wallet дахь картыг уншиж болох уу?', 'Болно. Дэмжигдэх тээврийн карт байгаа iPhone эсвэл Apple Watch дээр Service Mode-ыг асаагаад өөр iPhone дээрх CardBal-аар уншуулна. Карт байгаа iPhone дээр Wallet-ыг нээж, картаа сонгон Card Details хэсгээс Service Mode-ыг асаана уу. Дэмжлэг болон уншигдах мэдээлэл нь карт гаргагчаас хамаарна.'],
         ['CardBal картаа цэнэглэх боломжтой юу?', 'CardBal нь картын мэдээллийг уншина. Карт цэнэглэх, зорчих төлбөр төлөхдөө карт гаргагчийн албан ёсны үйлчилгээг ашиглаарай.'],
         ['Яагаад зарим карт цөөн түүх харуулдаг вэ?', 'Картын төрөл бүр өөр мэдээлэл, хязгаарлагдмал тооны бичлэг хадгалдаг. CardBal нь уншиж, тайлж чадсан өгөгдлийг харуулна. Зарим буудал, гүйлгээний мэдээлэл боломжгүй байж болно.'],
-        ['Миний өгөгдлийг хэрхэн ашигладаг вэ?', 'Хадгалсан картууд төхөөрөмжид тань байрлаж, нөөц хуулбарыг iCloud-аар синк хийх боломжтой. Солонгос картын сайн дурын өгөгдөл хуваалцах болон буудлын тайлан нь апп дотор тайлбарласан өгөгдлийг илгээнэ. Апп мөн Firebase Analytics ашигладаг. Дэлгэрэнгүйг нууцлалын бодлогоос уншаарай.'],
+        ['Миний өгөгдлийг хэрхэн ашигладаг вэ?', 'Хадгалсан картууд төхөөрөмжид тань байрлах ба iPhone дээр нөөц хуулбарыг iCloud-аар синк хийх боломжтой. Солонгос картын сайн дурын өгөгдөл хуваалцах болон буудлын тайлан нь апп дотор тайлбарласан өгөгдлийг илгээнэ. iPhone апп мөн Firebase Analytics ашигладаг. Дэлгэрэнгүйг нууцлалын бодлогоос уншаарай.'],
         ['Танигдахгүй буудлын мэдээлэл өгч болох уу?', 'Болно. CardBal дотор хадгалсан карт эсвэл зорчилтоо нээгээд дутуу буудлыг мэдээлэх, буудлын код засуулах хүсэлт илгээж болно. Буудлын нэр, нэмэлт мэдээлэл болон газрын зургийн тэмдэглэгээ оруулаарай.']
       ]
     },
-    end: { kicker: 'Дараагийн буудал', title: ['Өдөр бүр авч явдаг', 'картаа уншаарай.'], body: 'iPhone-д зориулсан CardBal-ыг App Store-оос татаарай.', meta: 'iOS 16 буюу түүнээс шинэ хувилбар, NFC-тэй iPhone шаардлагатай.' },
+    end: { kicker: 'Дараагийн буудал', title: ['Өдөр бүр авч явдаг', 'картаа уншаарай.'], body: 'CardBal-ыг App Store болон Google Play-ээс татаарай.', meta: 'iOS 16+ хувилбартай NFC-тэй iPhone, эсвэл Android 8+ хувилбартай NFC-тэй Android утас шаардлагатай.' },
     footer: {
-      tagline: 'iPhone-д зориулсан мэргэжлийн тээврийн карт уншигч.', resources: 'Нөөц', languages: 'Хэл',
-      privacy: 'Нууцлалын бодлого', reports: 'Буудлын тайлан', source: 'Эх код', top: 'Дээш буцах',
+      tagline: 'iPhone, Android-д зориулсан мэргэжлийн тээврийн карт уншигч.', resources: 'Нөөц', languages: 'Хэл',
+      privacy: 'Нууцлалын бодлого', reports: 'Буудлын тайлан', top: 'Дээш буцах',
       legal: 'Картын нэр, загвар нь тус тусын эзэмшигчийн өмч юм. CardBal нь бие даасан карт уншигч бөгөөд тээврийн операторуудтай холбоогүй.'
     },
     notFound: 'Энэ буудал газрын зураг дээр алга.', back: 'CardBal руу буцах'

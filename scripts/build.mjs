@@ -7,6 +7,7 @@ import { locales } from '../src/locales.mjs';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const output = path.join(root, 'dist');
 const appId = '6760978958';
+const playPackage = 'ad.neko.cardbal.android';
 const esc = (value) => String(value).replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 
 const svg = (body, cls = '') => `<svg class="i${cls ? ` ${cls}` : ''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${body}</svg>`;
@@ -27,6 +28,8 @@ const icons = {
   code: svg('<path d="m8.5 7-5 5 5 5M15.5 7l5 5-5 5"/>')
 };
 const apple = '<svg class="apple" viewBox="0 0 24 28" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.6 4.5c1-1.2 1.7-2.8 1.5-4.5-1.5.1-3.2 1-4.3 2.2-1 1.1-1.8 2.8-1.5 4.4 1.6.1 3.2-.8 4.3-2.1ZM22.5 20.1c-.6 1.4-.9 2-1.7 3.3-1.1 1.6-2.6 3.7-4.5 3.7-1.7 0-2.1-1.1-4.4-1.1S9 27.2 7.4 27.1C5.5 27.1 4 25.2 3 23.6.1 19.2-.8 13.2 1 10.1 2.2 7.9 4.2 6.6 6.2 6.6c2.1 0 3.4 1.2 5.1 1.2 1.6 0 2.6-1.2 5.1-1.2 1.8 0 3.6 1 4.8 2.5-4.2 2.3-3.5 8.3 1.3 11Z"/></svg>';
+// Google Play mark, drawn in one colour like the Apple logo beside it.
+const play = '<svg class="play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M3.6 1.8 13.4 12l-9.8 10.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1Z"/><path d="m14.5 13.1 2.6 2.7-11.6 6.6 9-9.3Z"/><path d="m17.1 8.2-2.6 2.7-9-9.3 11.6 6.6Z"/><path d="m18.4 8.9 2.7 1.6c1.1.6 1.1 2.4 0 3l-2.7 1.6-2.8-3.1 2.8-3.1Z"/></svg>';
 
 // Region "lines": code, card standard and colour token. Order matches every locale's cards.regions.
 const regions = [
@@ -74,6 +77,9 @@ const bootHash = createHash('sha256').update(boot).digest('base64');
 
 const storeUrl = (t) => `https://apps.apple.com/${t.store}/app/cardbal/id${appId}`;
 const storeButton = (t, cls = '') => `<a class="store${cls ? ` ${cls}` : ''}" href="${storeUrl(t)}">${apple}<span><small>${esc(t.appStore[0])}</small><strong>${esc(t.appStore[1])}</strong></span></a>`;
+const playUrl = (t) => `https://play.google.com/store/apps/details?id=${playPackage}&amp;hl=${t.htmlLang}`;
+const playButton = (t, cls = '') => `<a class="store${cls ? ` ${cls}` : ''}" href="${playUrl(t)}">${play}<span><small>${esc(t.googlePlay[0])}</small><strong>${esc(t.googlePlay[1])}</strong></span></a>`;
+const storeButtons = (t, cls = '') => `<div class="store-row">${storeButton(t, cls)}${playButton(t, cls)}</div>`;
 const stn = (number) => `<span class="stn" aria-hidden="true"><b>CB</b><i>${number}</i></span>`;
 const kicker = (number, text) => `<p class="kicker">${stn(number)}<span>${esc(text)}</span></p>`;
 const title = ([first, second], cls = 't2') => `<span>${esc(first)}</span> <span class="${cls}">${esc(second)}</span>`;
@@ -88,7 +94,7 @@ const navTargets = ['read', 'pro', 'cards', 'service-mode', 'faq'];
 // Keeps brand names and standards from breaking across lines in visible text (attributes are untouched).
 const typeset = (html) => html.replace(/>([^<]+)</g, (match, text) => `>${text
   .replace(/\b([TU])-(money|Money|Union)\b|\bNFC-(capable)/g, (term) => term.replace('-', '\u2011'))
-  .replace(/Lignes d’Azur|KS X 6924|iOS 16|Apple Watch|Rakuten Edy|ISO 7816/g, (term) => term.replace(/ /g, '\u00a0'))}<`);
+  .replace(/Lignes d’Azur|KS X 6924|iOS 16|Android 8|Google Play|App Store|Apple Watch|Rakuten Edy|ISO 7816/g, (term) => term.replace(/ /g, '\u00a0'))}<`);
 const navLinks = (t) => t.nav.map((label, i) => `<a href="#${navTargets[i]}" data-nav="${navTargets[i]}">${esc(label)}</a>`).join('');
 
 // Line art for the two reading methods.
@@ -114,7 +120,7 @@ function render(code) {
         ${kicker('00', h.kicker)}
         <h1 class="display" id="hero-title">${title(h.title, 'hl')}</h1>
         <p class="lede">${esc(h.body)}</p>
-        <div class="cta-row">${storeButton(t)}<a class="link-arrow" href="#cards">${esc(h.secondary)}${icons.arrow}</a></div>
+        <div class="cta-row">${storeButtons(t)}<a class="link-arrow" href="#cards">${esc(h.secondary)}${icons.arrow}</a></div>
         <p class="hero-meta">${esc(h.meta)}</p>
         <a class="pill-link" href="#service-mode"><span class="pill-icon">${icons.nfc}</span><span>${esc(h.service)}</span>${icons.arrow}</a>
       </div>
@@ -214,7 +220,6 @@ function render(code) {
           <span class="tile-icon">${icons.code}</span>
           <div class="tile-text"><h3>${esc(m.source.title)}</h3><p>${esc(m.source.body)}</p></div>
           <dl class="code-table">${sourceRows.map(([std, sys, cards]) => `<div><dt>${esc(std)}</dt><dd><span>${esc(sys)}</span>${esc(cards)}</dd></div>`).join('')}</dl>
-          <a class="link-arrow" href="https://github.com/iebb/TransitICReader">${esc(m.source.link)}${icons.arrow}</a>
         </article>
       </div>
     </div>
@@ -253,20 +258,20 @@ function render(code) {
     </div>
   </section>`;
 
-  const end = `<section class="cta" aria-labelledby="end-title">
+  const end = `<section class="cta" id="get" aria-labelledby="end-title">
     <div class="wrap cta-grid">
       <div class="cta-copy reveal">
         ${kicker('07', t.end.kicker)}
         <h2 class="cta-title" id="end-title">${title(t.end.title)}</h2>
         <p class="cta-body">${esc(t.end.body)}</p>
-        ${storeButton(t, 'store-dark')}
+        ${storeButtons(t, 'store-dark')}
         <p class="cta-meta">${esc(t.end.meta)}</p>
       </div>
       <div class="sign reveal" aria-hidden="true">
         <div class="sign-top"><span class="sign-arrow">${icons.exit}</span><span class="sign-code">CB<b>07</b></span></div>
         <img src="/assets/icon-180.png" width="180" height="180" alt="" loading="lazy" decoding="async">
-        <p class="sign-name">App Store</p>
-        <p class="sign-sub">CardBal · iPhone</p>
+        <p class="sign-name">CardBal</p>
+        <p class="sign-sub">iPhone · Android</p>
       </div>
     </div>
   </section>`;
@@ -275,8 +280,8 @@ function render(code) {
     <div class="wrap">
       <div class="footer-grid">
         <div class="footer-brand"><a class="brand" href="/${code}/"><img src="/assets/icon-96.png" width="32" height="32" alt=""><span>CardBal</span></a><p>${esc(t.footer.tagline)}</p></div>
-        <nav aria-label="CardBal"><h2 class="footer-title">CardBal</h2><ul>${t.nav.map((label, i) => `<li><a href="#${navTargets[i]}">${esc(label)}</a></li>`).join('')}<li><a href="${store}">${esc(t.download)}</a></li></ul></nav>
-        <nav aria-label="${esc(t.footer.resources)}"><h2 class="footer-title">${esc(t.footer.resources)}</h2><ul><li><a href="https://docs.kitta.co/privacy-policy/cardbal/">${esc(t.footer.privacy)}</a></li><li><a href="https://cardbal.ieb.app/">${esc(t.footer.reports)}</a></li><li><a href="https://github.com/iebb/TransitICReader">${esc(t.footer.source)}</a></li><li><a href="https://kitta.co/">Kitta ↗</a></li></ul></nav>
+        <nav aria-label="CardBal"><h2 class="footer-title">CardBal</h2><ul>${t.nav.map((label, i) => `<li><a href="#${navTargets[i]}">${esc(label)}</a></li>`).join('')}<li><a href="${store}">App Store</a></li><li><a href="${playUrl(t)}">Google Play</a></li></ul></nav>
+        <nav aria-label="${esc(t.footer.resources)}"><h2 class="footer-title">${esc(t.footer.resources)}</h2><ul><li><a href="https://docs.kitta.co/privacy-policy/cardbal/">${esc(t.footer.privacy)}</a></li><li><a href="https://cardbal.ieb.app/">${esc(t.footer.reports)}</a></li><li><a href="https://kitta.co/">Kitta ↗</a></li></ul></nav>
         <nav aria-label="${esc(t.language)}"><h2 class="footer-title">${esc(t.footer.languages)}</h2><ul class="footer-langs">${languageLinks(code)}</ul></nav>
       </div>
       <div class="footer-legal"><p>© 2026 Kitta Ltd</p><p>${esc(t.footer.legal)}</p><a class="to-top" href="#top">${esc(t.footer.top)}${icons.arrowUp}</a></div>
@@ -306,7 +311,7 @@ ${typeset(`<body id="top">
       <nav class="nav" aria-label="${esc(t.navLabel)}">${navLinks(t)}</nav>
       <div class="header-actions">
         <details class="lang" data-menu><summary aria-label="${esc(t.language)}">${icons.globe}<span class="lang-name">${esc(t.name)}</span><span class="lang-code">${code.toUpperCase()}</span>${icons.chevron}</summary><ul class="menu-panel lang-menu">${languageLinks(code)}</ul></details>
-        <a class="btn btn-signal" href="${store}">${esc(t.download)}</a>
+        <a class="btn btn-signal" href="#get">${esc(t.download)}</a>
         <details class="menu" data-menu><summary aria-label="${esc(t.menu)}">${icons.menu}</summary><nav class="menu-panel menu-nav" aria-label="${esc(t.navLabel)}">${navLinks(t)}</nav></details>
       </div>
     </div>

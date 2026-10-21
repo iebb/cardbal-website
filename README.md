@@ -27,7 +27,7 @@ Setup status on 2026-10-02: the public repository is pushed and builds successfu
 
 ## Design
 
-The site is designed as a transit wayfinding system for a pro card reader: signage black, platform yellow (`--signal`), and one line colour per region (JP, KR, CN, HK, MN, FR). Sections are numbered like station stops (`CB 00`–`CB 07`). The page runs hero → split-flap "Now reading" board → scroll story (one sticky phone, three real screenshots with readouts) → Pro tools (ride history, Ride Map, Transit Atlas, card details) → feature tiles → network map of supported cards → two ways to read (physical card, Apple Wallet Service Mode) → FAQ → closing App Store sign.
+The site is designed as a transit wayfinding system for a pro card reader: signage black, platform yellow (`--signal`), and one line colour per region (JP, KR, CN, HK, MN, FR). Sections are numbered like station stops (`CB 00`–`CB 07`). The page runs hero → split-flap "Now reading" board → scroll story (one sticky phone, three real screenshots with readouts) → Pro tools (ride history, Ride Map, Transit Atlas, card details) → feature tiles → network map of supported cards → two ways to read (physical card, Apple Wallet Service Mode) → FAQ → closing download sign with App Store and Google Play buttons.
 
 All tokens live at the top of `src/site.css`. Motion respects `prefers-reduced-motion`, and every section reads in full without JavaScript; `src/site.js` only adds the board animation, scroll story, reveals, menus, and section highlighting.
 
@@ -41,7 +41,7 @@ Each language has a complete, indexable static page, including its demo, FAQ, me
 - `/ko/` — Korean
 - `/mn/` — Mongolian (Cyrillic)
 
-The root includes the complete English page. A small inline script in `<head>` (allowed by its SHA-256 hash in the generated CSP) chooses a previously selected or supported browser language before first paint. Explicit language URLs always take priority. Language selection remains available without JavaScript, as do the main content, App Store links, and expandable FAQs.
+The root includes the complete English page. A small inline script in `<head>` (allowed by its SHA-256 hash in the generated CSP) chooses a previously selected or supported browser language before first paint. Explicit language URLs always take priority. Language selection remains available without JavaScript, as do the main content, App Store and Google Play links, and expandable FAQs.
 
 Edit `src/locales.mjs`, `src/site.css`, `src/site.js`, and `scripts/build.mjs`. The build rejects any locale whose keys or list lengths differ from English.
 
@@ -52,7 +52,7 @@ Screenshots come from two sources, both recorded in `src/assets/screenshots/mani
 
 `-640` and `-900` copies are plain downscales for responsive `srcset`. The images show the English interface in every website locale; captions and alternate text are translated. Readout values on the page are transcribed from the matching screenshots. The website does not perform an NFC scan.
 
-Supported cards and standards follow the live App Store listing (FeliCa, KS X 6924, T-Union with 300+ city cards, Calypso) and the app's public source ([iebb/TransitICReader](https://github.com/iebb/TransitICReader)) for FeliCa system codes, U-Money, raw data, and read-only Developer Mode probing.
+Supported cards and standards follow the live App Store and Google Play listings (FeliCa, KS X 6924, T-Union with 300+ city cards, Calypso) and the app's source for FeliCa system codes, U-Money, raw data, and read-only Developer Mode probing. The source code is not public yet; the site says it will be released after December 1 and links to it only once it is.
 
 Share images (`src/assets/og/{locale}.png`, 1200×630) are rendered from `scripts/og.mjs` with local Google Chrome. Run `npm run og` after changing hero copy and commit the PNGs; the Pages build only copies them.
 
