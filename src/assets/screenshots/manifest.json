@@ -52,7 +52,9 @@
         "screen": "Cards tab",
         "width": 1206,
         "height": 2622,
-        "sha256": "7bee25d9d1570796bf5daf42fac59038bfbe6629ff939851e9068c0659dfdb46"
+        "sha256": "50431696e8df683f9e9441aede3eb7fe1ef0f9f1f5eff912dcf0479f2eaf8911",
+        "appVersion": "2.4.0 (42)",
+        "cardFaces": "Frosted Header option turned on"
       },
       {
         "file": "pro-rides.jpg",
@@ -80,7 +82,9 @@
         "screen": "Card details for a T-money card",
         "width": 1206,
         "height": 2622,
-        "sha256": "0f4005899905343f73f43b3343f588326153cbb7d4f290277c1d69341691113f"
+        "sha256": "2e4d65a644d07cb58dcad8e9d328e7893314ca0f14849a92e760e2c62cc9cf85",
+        "appVersion": "2.4.0 (42)",
+        "cardFaces": "Frosted Header option turned on"
       }
     ]
   }

@@ -48,7 +48,7 @@ Edit `src/locales.mjs`, `src/site.css`, `src/site.js`, and `scripts/build.mjs`. 
 Screenshots come from two sources, both recorded in `src/assets/screenshots/manifest.json`:
 
 - `edy`, `climate`, `octopus`: real, unaltered iPhone screenshots from the app's public App Store listing (`6760978958`), used in the scroll story.
-- `pro-*`: CardBal 2.4.0 captured on the iPhone 17 Pro Simulator in dark appearance, with the developer's own iCloud-synced cards and the app's masked serial-number setting. They power the hero, the Pro tools section, and the share images.
+- `pro-*`: CardBal 2.4.0 captured on the iPhone 17 Pro Simulator in dark appearance, with the developer's own iCloud-synced cards and the app's masked serial-number setting. They power the hero, the Pro tools section, and the share images. The wallet and card-detail shots show cards with the optional Frosted Header style turned on.
 
 `-640` and `-900` copies are plain downscales for responsive `srcset`. The images show the English interface in every website locale; captions and alternate text are translated. Readout values on the page are transcribed from the matching screenshots. The website does not perform an NFC scan.
 
