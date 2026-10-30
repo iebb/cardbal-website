@@ -41,7 +41,7 @@ Each language has a complete, indexable static page, including its demo, FAQ, me
 - `/ko/` — Korean
 - `/mn/` — Mongolian (Cyrillic)
 
-Each language also has a support page at `/{lang}/support/`: the support email (`support@ieb.app`), what to include in a report, links to station reports, GitHub issues and the privacy policy, and quick fixes for common reading problems. The App Store listing uses it as the support URL in every listing language, and every footer and the FAQ link to it.
+Each language also has a support page at `/{lang}/support/`: the support email (`support@ieb.app`), what to include in a report, links to station reports, the Telegram group (`t.me/cardbal`), GitHub issues and the privacy policy, and quick fixes for common reading problems. The App Store listing uses it as the support URL in every listing language, and every footer and the FAQ link to it.
 
 The root includes the complete English page, and `/support/` the English support page. A small inline script in `<head>` (allowed by its SHA-256 hash in the generated CSP) sends both to a previously selected or supported browser language before first paint. Explicit language URLs always take priority. Language selection remains available without JavaScript, as do the main content, App Store and Google Play links, and expandable FAQs.
 

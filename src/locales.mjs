@@ -104,6 +104,7 @@ export const locales = {
         kicker: 'Other routes', title: ['More ways', 'to get help.'],
         items: [
           { title: 'A station is missing or wrong.', body: 'Open the saved card or trip in CardBal and report the station, with a map pin if you can. Requests appear on a public list.', link: 'View station reports' },
+          { title: 'Ask other riders.', body: 'Join the CardBal group on Telegram to ask questions, compare cards and chat with other users.', link: 'Join the Telegram group' },
           { title: 'Found a bug? Have an idea?', body: 'CardBal’s source code is public. Open an issue on GitHub to report a decoding bug or suggest a card.', link: 'Open a GitHub issue' },
           { title: 'Privacy and your data.', body: 'How CardBal handles saved cards, station reports, optional contributions and analytics.', link: 'Read the privacy policy' }
         ]
@@ -230,6 +231,7 @@ export const locales = {
         kicker: '其他途径', title: ['更多', '求助方式。'],
         items: [
           { title: '站点缺失或有误。', body: '在 CardBal 中打开已保存的卡片或行程并报告该站点，最好在地图上标记位置。提交的请求会显示在公开列表中。', link: '查看站点报告' },
+          { title: '和其他用户交流。', body: '加入 CardBal 的 Telegram 群组，提出问题、交流卡片，和其他用户聊聊。', link: '加入 Telegram 群组' },
           { title: '发现错误？有新想法？', body: 'CardBal 的源代码已公开。可在 GitHub 上提交 Issue，报告解析错误或建议支持新的卡片。', link: '在 GitHub 提交 Issue' },
           { title: '隐私与你的数据。', body: '了解 CardBal 如何处理已保存的卡片、站点报告、可选的数据贡献和分析数据。', link: '阅读隐私政策' }
         ]
@@ -356,6 +358,7 @@ export const locales = {
         kicker: 'ほかの窓口', title: ['ほかの', '相談方法。'],
         items: [
           { title: '駅がない、または間違っている。', body: 'CardBalで保存済みのカードや利用履歴を開き、駅を報告してください。地図上のピンもあると助かります。報告は公開リストに表示されます。', link: '駅情報の報告を見る' },
+          { title: 'ほかのユーザーと話す。', body: 'CardBalのTelegramグループで、質問したり、カードの情報を共有したり、ほかのユーザーと交流したりできます。', link: 'Telegramグループに参加' },
           { title: '不具合や要望がある。', body: 'CardBalのソースコードは公開されています。解析の不具合や対応してほしいカードは、GitHubのIssueでお知らせください。', link: 'GitHubでIssueを作成' },
           { title: 'プライバシーとデータ。', body: '保存したカード、駅情報の報告、任意のデータ提供、アクセス解析の扱いについて説明しています。', link: 'プライバシーポリシーを読む' }
         ]
@@ -482,6 +485,7 @@ export const locales = {
         kicker: '다른 방법', title: ['도움받는', '다른 방법.'],
         items: [
           { title: '역이 없거나 잘못되었어요.', body: 'CardBal에서 저장한 카드나 이용 내역을 열고 역을 신고해 주세요. 지도 핀을 함께 넣으면 더 좋아요. 신고 내용은 공개 목록에 표시돼요.', link: '역 정보 신고 보기' },
+          { title: '다른 사용자와 이야기해요.', body: 'CardBal Telegram 그룹에서 질문하고, 카드 정보를 나누고, 다른 사용자와 이야기해 보세요.', link: 'Telegram 그룹 참여하기' },
           { title: '버그를 찾았거나 제안이 있나요?', body: 'CardBal의 소스 코드는 공개되어 있어요. 해석 오류나 지원했으면 하는 카드는 GitHub 이슈로 알려주세요.', link: 'GitHub 이슈 만들기' },
           { title: '개인정보와 데이터.', body: '저장한 카드, 역 정보 신고, 선택적인 데이터 기여, 분석 데이터를 CardBal이 어떻게 처리하는지 안내해요.', link: '개인정보 처리방침 보기' }
         ]
@@ -608,6 +612,7 @@ export const locales = {
         kicker: 'Бусад суваг', title: ['Тусламж авах', 'бусад арга.'],
         items: [
           { title: 'Буудал дутуу эсвэл буруу байна.', body: 'CardBal дотор хадгалсан карт эсвэл зорчилтоо нээгээд буудлыг мэдээлээрэй. Боломжтой бол газрын зураг дээр тэмдэглээрэй. Хүсэлтүүд нийтийн жагсаалтад харагдана.', link: 'Буудлын тайлангууд' },
+          { title: 'Бусад хэрэглэгчидтэй ярилцаарай.', body: 'CardBal-ын Telegram бүлэгт нэгдэж асуулт асууж, картын мэдээлэл хуваалцаж, бусад хэрэглэгчидтэй харилцаарай.', link: 'Telegram бүлэгт нэгдэх' },
           { title: 'Алдаа олсон уу? Санал байна уу?', body: 'CardBal-ын эх код нээлттэй. Тайлалтын алдаа эсвэл дэмжүүлэх картын саналаа GitHub-д issue болгон илгээгээрэй.', link: 'GitHub-д issue нээх' },
           { title: 'Нууцлал ба таны өгөгдөл.', body: 'CardBal хадгалсан карт, буудлын тайлан, сайн дурын өгөгдөл хуваалцах болон аналитикийг хэрхэн боловсруулдаг тухай.', link: 'Нууцлалын бодлого унших' }
         ]

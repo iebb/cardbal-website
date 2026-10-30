@@ -12,6 +12,7 @@ const supportEmail = 'support@ieb.app';
 const privacyUrl = 'https://docs.kitta.co/privacy-policy/cardbal/';
 const reportsUrl = 'https://cardbal.ieb.app/';
 const sourceUrl = 'https://github.com/iebb/TransitICReader';
+const telegramUrl = 'https://t.me/cardbal';
 const esc = (value) => String(value).replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 
 const svg = (body, cls = '') => `<svg class="i${cls ? ` ${cls}` : ''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${body}</svg>`;
@@ -30,6 +31,7 @@ const icons = {
   file: svg('<path d="M13.5 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8.5Z"/><path d="M13.5 3v5.5H19M9 13h6M9 16.5h4"/>'),
   pin: svg('<path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.4"/>'),
   code: svg('<path d="m8.5 7-5 5 5 5M15.5 7l5 5-5 5"/>'),
+  send: svg('<path d="M20.5 3.5 10.8 13.2"/><path d="m20.5 3.5-6.2 17-3.5-7.3-7.3-3.5 17-6.2Z"/>'),
   mail: svg('<rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.8 7 8.2 6 8.2-6"/>'),
   lock: svg('<rect x="5" y="10.5" width="14" height="10" rx="2.2"/><path d="M8.2 10.5V7.8a3.8 3.8 0 0 1 7.6 0v2.7"/>')
 };
@@ -349,6 +351,7 @@ function render(code) {
 // Support routes, in the order of every locale's support.routes.items.
 const supportRoutes = [
   { cls: 'tile-reports', icon: icons.pin, href: reportsUrl },
+  { cls: 'tile-telegram', icon: icons.send, href: telegramUrl },
   { cls: 'tile-source', icon: icons.code, href: `${sourceUrl}/issues` },
   { cls: '', icon: icons.lock, href: privacyUrl }
 ];

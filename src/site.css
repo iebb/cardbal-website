@@ -520,11 +520,15 @@ html:is([lang=ja], [lang=zh-Hans], [lang=ko]) .desk-label { font-family: inherit
 .desk-no { color: var(--signal); font: 600 12px/1.9 var(--mono); }
 .desk-note { display: flex; gap: 10px; margin-top: 20px; color: var(--mute-d); font-size: 14px; line-height: 1.55; }
 .desk-note .i { width: 18px; height: 18px; margin-top: 1px; }
-.routes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.routes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 .routes .tile { grid-column: auto; min-height: 340px; }
 .routes .link-arrow { margin-top: auto; }
+.tile-telegram { background: var(--mn); border-color: transparent; }
+.tile-telegram p { color: #08303e; }
+.tile-telegram .tile-icon { background: var(--ink); color: var(--white); }
 .reveal-ready .routes .reveal:nth-child(2) { transition-delay: .08s; }
 .reveal-ready .routes .reveal:nth-child(3) { transition-delay: .16s; }
+.reveal-ready .routes .reveal:nth-child(4) { transition-delay: .24s; }
 
 /* Reveal on scroll, only once site.js is running */
 .reveal-ready .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
@@ -551,6 +555,7 @@ html:is([lang=ja], [lang=zh-Hans], [lang=ko]) .desk-label { font-family: inherit
   .tile-journeys, .tile-collection { grid-column: span 6; }
   .journeys-art { grid-template-columns: minmax(0, 1fr); }
   .trips li:nth-child(n+4) { display: none; }
+  .routes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 960px) {
   .nav { display: none; }
@@ -578,7 +583,6 @@ html:is([lang=ja], [lang=zh-Hans], [lang=ko]) .desk-label { font-family: inherit
   .faq-layout { grid-template-columns: minmax(0, 1fr); gap: 40px; }
   .faq-head { position: static; }
   .support-grid { grid-template-columns: minmax(0, 1fr); gap: 48px; padding-block: 56px 72px; }
-  .routes { grid-template-columns: minmax(0, 1fr); }
   .routes .tile { min-height: 0; }
   .cta-grid { grid-template-columns: minmax(0, 1fr); }
   .sign { justify-self: start; transform: rotate(-1.5deg); }
@@ -649,6 +653,7 @@ html:is([lang=ja], [lang=zh-Hans], [lang=ko]) .desk-label { font-family: inherit
   .support-grid { padding-block: 40px 56px; gap: 40px; }
   .desk { border-radius: 22px; }
   .desk-mail { padding: 16px 18px; font-size: 19px; }
+  .routes { grid-template-columns: minmax(0, 1fr); }
   .cta-body { font-size: 17px; }
   .sign { padding: 22px; gap: 16px; }
   .sign img { width: 88px; height: 88px; border-radius: 21px; }
