@@ -220,6 +220,7 @@ function render(code) {
           <span class="tile-icon">${icons.code}</span>
           <div class="tile-text"><h3>${esc(m.source.title)}</h3><p>${esc(m.source.body)}</p></div>
           <dl class="code-table">${sourceRows.map(([std, sys, cards]) => `<div><dt>${esc(std)}</dt><dd><span>${esc(sys)}</span>${esc(cards)}</dd></div>`).join('')}</dl>
+          <a class="link-arrow" href="https://github.com/iebb/TransitICReader">${esc(m.source.link)}${icons.arrow}</a>
         </article>
       </div>
     </div>
@@ -281,7 +282,7 @@ function render(code) {
       <div class="footer-grid">
         <div class="footer-brand"><a class="brand" href="/${code}/"><img src="/assets/icon-96.png" width="32" height="32" alt=""><span>CardBal</span></a><p>${esc(t.footer.tagline)}</p></div>
         <nav aria-label="CardBal"><h2 class="footer-title">CardBal</h2><ul>${t.nav.map((label, i) => `<li><a href="#${navTargets[i]}">${esc(label)}</a></li>`).join('')}<li><a href="${store}">App Store</a></li><li><a href="${playUrl(t)}">Google Play</a></li></ul></nav>
-        <nav aria-label="${esc(t.footer.resources)}"><h2 class="footer-title">${esc(t.footer.resources)}</h2><ul><li><a href="https://docs.kitta.co/privacy-policy/cardbal/">${esc(t.footer.privacy)}</a></li><li><a href="https://cardbal.ieb.app/">${esc(t.footer.reports)}</a></li><li><a href="https://kitta.co/">Kitta ↗</a></li></ul></nav>
+        <nav aria-label="${esc(t.footer.resources)}"><h2 class="footer-title">${esc(t.footer.resources)}</h2><ul><li><a href="https://docs.kitta.co/privacy-policy/cardbal/">${esc(t.footer.privacy)}</a></li><li><a href="https://cardbal.ieb.app/">${esc(t.footer.reports)}</a></li><li><a href="https://github.com/iebb/TransitICReader">${esc(t.footer.source)}</a></li><li><a href="https://kitta.co/">Kitta ↗</a></li></ul></nav>
         <nav aria-label="${esc(t.language)}"><h2 class="footer-title">${esc(t.footer.languages)}</h2><ul class="footer-langs">${languageLinks(code)}</ul></nav>
       </div>
       <div class="footer-legal"><p>© 2026 Kitta Ltd</p><p>${esc(t.footer.legal)}</p><a class="to-top" href="#top">${esc(t.footer.top)}${icons.arrowUp}</a></div>

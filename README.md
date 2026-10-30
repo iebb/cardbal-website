@@ -52,7 +52,7 @@ Screenshots come from two sources, both recorded in `src/assets/screenshots/mani
 
 `-640` and `-900` copies are plain downscales for responsive `srcset`. The images show the English interface in every website locale; captions and alternate text are translated. Readout values on the page are transcribed from the matching screenshots. The website does not perform an NFC scan.
 
-Supported cards and standards follow the live App Store and Google Play listings (FeliCa, KS X 6924, T-Union with 300+ city cards, Calypso) and the app's source for FeliCa system codes, U-Money, raw data, and read-only Developer Mode probing. The source code is not public yet; the site says it will be released after December 1 and links to it only once it is.
+Supported cards and standards follow the live App Store and Google Play listings (FeliCa, KS X 6924, T-Union with 300+ city cards, Calypso) and the app's public source ([iebb/TransitICReader](https://github.com/iebb/TransitICReader)) for FeliCa system codes, U-Money, raw data, and read-only Developer Mode probing.
 
 Share images (`src/assets/og/{locale}.png`, 1200×630) are rendered from `scripts/og.mjs` with local Google Chrome. Run `npm run og` after changing hero copy and commit the PNGs; the Pages build only copies them.
 

@@ -1,5 +1,5 @@
 // Every locale must match the shape of `en` exactly; scripts/build.mjs rejects missing keys or list items.
-// Card, region and protocol facts follow the live App Store and Google Play listings and the app's source.
+// Card, region and protocol facts follow the live App Store and Google Play listings and the app's public source.
 export const locales = {
   en: {
     name: 'English', htmlLang: 'en', store: 'us', ogLocale: 'en_US',
@@ -54,7 +54,7 @@ export const locales = {
       collection: { title: 'A wallet that’s yours.', body: 'Save multiple cards, give them names and spot them instantly with your own card photos.' },
       device: { title: 'On your device. Backed up your way.', body: 'Saved cards stay on your phone. Back up to iCloud on iPhone, or export a file that opens in CardBal on iPhone and Android.', labels: ['On device', 'iCloud backup', 'File export'] },
       reports: { title: 'Help map every station.', body: 'Report a missing station or request a station-code correction from any saved card or trip, with a map pin. Requests appear on a public list.', link: 'View station reports' },
-      source: { title: 'Open source, from December.', body: 'CardBal’s source code will be released after December 1, so you can see exactly how each card family is decoded.' }
+      source: { title: 'Open source.', body: 'See exactly how each card family is decoded. CardBal’s source code is public on GitHub.', link: 'View the source' }
     },
     cards: {
       kicker: 'Network', title: ['Six regions.', 'One reader.'],
@@ -94,7 +94,7 @@ export const locales = {
     end: { kicker: 'Next stop', title: ['Read the cards', 'you already carry.'], body: 'CardBal for iPhone and Android. Download it on the App Store or Google Play.', meta: 'Requires an NFC-capable iPhone with iOS 16 or later, or an Android phone with NFC and Android 8 or later.' },
     footer: {
       tagline: 'The pro transit card reader for iPhone and Android.', resources: 'Resources', languages: 'Languages',
-      privacy: 'Privacy policy', reports: 'Station reports', top: 'Back to top',
+      privacy: 'Privacy policy', reports: 'Station reports', source: 'Source code', top: 'Back to top',
       legal: 'Card names and artwork belong to their respective owners. CardBal is an independent reader and is not affiliated with transit operators.'
     },
     notFound: 'This stop isn’t on the map.', back: 'Back to CardBal'
@@ -152,7 +152,7 @@ export const locales = {
       collection: { title: '钱包，也可以很有个性。', body: '保存多张卡片，为它们起名字，用自己拍的卡片照片一眼认出。' },
       device: { title: '存在设备上，备份随你选。', body: '已保存的卡片存储在你的手机上。iPhone 可使用 iCloud 备份，也可导出文件，在 iPhone 与 Android 版 CardBal 之间互通。', labels: ['设备本地', 'iCloud 备份', '文件导出'] },
       reports: { title: '一起完善每一个站点。', body: '在已保存的卡片或行程中，即可报告缺失站点或请求更正站点代码，并在地图上标记位置。提交的请求会显示在公开列表中。', link: '查看站点报告' },
-      source: { title: '源代码，12 月起开放。', body: 'CardBal 的源代码将于 12 月 1 日之后发布，届时每种卡片如何解析，一目了然。' }
+      source: { title: '开放源代码。', body: '每种卡片如何解析，一目了然。CardBal 的源代码在 GitHub 上公开。', link: '查看源代码' }
     },
     cards: {
       kicker: '支持网络', title: ['六个地区，', '一个读卡器。'],
@@ -192,7 +192,7 @@ export const locales = {
     end: { kicker: '下一站', title: ['读懂你每天', '随身携带的卡。'], body: 'CardBal 现已登陆 App Store 与 Google Play，支持 iPhone 与 Android。', meta: '需要 iOS 16 或更新版本、支持 NFC 的 iPhone，或 Android 8 或更新版本、支持 NFC 的 Android 手机。' },
     footer: {
       tagline: 'iPhone 与 Android 专业交通卡读卡器。', resources: '资源', languages: '语言',
-      privacy: '隐私政策', reports: '站点报告', top: '返回顶部',
+      privacy: '隐私政策', reports: '站点报告', source: '源代码', top: '返回顶部',
       legal: '卡片名称与图案归各自所有者所有。CardBal 是独立读卡应用，与交通运营商没有隶属关系。'
     },
     notFound: '地图上没有这一站。', back: '返回 CardBal'
@@ -250,7 +250,7 @@ export const locales = {
       collection: { title: '自分らしいウォレットに。', body: '複数のカードを保存して名前を付けたり、撮影したカードの写真で、ひと目で見分けられるようにしたり。' },
       device: { title: '端末に保存。バックアップも自由に。', body: '保存したカードはスマートフォンに保管。iPhoneではiCloudにバックアップでき、書き出したファイルはiPhoneとAndroidのCardBalで読み込めます。', labels: ['端末に保存', 'iCloudバックアップ', 'ファイル書き出し'] },
       reports: { title: 'すべての駅を、みんなで地図に。', body: '保存したカードや利用履歴から、不足している駅の報告や駅コードの修正依頼を、地図のピンと一緒に送れます。リクエストは公開リストに掲載されます。', link: '駅情報の報告を見る' },
-      source: { title: 'ソースコードは、12月から公開。', body: 'CardBalのソースコードは12月1日以降に公開予定です。カードごとの解析方法を、そのまま確認できるようになります。' }
+      source: { title: 'オープンソース。', body: 'カードごとの解析方法を、そのまま確認できます。CardBalのソースコードはGitHubで公開しています。', link: 'ソースコードを見る' }
     },
     cards: {
       kicker: '対応ネットワーク', title: ['6つの地域を、', 'ひとつのリーダーで。'],
@@ -290,7 +290,7 @@ export const locales = {
     end: { kicker: '次の停車駅', title: ['毎日持ち歩くカードを、', '読み解こう。'], body: 'CardBalは、App StoreとGoogle Playで。', meta: 'iOS 16以降のNFC対応iPhone、またはAndroid 8以降のNFC対応Androidスマートフォンが必要です。' },
     footer: {
       tagline: 'iPhoneとAndroidのためのプロ仕様ICカードリーダー。', resources: 'リソース', languages: '言語',
-      privacy: 'プライバシーポリシー', reports: '駅情報の報告', top: 'ページの先頭へ',
+      privacy: 'プライバシーポリシー', reports: '駅情報の報告', source: 'ソースコード', top: 'ページの先頭へ',
       legal: 'カードの名称・デザインは各権利者に帰属します。CardBalは独立した読み取りアプリであり、交通事業者とは提携していません。'
     },
     notFound: 'この駅は、地図にないようです。', back: 'CardBalに戻る'
@@ -348,7 +348,7 @@ export const locales = {
       collection: { title: '내 취향을 담은 지갑.', body: '여러 카드를 저장하고 이름을 붙여보세요. 직접 찍은 카드 사진으로 한눈에 구별할 수 있어요.' },
       device: { title: '기기에 보관하고, 원하는 방식으로 백업.', body: '저장한 카드는 휴대폰에 보관돼요. iPhone에서는 iCloud에 백업할 수 있고, 내보낸 파일은 iPhone과 Android의 CardBal에서 모두 열 수 있어요.', labels: ['기기에 보관', 'iCloud 백업', '파일 내보내기'] },
       reports: { title: '모든 역을 함께 채워가요.', body: '저장한 카드나 이용 내역에서 누락된 역을 신고하거나 역 코드 수정을 요청하고, 지도 핀도 남길 수 있어요. 요청은 공개 목록에 표시돼요.', link: '역 정보 신고 보기' },
-      source: { title: '소스 코드, 12월부터 공개.', body: 'CardBal의 소스 코드는 12월 1일 이후 공개될 예정이에요. 카드별 해석 방식을 직접 확인할 수 있게 돼요.' }
+      source: { title: '오픈 소스.', body: '카드별 해석 방식을 직접 확인해 보세요. CardBal의 소스 코드는 GitHub에 공개되어 있어요.', link: '소스 코드 보기' }
     },
     cards: {
       kicker: '지원 네트워크', title: ['여섯 개 지역,', '하나의 리더.'],
@@ -388,7 +388,7 @@ export const locales = {
     end: { kicker: '다음 정류장', title: ['늘 지니고 다니는 카드,', '제대로 읽어보세요.'], body: 'CardBal, App Store와 Google Play에서 만나보세요.', meta: 'iOS 16 이상 NFC 지원 iPhone 또는 Android 8 이상 NFC 지원 Android 폰이 필요해요.' },
     footer: {
       tagline: 'iPhone과 Android를 위한 프로 교통카드 리더.', resources: '리소스', languages: '언어',
-      privacy: '개인정보 처리방침', reports: '역 정보 신고', top: '맨 위로',
+      privacy: '개인정보 처리방침', reports: '역 정보 신고', source: '소스 코드', top: '맨 위로',
       legal: '카드 이름과 디자인은 각 소유자의 자산이에요. CardBal은 독립적인 카드 리더이며 교통 운영사와 제휴 관계가 없어요.'
     },
     notFound: '지도에 없는 정류장이에요.', back: 'CardBal로 돌아가기'
@@ -446,7 +446,7 @@ export const locales = {
       collection: { title: 'Таны өнгө төрхтэй хэтэвч.', body: 'Олон карт хадгалж, нэр өгч, өөрийн авсан картын зургаар нэг харахад ялгаарай.' },
       device: { title: 'Төхөөрөмждөө. Нөөцөө өөрөө сонго.', body: 'Хадгалсан картууд таны утсанд байрлана. iPhone дээр iCloud-д нөөцлөх боломжтой бөгөөд экспортолсон файлыг iPhone болон Android дээрх CardBal-д нээж болно.', labels: ['Төхөөрөмжид', 'iCloud нөөцлөлт', 'Файл экспорт'] },
       reports: { title: 'Буудал бүрийг хамтдаа газрын зурагт.', body: 'Хадгалсан карт эсвэл зорчилтоос дутуу буудлыг мэдээлэх, буудлын код засуулах хүсэлтийг газрын зургийн тэмдэглэгээтэй илгээгээрэй. Хүсэлтүүд нээлттэй жагсаалтад харагдана.', link: 'Буудлын тайлангууд' },
-      source: { title: 'Эх код 12-р сараас нээлттэй.', body: 'CardBal-ын эх кодыг 12-р сарын 1-ээс хойш нийтэлнэ. Ингэснээр картын төрөл бүрийг хэрхэн тайлдгийг яг таг харах боломжтой болно.' }
+      source: { title: 'Нээлттэй эх код.', body: 'Картын төрөл бүрийг хэрхэн тайлдгийг яг таг хараарай. CardBal-ын эх код GitHub дээр нээлттэй.', link: 'Эх кодыг харах' }
     },
     cards: {
       kicker: 'Сүлжээ', title: ['Зургаан бүс нутаг.', 'Нэг уншигч.'],
@@ -486,7 +486,7 @@ export const locales = {
     end: { kicker: 'Дараагийн буудал', title: ['Өдөр бүр авч явдаг', 'картаа уншаарай.'], body: 'CardBal-ыг App Store болон Google Play-ээс татаарай.', meta: 'iOS 16+ хувилбартай NFC-тэй iPhone, эсвэл Android 8+ хувилбартай NFC-тэй Android утас шаардлагатай.' },
     footer: {
       tagline: 'iPhone, Android-д зориулсан мэргэжлийн тээврийн карт уншигч.', resources: 'Нөөц', languages: 'Хэл',
-      privacy: 'Нууцлалын бодлого', reports: 'Буудлын тайлан', top: 'Дээш буцах',
+      privacy: 'Нууцлалын бодлого', reports: 'Буудлын тайлан', source: 'Эх код', top: 'Дээш буцах',
       legal: 'Картын нэр, загвар нь тус тусын эзэмшигчийн өмч юм. CardBal нь бие даасан карт уншигч бөгөөд тээврийн операторуудтай холбоогүй.'
     },
     notFound: 'Энэ буудал газрын зураг дээр алга.', back: 'CardBal руу буцах'
