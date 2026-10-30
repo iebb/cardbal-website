@@ -369,7 +369,7 @@ function renderSupport(code) {
       </div>
       <div class="desk">
         <p class="desk-label">${esc(s.email)}</p>
-        <a class="desk-mail" href="mailto:${supportEmail}">${icons.mail}<span>${supportEmail}</span></a>
+        <!--email_off--><a class="desk-mail" href="mailto:${supportEmail}">${icons.mail}<span>${supportEmail}</span></a><!--/email_off-->
         <h2 class="desk-title">${esc(s.includeTitle)}</h2>
         <ol class="desk-list">${s.include.map((item, i) => `<li><span class="desk-no">0${i + 1}</span><span>${esc(item)}</span></li>`).join('')}</ol>
         <p class="desk-note">${icons.info}<span>${esc(s.note)}</span></p>
