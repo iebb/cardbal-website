@@ -8,6 +8,10 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const output = path.join(root, 'dist');
 const appId = '6760978958';
 const playPackage = 'ad.neko.cardbal.android';
+const supportEmail = 'support@ieb.app';
+const privacyUrl = 'https://docs.kitta.co/privacy-policy/cardbal/';
+const reportsUrl = 'https://cardbal.ieb.app/';
+const sourceUrl = 'https://github.com/iebb/TransitICReader';
 const esc = (value) => String(value).replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 
 const svg = (body, cls = '') => `<svg class="i${cls ? ` ${cls}` : ''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${body}</svg>`;
@@ -25,7 +29,9 @@ const icons = {
   cloud: svg('<path d="M7 18.5h10.5a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.6 9.2 4.7 4.7 0 0 0 7 18.5Z"/>'),
   file: svg('<path d="M13.5 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8.5Z"/><path d="M13.5 3v5.5H19M9 13h6M9 16.5h4"/>'),
   pin: svg('<path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.4"/>'),
-  code: svg('<path d="m8.5 7-5 5 5 5M15.5 7l5 5-5 5"/>')
+  code: svg('<path d="m8.5 7-5 5 5 5M15.5 7l5 5-5 5"/>'),
+  mail: svg('<rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.8 7 8.2 6 8.2-6"/>'),
+  lock: svg('<rect x="5" y="10.5" width="14" height="10" rx="2.2"/><path d="M8.2 10.5V7.8a3.8 3.8 0 0 1 7.6 0v2.7"/>')
 };
 const apple = '<svg class="apple" viewBox="0 0 24 28" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.6 4.5c1-1.2 1.7-2.8 1.5-4.5-1.5.1-3.2 1-4.3 2.2-1 1.1-1.8 2.8-1.5 4.4 1.6.1 3.2-.8 4.3-2.1ZM22.5 20.1c-.6 1.4-.9 2-1.7 3.3-1.1 1.6-2.6 3.7-4.5 3.7-1.7 0-2.1-1.1-4.4-1.1S9 27.2 7.4 27.1C5.5 27.1 4 25.2 3 23.6.1 19.2-.8 13.2 1 10.1 2.2 7.9 4.2 6.6 6.2 6.6c2.1 0 3.4 1.2 5.1 1.2 1.6 0 2.6-1.2 5.1-1.2 1.8 0 3.6 1 4.8 2.5-4.2 2.3-3.5 8.3 1.3 11Z"/></svg>';
 // Google Play mark, drawn in one colour like the Apple logo beside it.
@@ -71,8 +77,8 @@ const screenshots = ['edy', 'climate', 'octopus', 'pro-wallet', 'pro-rides', 'pr
 const proShots = ['pro-rides', 'pro-map', 'pro-atlas', 'pro-detail'];
 const shotSize = (name) => name.startsWith('pro-') ? [1206, 2622] : [1197, 2600];
 
-// Runs before first paint: marks JS support and sends "/" to a remembered or browser language.
-const boot = `document.documentElement.classList.add('js');if(location.pathname==='/'){var s=${JSON.stringify(Object.keys(locales))},p=null;try{p=localStorage.getItem('cardbal-language')}catch(e){}if(s.indexOf(p)<0){p=null;var l=navigator.languages||[navigator.language];for(var i=0;i<l.length&&!p;i++){var c=String(l[i]||'').split('-')[0].toLowerCase();if(s.indexOf(c)>-1)p=c}}if(p&&p!=='en')location.replace('/'+p+'/'+location.search+location.hash)}`;
+// Runs before first paint: marks JS support and sends "/" and "/support/" to a remembered or browser language.
+const boot = `document.documentElement.classList.add('js');var h=location.pathname;if(h==='/'||h==='/support/'){var s=${JSON.stringify(Object.keys(locales))},p=null;try{p=localStorage.getItem('cardbal-language')}catch(e){}if(s.indexOf(p)<0){p=null;var l=navigator.languages||[navigator.language];for(var i=0;i<l.length&&!p;i++){var c=String(l[i]||'').split('-')[0].toLowerCase();if(s.indexOf(c)>-1)p=c}}if(p&&p!=='en')location.replace('/'+p+h+location.search+location.hash)}`;
 const bootHash = createHash('sha256').update(boot).digest('base64');
 
 const storeUrl = (t) => `https://apps.apple.com/${t.store}/app/cardbal/id${appId}`;
@@ -89,21 +95,76 @@ const shot = (name, alt, { priority = false, sizes = '(max-width: 960px) 270px, 
 };
 const phone = (screen, { cls = '', extra = '' } = {}) => `<div class="phone${cls ? ` ${cls}` : ''}"><div class="phone-screen">${screen}</div><span class="phone-island" aria-hidden="true"></span>${extra}</div>`;
 const flaps = (text, cells, cls) => `<span class="flaps ${cls}">${[...text.padEnd(cells)].slice(0, cells).map((char) => `<span class="f">${char === ' ' ? '' : esc(char)}</span>`).join('')}</span>`;
-const languageLinks = (current) => Object.entries(locales).map(([code, t]) => `<li><a href="/${code}/" lang="${t.htmlLang}" hreflang="${t.htmlLang}" data-language="${code}"${code === current ? ' aria-current="page"' : ''}>${esc(t.name)}</a></li>`).join('');
+// `page` is '' for the home page or 'support/'; links keep visitors on the same page in another language.
+const languageLinks = (current, page = '') => Object.entries(locales).map(([code, t]) => `<li><a href="/${code}/${page}" lang="${t.htmlLang}" hreflang="${t.htmlLang}" data-language="${code}"${code === current ? ' aria-current="page"' : ''}>${esc(t.name)}</a></li>`).join('');
 const navTargets = ['read', 'pro', 'cards', 'service-mode', 'faq'];
 // Keeps brand names and standards from breaking across lines in visible text (attributes are untouched).
 const typeset = (html) => html.replace(/>([^<]+)</g, (match, text) => `>${text
   .replace(/\b([TU])-(money|Money|Union)\b|\bNFC-(capable)/g, (term) => term.replace('-', '\u2011'))
   .replace(/Lignes d’Azur|KS X 6924|iOS 16|Android 8|Google Play|App Store|Apple Watch|Rakuten Edy|ISO 7816/g, (term) => term.replace(/ /g, '\u00a0'))}<`);
-const navLinks = (t) => t.nav.map((label, i) => `<a href="#${navTargets[i]}" data-nav="${navTargets[i]}">${esc(label)}</a>`).join('');
+const navLinks = (t, base = '') => t.nav.map((label, i) => `<a href="${base}#${navTargets[i]}" data-nav="${navTargets[i]}">${esc(label)}</a>`).join('');
 
 // Line art for the two reading methods.
 const artPhysical = `<svg viewBox="0 0 280 170" fill="none" aria-hidden="true" focusable="false"><g class="art-phone"><rect x="95" y="62" width="90" height="150" rx="18"/><path d="M128 74h24"/></g><g class="art-waves"><path d="M118 52a30 30 0 0 1 44 0"/><path d="M106 40a48 48 0 0 1 68 0"/><path d="M94 28a66 66 0 0 1 92 0"/></g><g class="art-card" transform="rotate(-9 140 30)"><rect x="82" y="-12" width="116" height="72" rx="9"/><rect x="96" y="6" width="20" height="15" rx="3"/><path d="M96 42h40M150 42h30"/></g></svg>`;
 const artWallet = `<svg viewBox="0 0 280 170" fill="none" aria-hidden="true" focusable="false"><g class="art-phone" transform="rotate(-24 92 120)"><rect x="47" y="40" width="88" height="150" rx="18"/><rect class="art-fill" x="59" y="70" width="64" height="40" rx="6"/><path d="M80 52h22"/></g><g class="art-phone" transform="rotate(24 188 120)"><rect x="145" y="40" width="88" height="150" rx="18"/><path d="M178 52h22M160 76h44M160 90h56M160 104h34"/></g><g class="art-waves"><path d="M126 30a20 20 0 0 1 28 0"/><path d="M118 20a32 32 0 0 1 44 0"/><path d="M110 10a44 44 0 0 1 60 0"/></g></svg>`;
 
+// Shared page frame. `page` is '' for the home page or 'support/'; section links on other pages go back to the home page.
+function layout(code, { page = '', title: pageTitle, description, preload = '', main }) {
+  const t = locales[code];
+  const base = page ? `/${code}/` : '';
+  const header = `<header class="site-header">
+    <div class="wrap header-bar">
+      <a class="brand" href="/${code}/" aria-label="CardBal"><img src="/assets/icon-96.png" width="30" height="30" alt=""><span>CardBal</span></a>
+      <nav class="nav" aria-label="${esc(t.navLabel)}">${navLinks(t, base)}</nav>
+      <div class="header-actions">
+        <details class="lang" data-menu><summary aria-label="${esc(t.language)}">${icons.globe}<span class="lang-name">${esc(t.name)}</span><span class="lang-code">${code.toUpperCase()}</span>${icons.chevron}</summary><ul class="menu-panel lang-menu">${languageLinks(code, page)}</ul></details>
+        <a class="btn btn-signal" href="${base}#get">${esc(t.download)}</a>
+        <details class="menu" data-menu><summary aria-label="${esc(t.menu)}">${icons.menu}</summary><nav class="menu-panel menu-nav" aria-label="${esc(t.navLabel)}">${navLinks(t, base)}</nav></details>
+      </div>
+    </div>
+    <div class="progress" aria-hidden="true"><span></span></div>
+  </header>`;
+
+  const footer = `<footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand"><a class="brand" href="/${code}/"><img src="/assets/icon-96.png" width="32" height="32" alt=""><span>CardBal</span></a><p>${esc(t.footer.tagline)}</p></div>
+        <nav aria-label="CardBal"><h2 class="footer-title">CardBal</h2><ul>${t.nav.map((label, i) => `<li><a href="${base}#${navTargets[i]}">${esc(label)}</a></li>`).join('')}<li><a href="${storeUrl(t)}">App Store</a></li><li><a href="${playUrl(t)}">Google Play</a></li></ul></nav>
+        <nav aria-label="${esc(t.footer.resources)}"><h2 class="footer-title">${esc(t.footer.resources)}</h2><ul><li><a href="/${code}/support/"${page === 'support/' ? ' aria-current="page"' : ''}>${esc(t.footer.support)}</a></li><li><a href="${privacyUrl}">${esc(t.footer.privacy)}</a></li><li><a href="${reportsUrl}">${esc(t.footer.reports)}</a></li><li><a href="${sourceUrl}">${esc(t.footer.source)}</a></li><li><a href="https://kitta.co/">Kitta ↗</a></li></ul></nav>
+        <nav aria-label="${esc(t.language)}"><h2 class="footer-title">${esc(t.footer.languages)}</h2><ul class="footer-langs">${languageLinks(code, page)}</ul></nav>
+      </div>
+      <div class="footer-legal"><p>© 2026 Kitta Ltd</p><p>${esc(t.footer.legal)}</p><a class="to-top" href="#top">${esc(t.footer.top)}${icons.arrowUp}</a></div>
+    </div>
+    <div class="footer-mark" aria-hidden="true">CardBal</div>
+  </footer>`;
+
+  return `<!doctype html>
+<html lang="${t.htmlLang}" data-locale="${code}">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>${esc(pageTitle)}</title><meta name="description" content="${esc(description)}">
+  <meta name="theme-color" content="#0b0c0e"><meta name="apple-itunes-app" content="app-id=${appId}">
+  <script>${boot}</script>
+  <link rel="canonical" href="https://cardb.al/${code}/${page}">${Object.entries(locales).map(([lang, l]) => `<link rel="alternate" hreflang="${l.htmlLang}" href="https://cardb.al/${lang}/${page}">`).join('')}<link rel="alternate" hreflang="x-default" href="https://cardb.al/${page}">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="CardBal"><meta property="og:title" content="${esc(pageTitle)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="https://cardb.al/${code}/${page}"><meta property="og:image" content="https://cardb.al/assets/og/${code}.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:locale" content="${t.ogLocale}">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(pageTitle)}"><meta name="twitter:description" content="${esc(description)}"><meta name="twitter:image" content="https://cardb.al/assets/og/${code}.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png"><link rel="apple-touch-icon" href="/assets/icon-180.png">${preload}
+  <link rel="stylesheet" href="/assets/site.css"><script src="/assets/site.js" defer></script>
+</head>
+${typeset(`<body id="top">
+  <a class="skip-link" href="#main">${esc(t.skip)}</a>
+  ${header}
+  <main id="main">
+  ${main}
+  </main>
+  ${footer}
+</body>`)}
+</html>
+`;
+}
+
 function render(code) {
   const t = locales[code];
-  const store = storeUrl(t);
   const h = t.hero;
   const b = t.board;
   const r = t.read;
@@ -214,13 +275,13 @@ function render(code) {
         <article class="tile tile-reports reveal">
           <span class="tile-icon">${icons.pin}</span>
           <div class="tile-text"><h3>${esc(m.reports.title)}</h3><p>${esc(m.reports.body)}</p></div>
-          <a class="link-arrow" href="https://cardbal.ieb.app/">${esc(m.reports.link)}${icons.arrow}</a>
+          <a class="link-arrow" href="${reportsUrl}">${esc(m.reports.link)}${icons.arrow}</a>
         </article>
         <article class="tile tile-source reveal">
           <span class="tile-icon">${icons.code}</span>
           <div class="tile-text"><h3>${esc(m.source.title)}</h3><p>${esc(m.source.body)}</p></div>
           <dl class="code-table">${sourceRows.map(([std, sys, cards]) => `<div><dt>${esc(std)}</dt><dd><span>${esc(sys)}</span>${esc(cards)}</dd></div>`).join('')}</dl>
-          <a class="link-arrow" href="https://github.com/iebb/TransitICReader">${esc(m.source.link)}${icons.arrow}</a>
+          <a class="link-arrow" href="${sourceUrl}">${esc(m.source.link)}${icons.arrow}</a>
         </article>
       </div>
     </div>
@@ -254,7 +315,7 @@ function render(code) {
 
   const faq = `<section class="section paper faq" id="faq" aria-labelledby="faq-title">
     <div class="wrap faq-layout">
-      <header class="faq-head reveal">${kicker('06', f.kicker)}<h2 class="h2" id="faq-title">${esc(f.title)}</h2><a class="link-arrow" href="https://cardbal.ieb.app/">${esc(f.reports)}${icons.arrow}</a></header>
+      <header class="faq-head reveal">${kicker('06', f.kicker)}<h2 class="h2" id="faq-title">${esc(f.title)}</h2><div class="faq-links"><a class="link-arrow" href="/${code}/support/">${esc(f.support)}${icons.arrow}</a><a class="link-arrow" href="${reportsUrl}">${esc(f.reports)}${icons.arrow}</a></div></header>
       <div class="faq-list">${f.items.map(([question, answer], i) => `<details class="faq-item"><summary><span class="faq-no">Q${String(i + 1).padStart(2, '0')}</span><span class="faq-q">${esc(question)}</span><span class="faq-icon">${icons.plus}</span></summary><p>${esc(answer)}</p></details>`).join('')}</div>
     </div>
   </section>`;
@@ -277,62 +338,66 @@ function render(code) {
     </div>
   </section>`;
 
-  const footer = `<footer class="footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div class="footer-brand"><a class="brand" href="/${code}/"><img src="/assets/icon-96.png" width="32" height="32" alt=""><span>CardBal</span></a><p>${esc(t.footer.tagline)}</p></div>
-        <nav aria-label="CardBal"><h2 class="footer-title">CardBal</h2><ul>${t.nav.map((label, i) => `<li><a href="#${navTargets[i]}">${esc(label)}</a></li>`).join('')}<li><a href="${store}">App Store</a></li><li><a href="${playUrl(t)}">Google Play</a></li></ul></nav>
-        <nav aria-label="${esc(t.footer.resources)}"><h2 class="footer-title">${esc(t.footer.resources)}</h2><ul><li><a href="https://docs.kitta.co/privacy-policy/cardbal/">${esc(t.footer.privacy)}</a></li><li><a href="https://cardbal.ieb.app/">${esc(t.footer.reports)}</a></li><li><a href="https://github.com/iebb/TransitICReader">${esc(t.footer.source)}</a></li><li><a href="https://kitta.co/">Kitta ↗</a></li></ul></nav>
-        <nav aria-label="${esc(t.language)}"><h2 class="footer-title">${esc(t.footer.languages)}</h2><ul class="footer-langs">${languageLinks(code)}</ul></nav>
-      </div>
-      <div class="footer-legal"><p>© 2026 Kitta Ltd</p><p>${esc(t.footer.legal)}</p><a class="to-top" href="#top">${esc(t.footer.top)}${icons.arrowUp}</a></div>
-    </div>
-    <div class="footer-mark" aria-hidden="true">CardBal</div>
-  </footer>`;
+  return layout(code, {
+    title: t.title,
+    description: t.description,
+    preload: '\n  <link rel="preload" as="image" href="/assets/screenshots/pro-wallet-900.jpg" imagesrcset="/assets/screenshots/pro-wallet-640.jpg 640w, /assets/screenshots/pro-wallet-900.jpg 900w, /assets/screenshots/pro-wallet.jpg 1206w" imagesizes="(max-width: 960px) 270px, 340px">',
+    main: [hero, board, read, pro, more, network, ways, faq, end].join('\n  ')
+  });
+}
 
-  return `<!doctype html>
-<html lang="${t.htmlLang}" data-locale="${code}">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>${esc(t.title)}</title><meta name="description" content="${esc(t.description)}">
-  <meta name="theme-color" content="#0b0c0e"><meta name="apple-itunes-app" content="app-id=${appId}">
-  <script>${boot}</script>
-  <link rel="canonical" href="https://cardb.al/${code}/">${Object.entries(locales).map(([lang, l]) => `<link rel="alternate" hreflang="${l.htmlLang}" href="https://cardb.al/${lang}/">`).join('')}<link rel="alternate" hreflang="x-default" href="https://cardb.al/">
-  <meta property="og:type" content="website"><meta property="og:site_name" content="CardBal"><meta property="og:title" content="${esc(t.title)}"><meta property="og:description" content="${esc(t.description)}"><meta property="og:url" content="https://cardb.al/${code}/"><meta property="og:image" content="https://cardb.al/assets/og/${code}.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:locale" content="${t.ogLocale}">
-  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(t.title)}"><meta name="twitter:description" content="${esc(t.description)}"><meta name="twitter:image" content="https://cardb.al/assets/og/${code}.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png"><link rel="apple-touch-icon" href="/assets/icon-180.png">
-  <link rel="preload" as="image" href="/assets/screenshots/pro-wallet-900.jpg" imagesrcset="/assets/screenshots/pro-wallet-640.jpg 640w, /assets/screenshots/pro-wallet-900.jpg 900w, /assets/screenshots/pro-wallet.jpg 1206w" imagesizes="(max-width: 960px) 270px, 340px">
-  <link rel="stylesheet" href="/assets/site.css"><script src="/assets/site.js" defer></script>
-</head>
-${typeset(`<body id="top">
-  <a class="skip-link" href="#main">${esc(t.skip)}</a>
-  <header class="site-header">
-    <div class="wrap header-bar">
-      <a class="brand" href="/${code}/" aria-label="CardBal"><img src="/assets/icon-96.png" width="30" height="30" alt=""><span>CardBal</span></a>
-      <nav class="nav" aria-label="${esc(t.navLabel)}">${navLinks(t)}</nav>
-      <div class="header-actions">
-        <details class="lang" data-menu><summary aria-label="${esc(t.language)}">${icons.globe}<span class="lang-name">${esc(t.name)}</span><span class="lang-code">${code.toUpperCase()}</span>${icons.chevron}</summary><ul class="menu-panel lang-menu">${languageLinks(code)}</ul></details>
-        <a class="btn btn-signal" href="#get">${esc(t.download)}</a>
-        <details class="menu" data-menu><summary aria-label="${esc(t.menu)}">${icons.menu}</summary><nav class="menu-panel menu-nav" aria-label="${esc(t.navLabel)}">${navLinks(t)}</nav></details>
+// Support routes, in the order of every locale's support.routes.items.
+const supportRoutes = [
+  { cls: 'tile-reports', icon: icons.pin, href: reportsUrl },
+  { cls: 'tile-source', icon: icons.code, href: `${sourceUrl}/issues` },
+  { cls: '', icon: icons.lock, href: privacyUrl }
+];
+// Quick fixes that end with a link to a home-page section; the matching locale items carry a third entry, the link text.
+const fixTargets = ['', '', 'cards', 'service-mode', '', ''];
+
+function renderSupport(code) {
+  const t = locales[code];
+  const s = t.support;
+  const home = `/${code}/`;
+
+  const desk = `<section class="hero support-hero" aria-labelledby="support-title">
+    <div class="wrap support-grid">
+      <div class="hero-copy">
+        ${kicker('i', s.kicker)}
+        <h1 class="display" id="support-title">${title(s.title, 'hl')}</h1>
+        <p class="lede">${esc(s.body)}</p>
+      </div>
+      <div class="desk">
+        <p class="desk-label">${esc(s.email)}</p>
+        <a class="desk-mail" href="mailto:${supportEmail}">${icons.mail}<span>${supportEmail}</span></a>
+        <h2 class="desk-title">${esc(s.includeTitle)}</h2>
+        <ol class="desk-list">${s.include.map((item, i) => `<li><span class="desk-no">0${i + 1}</span><span>${esc(item)}</span></li>`).join('')}</ol>
+        <p class="desk-note">${icons.info}<span>${esc(s.note)}</span></p>
       </div>
     </div>
-    <div class="progress" aria-hidden="true"><span></span></div>
-  </header>
-  <main id="main">
-  ${hero}
-  ${board}
-  ${read}
-  ${pro}
-  ${more}
-  ${network}
-  ${ways}
-  ${faq}
-  ${end}
-  </main>
-  ${footer}
-</body>`)}
-</html>
-`;
+  </section>`;
+
+  const r = s.routes;
+  const routes = `<section class="section paper support-routes" aria-labelledby="routes-title">
+    <div class="wrap">
+      <header class="section-head reveal">${kicker('01', r.kicker)}<h2 class="h2" id="routes-title">${title(r.title)}</h2></header>
+      <div class="routes">${supportRoutes.map((route, i) => `<article class="tile${route.cls ? ` ${route.cls}` : ''} reveal">
+        <span class="tile-icon">${route.icon}</span>
+        <div class="tile-text"><h3>${esc(r.items[i].title)}</h3><p>${esc(r.items[i].body)}</p></div>
+        <a class="link-arrow" href="${route.href}">${esc(r.items[i].link)}${icons.arrow}</a>
+      </article>`).join('')}</div>
+    </div>
+  </section>`;
+
+  const x = s.fixes;
+  const fixes = `<section class="section paper faq" id="fixes" aria-labelledby="fixes-title">
+    <div class="wrap faq-layout">
+      <header class="faq-head reveal">${kicker('02', x.kicker)}<h2 class="h2" id="fixes-title">${esc(x.title)}</h2><a class="link-arrow" href="${home}#faq">${esc(x.more)}${icons.arrow}</a></header>
+      <div class="faq-list">${x.items.map(([question, answer, link], i) => `<details class="faq-item"><summary><span class="faq-no">Q${String(i + 1).padStart(2, '0')}</span><span class="faq-q">${esc(question)}</span><span class="faq-icon">${icons.plus}</span></summary><p>${esc(answer)}${link ? ` <a class="faq-link" href="${home}#${fixTargets[i]}">${esc(link)}</a>` : ''}</p></details>`).join('')}</div>
+    </div>
+  </section>`;
+
+  return layout(code, { page: 'support/', title: s.pageTitle, description: s.description, main: [desk, routes, fixes].join('\n  ') });
 }
 
 function renderNotFound() {
@@ -372,14 +437,18 @@ function checkShape(reference, value, where) {
 }
 for (const [code, t] of Object.entries(locales)) checkShape(locales.en, t, code);
 if (locales.en.cards.regions.length !== regions.length || locales.en.read.chapters.length !== chapters.length || locales.en.pro.items.length !== proShots.length || locales.en.nav.length !== navTargets.length) throw new Error('Locale lists do not match the page structure');
+if (locales.en.support.routes.items.length !== supportRoutes.length || locales.en.support.fixes.items.some((item, i) => (item.length === 3) !== Boolean(fixTargets[i]))) throw new Error('Support lists do not match the page structure');
 
 await rm(output, { recursive: true, force: true });
 await mkdir(path.join(output, 'assets'), { recursive: true });
 for (const code of Object.keys(locales)) {
-  await mkdir(path.join(output, code), { recursive: true });
+  await mkdir(path.join(output, code, 'support'), { recursive: true });
   await writeFile(path.join(output, code, 'index.html'), render(code));
+  await writeFile(path.join(output, code, 'support', 'index.html'), renderSupport(code));
 }
 await writeFile(path.join(output, 'index.html'), render('en'));
+await mkdir(path.join(output, 'support'), { recursive: true });
+await writeFile(path.join(output, 'support', 'index.html'), renderSupport('en'));
 await writeFile(path.join(output, '404.html'), renderNotFound());
 await cp(path.join(root, 'src/assets'), path.join(output, 'assets'), { recursive: true, filter: (source) => !source.endsWith('manifest.json') && !source.endsWith('.DS_Store') });
 for (const asset of ['site.css', 'site.js']) await copyFile(path.join(root, 'src', asset), path.join(output, 'assets', asset));
@@ -388,9 +457,9 @@ await copyFile(path.join(root, 'src/social.png'), path.join(output, 'assets/soci
 await writeFile(path.join(output, '_headers'), `/*\n  X-Content-Type-Options: nosniff\n  X-Frame-Options: DENY\n  Referrer-Policy: strict-origin-when-cross-origin\n  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()\n  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-${bootHash}'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'; upgrade-insecure-requests\n/assets/*\n  Cache-Control: public, max-age=3600\n`);
 await writeFile(path.join(output, '_redirects'), '/zh-cn/ /zh/ 301\n/zh-hans/ /zh/ 301\n');
 await writeFile(path.join(output, 'robots.txt'), 'User-agent: *\nAllow: /\nSitemap: https://cardb.al/sitemap.xml\n');
-await writeFile(path.join(output, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${Object.keys(locales).map((code) => `<url><loc>https://cardb.al/${code}/</loc>${Object.entries(locales).map(([lang, t]) => `<xhtml:link rel="alternate" hreflang="${t.htmlLang}" href="https://cardb.al/${lang}/"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="https://cardb.al/"/></url>`).join('')}</urlset>`);
+await writeFile(path.join(output, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${['', 'support/'].flatMap((page) => Object.keys(locales).map((code) => `<url><loc>https://cardb.al/${code}/${page}</loc>${Object.entries(locales).map(([lang, t]) => `<xhtml:link rel="alternate" hreflang="${t.htmlLang}" href="https://cardb.al/${lang}/${page}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="https://cardb.al/${page}"/></url>`)).join('')}</urlset>`);
 const hash = createHash('sha256');
 for (const file of ['src/locales.mjs', 'src/site.css', 'src/site.js', 'scripts/build.mjs']) hash.update(await readFile(path.join(root, file)));
 for (const name of screenshots) hash.update(await readFile(path.join(root, 'src/assets/screenshots', `${name}.jpg`)));
 await writeFile(path.join(output, 'build-info.json'), JSON.stringify({ site: 'CardBal', hosting: 'Cloudflare Pages', locales: Object.keys(locales), revision: hash.digest('hex').slice(0, 16) }, null, 2) + '\n');
-console.log(`Built ${Object.keys(locales).length} languages into ${output}. Static assets only; no Functions or Worker bundle.`);
+console.log(`Built home and support pages in ${Object.keys(locales).length} languages into ${output}. Static assets only; no Functions or Worker bundle.`);

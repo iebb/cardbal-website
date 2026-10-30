@@ -456,6 +456,9 @@ html:is([lang=ja], [lang=zh-Hans], [lang=ko]) .flow li { font-family: inherit; f
 .faq-item summary:hover .faq-icon { background: var(--signal); }
 .faq-item[open] .faq-icon { transform: rotate(45deg); background: var(--ink); color: var(--white); }
 .faq-item p { max-width: 42em; padding: 0 44px 30px 64px; color: var(--mute); font-size: 16.5px; line-height: 1.65; }
+.faq-links { display: grid; justify-items: start; gap: 14px; }
+.faq-link { color: var(--ink); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.faq-link:hover { text-decoration-thickness: 2px; }
 
 /* Closing sign */
 .cta { position: relative; overflow: hidden; background: var(--signal); color: var(--ink); }
@@ -489,7 +492,7 @@ html:is([lang=ja], [lang=zh-Hans], [lang=ko]) .footer-title { font-family: inher
 .footer ul { display: grid; gap: 10px; font-size: 15px; }
 .footer ul a { transition: color .2s; }
 .footer ul a:hover { color: var(--white); }
-.footer-langs a[aria-current=page] { color: var(--white); }
+.footer ul a[aria-current=page] { color: var(--white); }
 .footer-langs a[aria-current=page]::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 8px; border-radius: 50%; background: var(--signal); vertical-align: 1px; }
 .footer-legal { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: start; gap: 24px 40px; margin-top: 64px; padding-block: 26px; border-top: 1px solid var(--rule-d); color: var(--dim-d); font-size: 13px; line-height: 1.55; }
 .footer-legal p:nth-child(2) { max-width: 46em; }
@@ -497,6 +500,31 @@ html:is([lang=ja], [lang=zh-Hans], [lang=ko]) .footer-title { font-family: inher
 .to-top .i { width: 16px; height: 16px; }
 .to-top:hover { color: var(--white); }
 .footer-mark { margin: 12px 0 -0.2em; color: #15171a; font-size: clamp(88px, 21vw, 340px); font-weight: 700; line-height: .82; letter-spacing: -.065em; text-align: center; white-space: nowrap; user-select: none; }
+
+/* Support: help desk, other routes, quick fixes */
+.support-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 64px; padding-block: 88px 104px; }
+.support-hero .display { font-size: clamp(44px, 5.6vw, 88px); }
+.desk { display: grid; padding: clamp(26px, 3vw, 40px); border: 1px solid var(--rule-d); border-radius: 26px; background: var(--night-2); box-shadow: 0 40px 80px -40px rgba(0, 0, 0, .7); }
+.desk-label { color: var(--mute-d); font: 600 12px/1.4 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+html:is([lang=ja], [lang=zh-Hans], [lang=ko]) .desk-label { font-family: inherit; font-size: 13.5px; letter-spacing: .06em; }
+.desk-mail {
+  display: flex; align-items: center; gap: 14px; margin-top: 14px; padding: 18px 22px; border-radius: 16px;
+  background: var(--signal); color: var(--ink); font-size: clamp(20px, 2vw, 26px); font-weight: 650; letter-spacing: -.02em; overflow-wrap: anywhere;
+  transition: background .2s, transform .3s var(--ease);
+}
+.desk-mail:hover { background: var(--signal-2); transform: translateY(-2px); }
+.desk-mail .i { width: 26px; height: 26px; }
+.desk .desk-mail:focus-visible { outline-color: var(--white); }
+.desk-title { margin-top: 34px; padding-bottom: 12px; border-bottom: 1px solid var(--rule-d); color: var(--white); font-size: 15px; font-weight: 600; }
+.desk-list li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--rule-d); color: #d6d9dd; font-size: 15.5px; line-height: 1.45; }
+.desk-no { color: var(--signal); font: 600 12px/1.9 var(--mono); }
+.desk-note { display: flex; gap: 10px; margin-top: 20px; color: var(--mute-d); font-size: 14px; line-height: 1.55; }
+.desk-note .i { width: 18px; height: 18px; margin-top: 1px; }
+.routes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.routes .tile { grid-column: auto; min-height: 340px; }
+.routes .link-arrow { margin-top: auto; }
+.reveal-ready .routes .reveal:nth-child(2) { transition-delay: .08s; }
+.reveal-ready .routes .reveal:nth-child(3) { transition-delay: .16s; }
 
 /* Reveal on scroll, only once site.js is running */
 .reveal-ready .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
@@ -549,6 +577,9 @@ html:is([lang=ja], [lang=zh-Hans], [lang=ko]) .footer-title { font-family: inher
   .pro-item:nth-child(even) { margin-top: 0; }
   .faq-layout { grid-template-columns: minmax(0, 1fr); gap: 40px; }
   .faq-head { position: static; }
+  .support-grid { grid-template-columns: minmax(0, 1fr); gap: 48px; padding-block: 56px 72px; }
+  .routes { grid-template-columns: minmax(0, 1fr); }
+  .routes .tile { min-height: 0; }
   .cta-grid { grid-template-columns: minmax(0, 1fr); }
   .sign { justify-self: start; transform: rotate(-1.5deg); }
   .footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -615,6 +646,9 @@ html:is([lang=ja], [lang=zh-Hans], [lang=ko]) .footer-title { font-family: inher
   .way-link { margin: 20px 22px 26px; }
   .faq-item summary { grid-template-columns: 40px minmax(0, 1fr) 30px; gap: 10px; padding: 22px 0; }
   .faq-item p { padding: 0 0 26px 50px; font-size: 16px; }
+  .support-grid { padding-block: 40px 56px; gap: 40px; }
+  .desk { border-radius: 22px; }
+  .desk-mail { padding: 16px 18px; font-size: 19px; }
   .cta-body { font-size: 17px; }
   .sign { padding: 22px; gap: 16px; }
   .sign img { width: 88px; height: 88px; border-radius: 21px; }

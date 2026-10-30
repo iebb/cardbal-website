@@ -81,7 +81,7 @@ export const locales = {
       }
     },
     faq: {
-      kicker: 'Before you tap', title: 'Good to know.', reports: 'View station reports',
+      kicker: 'Before you tap', title: 'Good to know.', reports: 'View station reports', support: 'Contact support',
       items: [
         ['What do I need?', 'An NFC-capable iPhone running iOS 16 or later, or an Android phone with NFC running Android 8 or later, and a supported card. On iPhone, you can also read a supported Apple Wallet transit card on another device with Service Mode enabled. CardBal uses your phone’s built-in NFC reader.'],
         ['Can I read an Apple Wallet card on another device?', 'Yes. Put a supported transit card in Service Mode on the iPhone or Apple Watch that holds it, then scan it with CardBal on a separate iPhone. On the card-holding iPhone, open Wallet, select the card, open Card Details, and enable Service Mode where available. Card support and readable information depend on the issuer.'],
@@ -92,9 +92,37 @@ export const locales = {
       ]
     },
     end: { kicker: 'Next stop', title: ['Read the cards', 'you already carry.'], body: 'CardBal for iPhone and Android. Download it on the App Store or Google Play.', meta: 'Requires an NFC-capable iPhone with iOS 16 or later, or an Android phone with NFC and Android 8 or later.' },
+    support: {
+      pageTitle: 'Support — CardBal',
+      description: 'Get help with CardBal for iPhone and Android: email support, report a station, file a bug and fix common card-reading problems.',
+      kicker: 'Help desk', title: ['Need a hand?', 'Write to us.'],
+      body: 'Questions, bug reports or a card CardBal can’t read yet: send us an email and we’ll get back to you.',
+      email: 'Email support', includeTitle: 'Helpful to include',
+      include: ['CardBal version and phone model', 'iOS or Android version', 'Card name, issuer and city', 'What happened, with a screenshot'],
+      note: 'Leave out full card numbers. On iPhone, set Settings › Privacy › Serial Number Display to Masked or Hidden before you take screenshots.',
+      routes: {
+        kicker: 'Other routes', title: ['More ways', 'to get help.'],
+        items: [
+          { title: 'A station is missing or wrong.', body: 'Open the saved card or trip in CardBal and report the station, with a map pin if you can. Requests appear on a public list.', link: 'View station reports' },
+          { title: 'Found a bug? Have an idea?', body: 'CardBal’s source code is public. Open an issue on GitHub to report a decoding bug or suggest a card.', link: 'Open a GitHub issue' },
+          { title: 'Privacy and your data.', body: 'How CardBal handles saved cards, station reports, optional contributions and analytics.', link: 'Read the privacy policy' }
+        ]
+      },
+      fixes: {
+        kicker: 'Quick fixes', title: 'Try this first.', more: 'More answers in the FAQ',
+        items: [
+          ['CardBal doesn’t detect my card.', 'On iPhone, start a scan and hold the card flat against the top of the phone. On Android, turn on NFC in Settings, open CardBal and move the card slowly across the back until it’s detected. Take the card out of a wallet with other cards, and remove thick or metal cases.'],
+          ['The read stops before it finishes.', 'Keep the card still until CardBal shows the result. Some cards take a few seconds, and reads with Developer Mode on take longer.'],
+          ['My card isn’t supported.', 'Check the list of supported cards. If yours isn’t there, email us its name, issuer and city.', 'See supported cards'],
+          ['How do I read a card in Apple Wallet?', 'Turn on Service Mode for the card on the iPhone or Apple Watch that holds it, then scan it with CardBal on a separate iPhone.', 'How Service Mode works'],
+          ['A station shows as a code or is missing.', 'CardBal’s station data doesn’t cover every code yet. Open the trip and report the station; corrections reach the app in later updates.'],
+          ['How do I move my cards to a new phone?', 'On iPhone, use Settings › Backup to back up to iCloud, then restore on the new iPhone. On either platform, export a backup file in Settings and import it on the new phone, including from iPhone to Android.']
+        ]
+      }
+    },
     footer: {
       tagline: 'The pro transit card reader for iPhone and Android.', resources: 'Resources', languages: 'Languages',
-      privacy: 'Privacy policy', reports: 'Station reports', source: 'Source code', top: 'Back to top',
+      support: 'Support', privacy: 'Privacy policy', reports: 'Station reports', source: 'Source code', top: 'Back to top',
       legal: 'Card names and artwork belong to their respective owners. CardBal is an independent reader and is not affiliated with transit operators.'
     },
     notFound: 'This stop isn’t on the map.', back: 'Back to CardBal'
@@ -179,7 +207,7 @@ export const locales = {
       }
     },
     faq: {
-      kicker: '读取之前', title: '你可能想知道。', reports: '查看站点报告',
+      kicker: '读取之前', title: '你可能想知道。', reports: '查看站点报告', support: '联系支持',
       items: [
         ['需要什么设备？', '一部运行 iOS 16 或更新版本、支持 NFC 的 iPhone，或一部运行 Android 8 或更新版本、支持 NFC 的 Android 手机，以及一张支持的交通卡。在 iPhone 上，还可读取另一台设备上开启服务模式的受支持 Apple 钱包交通卡。CardBal 使用手机自带的 NFC 读卡功能。'],
         ['能读取另一台设备中的 Apple 钱包交通卡吗？', '可以。在存放受支持交通卡的 iPhone 或 Apple Watch 上开启服务模式，再使用另一部 iPhone 上的 CardBal 读取。在存卡的 iPhone 上，打开“钱包”，选择交通卡，进入“卡片详细信息”，并在该选项可用时开启“服务模式”。具体支持情况与可读取的信息取决于发卡方。'],
@@ -190,9 +218,37 @@ export const locales = {
       ]
     },
     end: { kicker: '下一站', title: ['读懂你每天', '随身携带的卡。'], body: 'CardBal 现已登陆 App Store 与 Google Play，支持 iPhone 与 Android。', meta: '需要 iOS 16 或更新版本、支持 NFC 的 iPhone，或 Android 8 或更新版本、支持 NFC 的 Android 手机。' },
+    support: {
+      pageTitle: '支持 — CardBal',
+      description: '获取 CardBal（iPhone 与 Android）的帮助：发送邮件联系支持、报告站点、反馈错误，以及解决常见的读卡问题。',
+      kicker: '服务台', title: ['需要帮助？', '写信给我们。'],
+      body: '使用疑问、错误报告，或是 CardBal 暂时读不了的卡，都可以发邮件告诉我们，我们会通过邮件回复你。',
+      email: '邮件联系支持', includeTitle: '方便的话，请附上',
+      include: ['CardBal 版本和手机型号', 'iOS 或 Android 系统版本', '卡片名称、发卡方和城市', '具体情况，最好附上截图'],
+      note: '请不要发送完整卡号。在 iPhone 上截图前，可在“设置 › 隐私 › 序列号显示”中选择“掩码显示（仅末尾数字）”或“隐藏”。',
+      routes: {
+        kicker: '其他途径', title: ['更多', '求助方式。'],
+        items: [
+          { title: '站点缺失或有误。', body: '在 CardBal 中打开已保存的卡片或行程并报告该站点，最好在地图上标记位置。提交的请求会显示在公开列表中。', link: '查看站点报告' },
+          { title: '发现错误？有新想法？', body: 'CardBal 的源代码已公开。可在 GitHub 上提交 Issue，报告解析错误或建议支持新的卡片。', link: '在 GitHub 提交 Issue' },
+          { title: '隐私与你的数据。', body: '了解 CardBal 如何处理已保存的卡片、站点报告、可选的数据贡献和分析数据。', link: '阅读隐私政策' }
+        ]
+      },
+      fixes: {
+        kicker: '快速排查', title: '先试试这些。', more: '查看更多常见问题',
+        items: [
+          ['CardBal 检测不到我的卡。', '在 iPhone 上，开始扫描后将卡片平贴在手机顶部。在 Android 上，先在系统设置中开启 NFC，打开 CardBal，再将卡片在手机背面缓慢移动，直到被识别。请把卡片从放有其他卡的卡包中取出，并取下较厚或含金属的手机壳。'],
+          ['读卡中途停止。', '请保持卡片不动，直到 CardBal 显示结果。部分卡片需要几秒钟，开启开发者模式后读取时间更长。'],
+          ['我的卡不受支持。', '请先查看支持的卡片列表。如果没有你的卡，请发邮件告诉我们卡片名称、发卡方和城市。', '查看支持的卡'],
+          ['如何读取 Apple 钱包中的卡？', '在存放该卡的 iPhone 或 Apple Watch 上为它开启服务模式，再用另一部 iPhone 上的 CardBal 读取。', '了解服务模式'],
+          ['站点显示为代码或缺失。', 'CardBal 的站点数据尚未覆盖所有代码。打开该行程并报告站点，更正会在后续版本中加入应用。'],
+          ['如何把卡片迁移到新手机？', '在 iPhone 上，可在“设置 › 备份”中备份到 iCloud，再在新 iPhone 上恢复。在两个平台上，也可以在设置中导出备份文件，再在新手机上导入，包括从 iPhone 迁移到 Android。']
+        ]
+      }
+    },
     footer: {
       tagline: 'iPhone 与 Android 专业交通卡读卡器。', resources: '资源', languages: '语言',
-      privacy: '隐私政策', reports: '站点报告', source: '源代码', top: '返回顶部',
+      support: '支持', privacy: '隐私政策', reports: '站点报告', source: '源代码', top: '返回顶部',
       legal: '卡片名称与图案归各自所有者所有。CardBal 是独立读卡应用，与交通运营商没有隶属关系。'
     },
     notFound: '地图上没有这一站。', back: '返回 CardBal'
@@ -277,7 +333,7 @@ export const locales = {
       }
     },
     faq: {
-      kicker: 'かざす、その前に', title: '知っておきたいこと。', reports: '駅情報の報告を見る',
+      kicker: 'かざす、その前に', title: '知っておきたいこと。', reports: '駅情報の報告を見る', support: 'サポートに問い合わせる',
       items: [
         ['何が必要ですか？', 'iOS 16以降を搭載したNFC対応iPhone、またはAndroid 8以降のNFC対応Androidスマートフォンと、対応カードが必要です。iPhoneでは、別のデバイスのAppleウォレットにある対応カードもヘルプモードで読み取れます。端末内蔵のNFCリーダーを使用します。'],
         ['別のデバイスのAppleウォレットのカードを読めますか？', 'はい。対応する交通系ICカードが入ったiPhoneやApple Watchでヘルプモードをオンにして、別のiPhoneのCardBalで読み取れます。カードが入ったiPhoneでウォレットを開き、カードを選び、「カードの詳細」からヘルプモードをオンにしてください。対応状況や読み取れる情報は発行元によって異なります。'],
@@ -288,9 +344,37 @@ export const locales = {
       ]
     },
     end: { kicker: '次の停車駅', title: ['毎日持ち歩くカードを、', '読み解こう。'], body: 'CardBalは、App StoreとGoogle Playで。', meta: 'iOS 16以降のNFC対応iPhone、またはAndroid 8以降のNFC対応Androidスマートフォンが必要です。' },
+    support: {
+      pageTitle: 'サポート — CardBal',
+      description: 'iPhone・Android版CardBalのサポート。メールでのお問い合わせ、駅情報の報告、不具合の報告、よくある読み取りトラブルの解決方法をご案内します。',
+      kicker: 'ご案内窓口', title: ['お困りですか？', 'メールでどうぞ。'],
+      body: '使い方の質問や不具合の報告、まだ読み取れないカードについて、メールでお気軽にお問い合わせください。メールで返信します。',
+      email: 'メールで問い合わせる', includeTitle: 'あると助かる情報',
+      include: ['CardBalのバージョンと端末の機種', 'iOSまたはAndroidのバージョン', 'カード名、発行元、地域', '起きたことと、できればスクリーンショット'],
+      note: 'カード番号の全桁は送らないでください。iPhoneでは、スクリーンショットを撮る前に「設定 › プライバシー › シリアル番号の表示」を「マスク表示（末尾のみ）」または「非表示」にできます。',
+      routes: {
+        kicker: 'ほかの窓口', title: ['ほかの', '相談方法。'],
+        items: [
+          { title: '駅がない、または間違っている。', body: 'CardBalで保存済みのカードや利用履歴を開き、駅を報告してください。地図上のピンもあると助かります。報告は公開リストに表示されます。', link: '駅情報の報告を見る' },
+          { title: '不具合や要望がある。', body: 'CardBalのソースコードは公開されています。解析の不具合や対応してほしいカードは、GitHubのIssueでお知らせください。', link: 'GitHubでIssueを作成' },
+          { title: 'プライバシーとデータ。', body: '保存したカード、駅情報の報告、任意のデータ提供、アクセス解析の扱いについて説明しています。', link: 'プライバシーポリシーを読む' }
+        ]
+      },
+      fixes: {
+        kicker: 'まずはここから', title: '試してみてください。', more: 'よくある質問をもっと見る',
+        items: [
+          ['カードが検出されない。', 'iPhoneでは、スキャンを開始してカードを本体上部に平らに当ててください。Androidでは、設定でNFCをオンにしてCardBalを開き、認識されるまでカードを背面でゆっくり動かしてください。ほかのカードと重ねたままにせず、厚いケースや金属製のケースは外してください。'],
+          ['読み取りが途中で止まる。', '結果が表示されるまで、カードを動かさないでください。カードによっては数秒かかり、開発者モードがオンの場合はさらに時間がかかります。'],
+          ['カードが対応していない。', 'まず対応カードの一覧をご確認ください。見つからない場合は、カード名、発行元、地域をメールでお知らせください。', '対応カードを見る'],
+          ['Appleウォレットのカードを読み取るには？', 'カードが入ったiPhoneまたはApple Watchでそのカードのヘルプモードをオンにし、別のiPhoneのCardBalで読み取ります。', 'ヘルプモードの使い方'],
+          ['駅がコードで表示される、または表示されない。', 'CardBalの駅データは、まだすべてのコードを網羅していません。利用履歴を開いて駅を報告してください。修正は今後のアップデートでアプリに反映されます。'],
+          ['新しいスマートフォンにカードを移すには？', 'iPhoneでは「設定 › バックアップ」からiCloudにバックアップし、新しいiPhoneで復元します。どちらの機種でも、設定からバックアップファイルを書き出し、新しい端末で読み込めます。iPhoneからAndroidへの移行にも使えます。']
+        ]
+      }
+    },
     footer: {
       tagline: 'iPhoneとAndroidのためのプロ仕様ICカードリーダー。', resources: 'リソース', languages: '言語',
-      privacy: 'プライバシーポリシー', reports: '駅情報の報告', source: 'ソースコード', top: 'ページの先頭へ',
+      support: 'サポート', privacy: 'プライバシーポリシー', reports: '駅情報の報告', source: 'ソースコード', top: 'ページの先頭へ',
       legal: 'カードの名称・デザインは各権利者に帰属します。CardBalは独立した読み取りアプリであり、交通事業者とは提携していません。'
     },
     notFound: 'この駅は、地図にないようです。', back: 'CardBalに戻る'
@@ -375,7 +459,7 @@ export const locales = {
       }
     },
     faq: {
-      kicker: '카드를 대기 전에', title: '미리 알아두세요.', reports: '역 정보 신고 보기',
+      kicker: '카드를 대기 전에', title: '미리 알아두세요.', reports: '역 정보 신고 보기', support: '고객 지원 문의',
       items: [
         ['무엇이 필요한가요?', 'iOS 16 이상을 실행하는 NFC 지원 iPhone 또는 Android 8 이상을 실행하는 NFC 지원 Android 폰과 지원 카드가 필요해요. iPhone에서는 다른 기기에서 서비스 모드를 켠 지원 Apple 지갑 교통카드도 읽을 수 있어요. CardBal은 휴대폰의 내장 NFC 리더를 사용해요.'],
         ['다른 기기의 Apple 지갑 카드도 읽을 수 있나요?', '네. 지원 교통카드가 있는 iPhone이나 Apple Watch에서 서비스 모드를 켜고, 다른 iPhone의 CardBal로 읽을 수 있어요. 카드가 있는 iPhone에서 지갑 앱을 열고 카드를 선택한 다음 카드 세부사항에서 서비스 모드를 켜세요. 지원 여부와 읽을 수 있는 정보는 발급사에 따라 달라요.'],
@@ -386,9 +470,37 @@ export const locales = {
       ]
     },
     end: { kicker: '다음 정류장', title: ['늘 지니고 다니는 카드,', '제대로 읽어보세요.'], body: 'CardBal, App Store와 Google Play에서 만나보세요.', meta: 'iOS 16 이상 NFC 지원 iPhone 또는 Android 8 이상 NFC 지원 Android 폰이 필요해요.' },
+    support: {
+      pageTitle: '고객 지원 — CardBal',
+      description: 'iPhone·Android용 CardBal 고객 지원. 이메일 문의, 역 정보 신고, 버그 제보와 자주 겪는 카드 읽기 문제의 해결 방법을 안내해요.',
+      kicker: '안내 데스크', title: ['도움이 필요하세요?', '메일을 보내주세요.'],
+      body: '사용 중 궁금한 점, 버그 제보, 아직 읽히지 않는 카드까지 이메일로 알려주세요. 이메일로 답변드릴게요.',
+      email: '이메일로 문의하기', includeTitle: '함께 보내주시면 좋아요',
+      include: ['CardBal 버전과 휴대폰 모델', 'iOS 또는 Android 버전', '카드 이름, 발급사, 지역', '어떤 일이 있었는지, 가능하면 스크린샷과 함께'],
+      note: '카드 번호 전체는 보내지 마세요. iPhone에서는 스크린샷을 찍기 전에 설정 › 개인정보 › 일련번호 표시를 ‘마스킹됨 (끝자리만)’ 또는 ‘숨김’으로 바꿀 수 있어요.',
+      routes: {
+        kicker: '다른 방법', title: ['도움받는', '다른 방법.'],
+        items: [
+          { title: '역이 없거나 잘못되었어요.', body: 'CardBal에서 저장한 카드나 이용 내역을 열고 역을 신고해 주세요. 지도 핀을 함께 넣으면 더 좋아요. 신고 내용은 공개 목록에 표시돼요.', link: '역 정보 신고 보기' },
+          { title: '버그를 찾았거나 제안이 있나요?', body: 'CardBal의 소스 코드는 공개되어 있어요. 해석 오류나 지원했으면 하는 카드는 GitHub 이슈로 알려주세요.', link: 'GitHub 이슈 만들기' },
+          { title: '개인정보와 데이터.', body: '저장한 카드, 역 정보 신고, 선택적인 데이터 기여, 분석 데이터를 CardBal이 어떻게 처리하는지 안내해요.', link: '개인정보 처리방침 보기' }
+        ]
+      },
+      fixes: {
+        kicker: '빠른 해결', title: '먼저 확인해 보세요.', more: '자주 묻는 질문 더 보기',
+        items: [
+          ['카드가 인식되지 않아요.', 'iPhone에서는 스캔을 시작한 뒤 카드를 휴대폰 위쪽에 평평하게 대세요. Android에서는 설정에서 NFC를 켜고 CardBal을 연 다음, 인식될 때까지 카드를 휴대폰 뒷면에서 천천히 움직여 보세요. 다른 카드와 함께 지갑에 든 상태라면 꺼내고, 두껍거나 금속이 들어간 케이스는 빼 주세요.'],
+          ['읽기가 중간에 멈춰요.', '결과가 나올 때까지 카드를 움직이지 마세요. 일부 카드는 몇 초가 걸리고, 개발자 모드를 켜면 더 오래 걸려요.'],
+          ['내 카드가 지원되지 않아요.', '먼저 지원 카드 목록을 확인해 주세요. 목록에 없다면 카드 이름, 발급사, 지역을 이메일로 알려주세요.', '지원 카드 보기'],
+          ['Apple 지갑의 카드는 어떻게 읽나요?', '카드가 있는 iPhone이나 Apple Watch에서 해당 카드의 서비스 모드를 켜고, 다른 iPhone의 CardBal로 읽으세요.', '서비스 모드 사용법'],
+          ['역이 코드로 표시되거나 보이지 않아요.', 'CardBal의 역 데이터가 아직 모든 코드를 다루지는 못해요. 이용 내역을 열고 역을 신고해 주세요. 수정 사항은 이후 업데이트에서 앱에 반영돼요.'],
+          ['새 휴대폰으로 카드를 옮기려면요?', 'iPhone에서는 설정 › 백업에서 iCloud에 백업한 뒤 새 iPhone에서 복원하세요. 두 플랫폼 모두 설정에서 백업 파일을 내보내 새 휴대폰에서 가져올 수 있고, iPhone에서 Android로 옮길 때도 쓸 수 있어요.']
+        ]
+      }
+    },
     footer: {
       tagline: 'iPhone과 Android를 위한 프로 교통카드 리더.', resources: '리소스', languages: '언어',
-      privacy: '개인정보 처리방침', reports: '역 정보 신고', source: '소스 코드', top: '맨 위로',
+      support: '고객 지원', privacy: '개인정보 처리방침', reports: '역 정보 신고', source: '소스 코드', top: '맨 위로',
       legal: '카드 이름과 디자인은 각 소유자의 자산이에요. CardBal은 독립적인 카드 리더이며 교통 운영사와 제휴 관계가 없어요.'
     },
     notFound: '지도에 없는 정류장이에요.', back: 'CardBal로 돌아가기'
@@ -473,7 +585,7 @@ export const locales = {
       }
     },
     faq: {
-      kicker: 'Уншуулахаасаа өмнө', title: 'Мэдэхэд илүүдэхгүй.', reports: 'Буудлын тайлангууд',
+      kicker: 'Уншуулахаасаа өмнө', title: 'Мэдэхэд илүүдэхгүй.', reports: 'Буудлын тайлангууд', support: 'Тусламж авах',
       items: [
         ['Юу хэрэгтэй вэ?', 'iOS 16 буюу түүнээс шинэ хувилбартай NFC-тэй iPhone, эсвэл Android 8 буюу түүнээс шинэ хувилбартай NFC-тэй Android утас болон дэмжигдэх карт хэрэгтэй. iPhone дээр өөр төхөөрөмжийн Apple Wallet дахь үйлчилгээний горим асаасан дэмжигдэх тээврийн картыг ч уншуулж болно. CardBal нь утасны суурилуулсан NFC уншигчийг ашигладаг.'],
         ['Өөр төхөөрөмжийн Apple Wallet дахь картыг уншиж болох уу?', 'Болно. Дэмжигдэх тээврийн карт байгаа iPhone эсвэл Apple Watch дээр Service Mode-ыг асаагаад өөр iPhone дээрх CardBal-аар уншуулна. Карт байгаа iPhone дээр Wallet-ыг нээж, картаа сонгон Card Details хэсгээс Service Mode-ыг асаана уу. Дэмжлэг болон уншигдах мэдээлэл нь карт гаргагчаас хамаарна.'],
@@ -484,9 +596,37 @@ export const locales = {
       ]
     },
     end: { kicker: 'Дараагийн буудал', title: ['Өдөр бүр авч явдаг', 'картаа уншаарай.'], body: 'CardBal-ыг App Store болон Google Play-ээс татаарай.', meta: 'iOS 16+ хувилбартай NFC-тэй iPhone, эсвэл Android 8+ хувилбартай NFC-тэй Android утас шаардлагатай.' },
+    support: {
+      pageTitle: 'Тусламж — CardBal',
+      description: 'iPhone, Android-д зориулсан CardBal-ын тусламж: имэйлээр холбогдох, буудал мэдээлэх, алдаа илгээх, картын уншилтын түгээмэл асуудлыг шийдэх.',
+      kicker: 'Лавлах', title: ['Тусламж хэрэгтэй юу?', 'Бидэнд бичээрэй.'],
+      body: 'Асуулт, алдааны мэдээлэл эсвэл CardBal одоогоор уншиж чадахгүй байгаа картын талаар имэйл илгээгээрэй. Бид имэйлээр хариу өгнө.',
+      email: 'Имэйлээр холбогдох', includeTitle: 'Хавсаргахад тустай',
+      include: ['CardBal-ын хувилбар, утасны загвар', 'iOS эсвэл Android-ын хувилбар', 'Картын нэр, карт гаргагч, хот', 'Юу болсныг дэлгэцийн зурагтай нь'],
+      note: 'Картын дугаарыг бүтнээр нь бүү илгээгээрэй. iPhone дээр дэлгэцийн зураг авахаасаа өмнө Settings › Privacy › Serial Number Display-г Masked эсвэл Hidden болгож болно.',
+      routes: {
+        kicker: 'Бусад суваг', title: ['Тусламж авах', 'бусад арга.'],
+        items: [
+          { title: 'Буудал дутуу эсвэл буруу байна.', body: 'CardBal дотор хадгалсан карт эсвэл зорчилтоо нээгээд буудлыг мэдээлээрэй. Боломжтой бол газрын зураг дээр тэмдэглээрэй. Хүсэлтүүд нийтийн жагсаалтад харагдана.', link: 'Буудлын тайлангууд' },
+          { title: 'Алдаа олсон уу? Санал байна уу?', body: 'CardBal-ын эх код нээлттэй. Тайлалтын алдаа эсвэл дэмжүүлэх картын саналаа GitHub-д issue болгон илгээгээрэй.', link: 'GitHub-д issue нээх' },
+          { title: 'Нууцлал ба таны өгөгдөл.', body: 'CardBal хадгалсан карт, буудлын тайлан, сайн дурын өгөгдөл хуваалцах болон аналитикийг хэрхэн боловсруулдаг тухай.', link: 'Нууцлалын бодлого унших' }
+        ]
+      },
+      fixes: {
+        kicker: 'Хурдан шийдэл', title: 'Эхлээд үүнийг туршаарай.', more: 'Түгээмэл асуултууд',
+        items: [
+          ['CardBal миний картыг илрүүлэхгүй байна.', 'iPhone дээр уншилтыг эхлүүлээд картаа утасны дээд хэсэгт хавтгай наана уу. Android дээр Settings-ээс NFC-г асааж, CardBal-ыг нээгээд картыг илрэх хүртэл утасны ар талаар аажуухан хөдөлгөнө үү. Картаа бусад карттай түрийвчнээс гаргаж, зузаан эсвэл металл гэрийг авна уу.'],
+          ['Уншилт дуусахаасаа өмнө зогсдог.', 'CardBal үр дүнг харуулах хүртэл картаа хөдөлгөлгүй барина уу. Зарим картыг уншихад хэдэн секунд шаардагдах ба Developer Mode асаалттай үед илүү удаан.'],
+          ['Миний карт дэмжигдэхгүй байна.', 'Эхлээд дэмжигдэх картуудын жагсаалтыг шалгаарай. Таны карт байхгүй бол картын нэр, карт гаргагч, хотыг имэйлээр илгээгээрэй.', 'Дэмжигдэх картууд'],
+          ['Apple Wallet дахь картыг яаж уншуулах вэ?', 'Карт байгаа iPhone эсвэл Apple Watch дээр тухайн картын Service Mode-ыг асаагаад өөр iPhone дээрх CardBal-аар уншуулна.', 'Service Mode-ын заавар'],
+          ['Буудал код хэлбэрээр харагдах эсвэл алга байна.', 'CardBal-ын буудлын өгөгдөл бүх кодыг хараахан хамраагүй байна. Зорчилтоо нээгээд буудлыг мэдээлээрэй. Засварууд дараагийн шинэчлэлтээр апп-д орно.'],
+          ['Картуудаа шинэ утас руу яаж шилжүүлэх вэ?', 'iPhone дээр Settings › Backup хэсгээс iCloud-д нөөцлөөд шинэ iPhone дээр сэргээнэ. Аль ч платформ дээр Settings-ээс нөөц файл экспортлоод шинэ утсан дээр импортлох боломжтой, iPhone-оос Android руу шилжүүлэхэд ч болно.']
+        ]
+      }
+    },
     footer: {
       tagline: 'iPhone, Android-д зориулсан мэргэжлийн тээврийн карт уншигч.', resources: 'Нөөц', languages: 'Хэл',
-      privacy: 'Нууцлалын бодлого', reports: 'Буудлын тайлан', source: 'Эх код', top: 'Дээш буцах',
+      support: 'Тусламж', privacy: 'Нууцлалын бодлого', reports: 'Буудлын тайлан', source: 'Эх код', top: 'Дээш буцах',
       legal: 'Картын нэр, загвар нь тус тусын эзэмшигчийн өмч юм. CardBal нь бие даасан карт уншигч бөгөөд тээврийн операторуудтай холбоогүй.'
     },
     notFound: 'Энэ буудал газрын зураг дээр алга.', back: 'CardBal руу буцах'
