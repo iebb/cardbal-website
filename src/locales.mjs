@@ -142,7 +142,7 @@ export const locales = {
           'These are sent only when you tap Submit Report.',
           'CardBal sends the station name, report type, any station code, line, operator, city, country or notes you enter, and, if you choose, the exact coordinates of a map pin or your current location. Each report also includes a SHA-256 hash of the card ID, an app-specific device ID, the app version and the card type. Reports are stored in Cloudflare D1 so we can review requests and improve station data. The public list at {reports} shows station details and an approximate location. It doesn’t show the card ID hash, device ID, app version, notes or exact coordinates.'
         ] },
-        { title: 'App analytics', body: ['CardBal uses Google Firebase Analytics to count installs, sessions and screens viewed. Firebase receives an app-instance ID, device and system details, language, and an approximate location derived from your IP address. CardBal doesn’t send your cards or trips to Firebase and doesn’t use the advertising identifier. Google processes this data under its own privacy policy. There is no switch for this in the app.'] },
+        { title: 'App analytics (iPhone)', body: ['CardBal uses Google Firebase Analytics to count installs, sessions and screens viewed. Firebase receives an app-instance ID, device and system details, language, and an approximate location derived from your IP address. CardBal doesn’t send your cards or trips to Firebase and doesn’t use the advertising identifier. Google processes this data under its own privacy policy. There is no switch for this in the app.'] },
         { title: 'Card artwork', body: ['CardBal downloads card pictures from faces.cardb.al, or from GitHub mirrors (cdn.jsdelivr.net, raw.githubusercontent.com) when it’s unreachable. The matching picture is chosen on the phone, and no card data is sent. The server sees only which picture was requested and your IP address.'] },
         { title: 'Maps', body: ['On iPhone, maps come from Apple Maps. On Android, map tiles come from OpenStreetMap. These providers see which areas are shown and your IP address.'] },
         { title: 'Backups and sync', body: [[
@@ -304,7 +304,7 @@ export const locales = {
           '只有在你轻点“提交报告”时才会发送。',
           'CardBal 会发送站名、报告类型，以及你填写的站点代码、线路、运营方、城市、国家或备注；如果你选择提供，还会发送地图标记的精确坐标或你的当前位置。每份报告还包含卡片 ID 的 SHA-256 哈希值、应用专属的设备 ID、应用版本和卡片类型。报告存储在 Cloudflare D1 中，以便我们审核请求并改进站点数据。{reports} 上的公开列表会显示站点详情和大致位置，但不会显示卡片 ID 哈希值、设备 ID、应用版本、备注或精确坐标。'
         ] },
-        { title: '应用分析', body: ['CardBal 使用 Google Firebase Analytics 统计安装量、会话数和浏览过的界面。Firebase 会收到应用实例 ID、设备与系统信息、语言，以及根据你的 IP 地址推断出的大致位置。CardBal 不会将你的卡片或行程发送给 Firebase，也不使用广告标识符。Google 依据其自身的隐私政策处理这些数据。应用中没有关闭此功能的开关。'] },
+        { title: '应用分析（iPhone）', body: ['CardBal 使用 Google Firebase Analytics 统计安装量、会话数和浏览过的界面。Firebase 会收到应用实例 ID、设备与系统信息、语言，以及根据你的 IP 地址推断出的大致位置。CardBal 不会将你的卡片或行程发送给 Firebase，也不使用广告标识符。Google 依据其自身的隐私政策处理这些数据。应用中没有关闭此功能的开关。'] },
         { title: '卡面图片', body: ['CardBal 从 faces.cardb.al 下载卡面图片；无法访问时，则从 GitHub 镜像（cdn.jsdelivr.net、raw.githubusercontent.com）下载。匹配哪张图片在手机上决定，不会发送任何卡片数据。服务器只能看到请求了哪张图片以及你的 IP 地址。'] },
         { title: '地图', body: ['在 iPhone 上，地图来自 Apple 地图。在 Android 上，地图图块来自 OpenStreetMap。这些服务提供方能看到显示了哪些区域以及你的 IP 地址。'] },
         { title: '备份与同步', body: [[
@@ -466,7 +466,7 @@ export const locales = {
           '「報告を送信」をタップしたときにのみ送信されます。',
           'CardBalは、駅名、報告の種類、入力された駅コード・路線・事業者・都市・国・メモに加え、選択した場合は地図のピンまたは現在地の正確な座標を送信します。各報告には、カードIDのSHA-256ハッシュ、アプリ固有のデバイスID、アプリのバージョン、カードの種類も含まれます。報告は、リクエストを確認して駅データを改善するためにCloudflare D1に保存されます。{reports}の公開リストには、駅の詳細とおおよその位置が表示されます。カードIDのハッシュ、デバイスID、アプリのバージョン、メモ、正確な座標は表示されません。'
         ] },
-        { title: 'アプリの利用状況の分析', body: ['CardBalは、インストール数、セッション数、表示された画面を集計するためにGoogle Firebase Analyticsを使用しています。Firebaseが受け取るのは、アプリインスタンスID、デバイスとシステムの情報、言語、IPアドレスから推定したおおよその位置です。CardBalはカードや利用履歴をFirebaseに送信せず、広告識別子も使用しません。Googleは、このデータを同社のプライバシーポリシーに基づいて処理します。アプリにはこの機能をオフにする設定はありません。'] },
+        { title: 'アプリの利用状況の分析（iPhone）', body: ['CardBalは、インストール数、セッション数、表示された画面を集計するためにGoogle Firebase Analyticsを使用しています。Firebaseが受け取るのは、アプリインスタンスID、デバイスとシステムの情報、言語、IPアドレスから推定したおおよその位置です。CardBalはカードや利用履歴をFirebaseに送信せず、広告識別子も使用しません。Googleは、このデータを同社のプライバシーポリシーに基づいて処理します。アプリにはこの機能をオフにする設定はありません。'] },
         { title: 'カードの画像', body: ['CardBalはカードの画像をfaces.cardb.alから、接続できない場合はGitHubのミラー（cdn.jsdelivr.net、raw.githubusercontent.com）からダウンロードします。どの画像を使うかは端末内で判定し、カードのデータは送信しません。サーバーにわかるのは、リクエストされた画像とIPアドレスのみです。'] },
         { title: '地図', body: ['iPhoneではAppleマップの地図を使用します。AndroidではOpenStreetMapの地図タイルを使用します。これらの提供元には、表示している地域とIPアドレスがわかります。'] },
         { title: 'バックアップと同期', body: [[
@@ -628,7 +628,7 @@ export const locales = {
           '‘신고 제출’을 탭할 때만 전송돼요.',
           'CardBal은 역 이름과 신고 유형, 그리고 입력한 역 코드, 노선, 운영사, 도시, 국가, 메모를 보내요. 원하면 지도 핀이나 현재 위치의 정확한 좌표도 함께 보내요. 각 신고에는 카드 ID의 SHA-256 해시, 앱 전용 기기 ID, 앱 버전, 카드 유형도 포함돼요. 신고는 요청을 검토하고 역 데이터를 개선할 수 있도록 Cloudflare D1에 저장돼요. {reports}의 공개 목록에는 역 정보와 대략적인 위치가 표시돼요. 카드 ID 해시, 기기 ID, 앱 버전, 메모, 정확한 좌표는 표시되지 않아요.'
         ] },
-        { title: '앱 분석', body: ['CardBal은 설치 수, 세션, 조회한 화면을 집계하기 위해 Google Firebase Analytics를 사용해요. Firebase는 앱 인스턴스 ID, 기기 및 시스템 정보, 언어, IP 주소로 추정한 대략적인 위치를 받아요. CardBal은 카드나 이용 내역을 Firebase로 보내지 않으며, 광고 식별자도 사용하지 않아요. Google은 이 데이터를 자체 개인정보 처리방침에 따라 처리해요. 앱에는 이 기능을 끄는 설정이 없어요.'] },
+        { title: '앱 분석 (iPhone)', body: ['CardBal은 설치 수, 세션, 조회한 화면을 집계하기 위해 Google Firebase Analytics를 사용해요. Firebase는 앱 인스턴스 ID, 기기 및 시스템 정보, 언어, IP 주소로 추정한 대략적인 위치를 받아요. CardBal은 카드나 이용 내역을 Firebase로 보내지 않으며, 광고 식별자도 사용하지 않아요. Google은 이 데이터를 자체 개인정보 처리방침에 따라 처리해요. 앱에는 이 기능을 끄는 설정이 없어요.'] },
         { title: '카드 이미지', body: ['CardBal은 카드 이미지를 faces.cardb.al에서 내려받고, 연결할 수 없을 때는 GitHub 미러(cdn.jsdelivr.net, raw.githubusercontent.com)에서 내려받아요. 맞는 이미지는 휴대폰에서 고르며, 카드 데이터는 보내지 않아요. 서버는 어떤 이미지를 요청했는지와 IP 주소만 알 수 있어요.'] },
         { title: '지도', body: ['iPhone에서는 Apple 지도를 사용해요. Android에서는 OpenStreetMap의 지도 타일을 사용해요. 이 제공업체들은 어떤 지역이 표시되는지와 IP 주소를 알 수 있어요.'] },
         { title: '백업과 동기화', body: [[
@@ -790,7 +790,7 @@ export const locales = {
           'Тайланг зөвхөн та “Submit Report”-ыг товшсон үед илгээнэ.',
           'CardBal буудлын нэр, тайлангийн төрөл, мөн таны оруулсан буудлын код, шугам, оператор, хот, улс эсвэл тэмдэглэлийг илгээнэ. Хэрэв та сонговол газрын зургийн тэмдэглэгээ эсвэл одоогийн байршлын тань яг координатыг мөн илгээнэ. Тайлан бүрд картын ID-ийн SHA-256 хэш, зөвхөн энэ аппад хамаарах төхөөрөмжийн ID, аппын хувилбар, картын төрөл багтана. Хүсэлтүүдийг хянаж, буудлын өгөгдлийг сайжруулахын тулд тайлангуудыг Cloudflare D1-д хадгална. {reports} дахь нийтийн жагсаалтад буудлын мэдээлэл болон ойролцоо байршил харагдана. Картын ID-ийн хэш, төхөөрөмжийн ID, аппын хувилбар, тэмдэглэл, яг координат харагдахгүй.'
         ] },
-        { title: 'Аппын аналитик', body: ['CardBal суулгалт, сесс, үзсэн дэлгэцийн тоог гаргахын тулд Google Firebase Analytics ашигладаг. Firebase аппын суулгацын ID (app-instance ID), төхөөрөмж болон системийн мэдээлэл, хэл, таны IP хаягаас тооцоолсон ойролцоо байршлыг хүлээн авна. CardBal таны карт, зорчилтыг Firebase руу илгээдэггүй бөгөөд зар сурталчилгааны танигчийг ашигладаггүй. Google энэ өгөгдлийг өөрийн нууцлалын бодлогын дагуу боловсруулна. Аппад үүнийг унтраах тохиргоо байхгүй.'] },
+        { title: 'Аппын аналитик (iPhone)', body: ['CardBal суулгалт, сесс, үзсэн дэлгэцийн тоог гаргахын тулд Google Firebase Analytics ашигладаг. Firebase аппын суулгацын ID (app-instance ID), төхөөрөмж болон системийн мэдээлэл, хэл, таны IP хаягаас тооцоолсон ойролцоо байршлыг хүлээн авна. CardBal таны карт, зорчилтыг Firebase руу илгээдэггүй бөгөөд зар сурталчилгааны танигчийг ашигладаггүй. Google энэ өгөгдлийг өөрийн нууцлалын бодлогын дагуу боловсруулна. Аппад үүнийг унтраах тохиргоо байхгүй.'] },
         { title: 'Картын зураг', body: ['CardBal картын зургийг faces.cardb.al-аас, түүнд холбогдох боломжгүй үед GitHub-ын толин хуулбаруудаас (cdn.jsdelivr.net, raw.githubusercontent.com) татна. Тохирох зургийг утсан дээр сонгох бөгөөд картын өгөгдөл илгээгдэхгүй. Сервер зөвхөн аль зургийг хүссэн болон таны IP хаягийг харна.'] },
         { title: 'Газрын зураг', body: ['iPhone дээр газрын зураг Apple Maps-аас ирнэ. Android дээр газрын зургийн хавтангууд OpenStreetMap-аас ирнэ. Эдгээр үйлчилгээ үзүүлэгч аль бүсийг харуулж буйг болон таны IP хаягийг харна.'] },
         { title: 'Нөөцлөлт ба синк', body: [[
