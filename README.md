@@ -43,7 +43,9 @@ Each language has a complete, indexable static page, including its demo, FAQ, me
 
 Each language also has a support page at `/{lang}/support/`: the support email (`support@ieb.app`), what to include in a report, links to station reports, the Telegram group (`t.me/cardbal`), GitHub issues and the privacy policy, and quick fixes for common reading problems. The App Store listing uses it as the support URL in every listing language, and every footer and the FAQ link to it.
 
-The root includes the complete English page, and `/support/` the English support page. A small inline script in `<head>` (allowed by its SHA-256 hash in the generated CSP) sends both to a previously selected or supported browser language before first paint. Explicit language URLs always take priority. Language selection remains available without JavaScript, as do the main content, App Store and Google Play links, and expandable FAQs.
+Each language also has the app's privacy policy at `/{lang}/privacy/`: twelve numbered sections covering on-device reading, online checks with card operators (Octopus Online, Lignes d’Azur), Help Improve Korean Cards, station reports, Firebase Analytics, card artwork, maps, backups, the debug log, platform processing, changes, and the privacy contact (`privacy@ieb.app`). The English text in `src/locales.mjs` is the authoritative version; the other languages are translations that use the app's own setting and button names where the app is localized, and the English names in Mongolian. Every footer and the support page link to the privacy page in the same language.
+
+The root includes the complete English page, `/support/` the English support page, and `/privacy/` the English privacy policy. A small inline script in `<head>` (allowed by its SHA-256 hash in the generated CSP) sends all three to a previously selected or supported browser language before first paint. Explicit language URLs always take priority. Language selection remains available without JavaScript, as do the main content, App Store and Google Play links, and expandable FAQs.
 
 Edit `src/locales.mjs`, `src/site.css`, `src/site.js`, and `scripts/build.mjs`. The build rejects any locale whose keys or list lengths differ from English.
 
@@ -62,7 +64,7 @@ CardBal can read supported Apple Wallet transit cards on another iPhone or Apple
 
 The website's Mongolian localization does not claim the native app is localized in Mongolian.
 
-The site uses local assets and system fonts (SF Pro and SF Mono on Apple devices), without third-party scripts or cookies. Its privacy link points to the app's published privacy policy, including Firebase Analytics and optional contributions.
+The site uses local assets and system fonts (SF Pro and SF Mono on Apple devices), without third-party scripts or cookies. Its privacy links point to the site's own `/{lang}/privacy/` pages, which describe the app's data handling, including Firebase Analytics and optional contributions.
 
 ## Custom domain
 

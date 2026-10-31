@@ -530,6 +530,22 @@ html:is([lang=ja], [lang=zh-Hans], [lang=ko]) .desk-label { font-family: inherit
 .reveal-ready .routes .reveal:nth-child(3) { transition-delay: .16s; }
 .reveal-ready .routes .reveal:nth-child(4) { transition-delay: .24s; }
 
+/* Privacy policy: a plain reading page */
+.privacy-head { padding-block: 88px 96px; }
+.privacy-hero .display { font-size: clamp(44px, 5.6vw, 88px); }
+.privacy-updated { margin-top: 26px; color: var(--mute-d); font: 500 13px/1.5 var(--mono); letter-spacing: .02em; }
+.privacy-hero .lede { max-width: 40em; }
+.privacy { padding-block: clamp(64px, 7vw, 104px); }
+.privacy-doc { max-width: 68ch; overflow-wrap: break-word; }
+.privacy-section + .privacy-section { margin-top: 44px; padding-top: 40px; border-top: 1px solid var(--rule); }
+.privacy-section h2 { display: grid; grid-template-columns: 44px minmax(0, 1fr); align-items: baseline; font-size: clamp(21px, 1.9vw, 26px); line-height: 1.3; letter-spacing: -.02em; }
+.privacy-no { color: var(--mute); font: 500 13px/1 var(--mono); }
+.privacy-body { padding-left: 44px; color: #33363c; font-size: 17px; line-height: 1.7; }
+.privacy-body > * { margin-top: 16px; }
+.privacy-body li { position: relative; padding-left: 20px; }
+.privacy-body li + li { margin-top: 12px; }
+.privacy-body li::before { content: ""; position: absolute; left: 2px; top: .72em; width: 7px; height: 7px; border-radius: 2px; background: var(--signal); box-shadow: 0 0 0 1px rgba(11, 12, 14, .2); }
+
 /* Reveal on scroll, only once site.js is running */
 .reveal-ready .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
 .reveal-ready .reveal.is-in { opacity: 1; transform: none; }
@@ -583,6 +599,7 @@ html:is([lang=ja], [lang=zh-Hans], [lang=ko]) .desk-label { font-family: inherit
   .faq-layout { grid-template-columns: minmax(0, 1fr); gap: 40px; }
   .faq-head { position: static; }
   .support-grid { grid-template-columns: minmax(0, 1fr); gap: 48px; padding-block: 56px 72px; }
+  .privacy-head { padding-block: 56px 72px; }
   .routes .tile { min-height: 0; }
   .cta-grid { grid-template-columns: minmax(0, 1fr); }
   .sign { justify-self: start; transform: rotate(-1.5deg); }
@@ -651,6 +668,10 @@ html:is([lang=ja], [lang=zh-Hans], [lang=ko]) .desk-label { font-family: inherit
   .faq-item summary { grid-template-columns: 40px minmax(0, 1fr) 30px; gap: 10px; padding: 22px 0; }
   .faq-item p { padding: 0 0 26px 50px; font-size: 16px; }
   .support-grid { padding-block: 40px 56px; gap: 40px; }
+  .privacy-head { padding-block: 40px 56px; }
+  .privacy { padding-block: 56px 72px; }
+  .privacy-section h2 { grid-template-columns: 36px minmax(0, 1fr); }
+  .privacy-body { padding-left: 0; font-size: 16.5px; }
   .desk { border-radius: 22px; }
   .desk-mail { padding: 16px 18px; font-size: 19px; }
   .routes { grid-template-columns: minmax(0, 1fr); }

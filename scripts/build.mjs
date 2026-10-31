@@ -9,7 +9,8 @@ const output = path.join(root, 'dist');
 const appId = '6760978958';
 const playPackage = 'ad.neko.cardbal.android';
 const supportEmail = 'support@ieb.app';
-const privacyUrl = 'https://docs.kitta.co/privacy-policy/cardbal/';
+const privacyEmail = 'privacy@ieb.app';
+const privacyUpdated = '2026-10-31';
 const reportsUrl = 'https://cardbal.ieb.app/';
 const sourceUrl = 'https://github.com/iebb/TransitICReader';
 const telegramUrl = 'https://t.me/cardbal';
@@ -79,8 +80,8 @@ const screenshots = ['edy', 'climate', 'octopus', 'pro-wallet', 'pro-rides', 'pr
 const proShots = ['pro-rides', 'pro-map', 'pro-atlas', 'pro-detail'];
 const shotSize = (name) => name.startsWith('pro-') ? [1206, 2622] : [1197, 2600];
 
-// Runs before first paint: marks JS support and sends "/" and "/support/" to a remembered or browser language.
-const boot = `document.documentElement.classList.add('js');var h=location.pathname;if(h==='/'||h==='/support/'){var s=${JSON.stringify(Object.keys(locales))},p=null;try{p=localStorage.getItem('cardbal-language')}catch(e){}if(s.indexOf(p)<0){p=null;var l=navigator.languages||[navigator.language];for(var i=0;i<l.length&&!p;i++){var c=String(l[i]||'').split('-')[0].toLowerCase();if(s.indexOf(c)>-1)p=c}}if(p&&p!=='en')location.replace('/'+p+h+location.search+location.hash)}`;
+// Runs before first paint: marks JS support and sends "/", "/support/" and "/privacy/" to a remembered or browser language.
+const boot = `document.documentElement.classList.add('js');var h=location.pathname;if(h==='/'||h==='/support/'||h==='/privacy/'){var s=${JSON.stringify(Object.keys(locales))},p=null;try{p=localStorage.getItem('cardbal-language')}catch(e){}if(s.indexOf(p)<0){p=null;var l=navigator.languages||[navigator.language];for(var i=0;i<l.length&&!p;i++){var c=String(l[i]||'').split('-')[0].toLowerCase();if(s.indexOf(c)>-1)p=c}}if(p&&p!=='en')location.replace('/'+p+h+location.search+location.hash)}`;
 const bootHash = createHash('sha256').update(boot).digest('base64');
 
 const storeUrl = (t) => `https://apps.apple.com/${t.store}/app/cardbal/id${appId}`;
@@ -97,7 +98,7 @@ const shot = (name, alt, { priority = false, sizes = '(max-width: 960px) 270px, 
 };
 const phone = (screen, { cls = '', extra = '' } = {}) => `<div class="phone${cls ? ` ${cls}` : ''}"><div class="phone-screen">${screen}</div><span class="phone-island" aria-hidden="true"></span>${extra}</div>`;
 const flaps = (text, cells, cls) => `<span class="flaps ${cls}">${[...text.padEnd(cells)].slice(0, cells).map((char) => `<span class="f">${char === ' ' ? '' : esc(char)}</span>`).join('')}</span>`;
-// `page` is '' for the home page or 'support/'; links keep visitors on the same page in another language.
+// `page` is '' for the home page, 'support/' or 'privacy/'; links keep visitors on the same page in another language.
 const languageLinks = (current, page = '') => Object.entries(locales).map(([code, t]) => `<li><a href="/${code}/${page}" lang="${t.htmlLang}" hreflang="${t.htmlLang}" data-language="${code}"${code === current ? ' aria-current="page"' : ''}>${esc(t.name)}</a></li>`).join('');
 const navTargets = ['read', 'pro', 'cards', 'service-mode', 'faq'];
 // Keeps brand names and standards from breaking across lines in visible text (attributes are untouched).
@@ -110,7 +111,7 @@ const navLinks = (t, base = '') => t.nav.map((label, i) => `<a href="${base}#${n
 const artPhysical = `<svg viewBox="0 0 280 170" fill="none" aria-hidden="true" focusable="false"><g class="art-phone"><rect x="95" y="62" width="90" height="150" rx="18"/><path d="M128 74h24"/></g><g class="art-waves"><path d="M118 52a30 30 0 0 1 44 0"/><path d="M106 40a48 48 0 0 1 68 0"/><path d="M94 28a66 66 0 0 1 92 0"/></g><g class="art-card" transform="rotate(-9 140 30)"><rect x="82" y="-12" width="116" height="72" rx="9"/><rect x="96" y="6" width="20" height="15" rx="3"/><path d="M96 42h40M150 42h30"/></g></svg>`;
 const artWallet = `<svg viewBox="0 0 280 170" fill="none" aria-hidden="true" focusable="false"><g class="art-phone" transform="rotate(-24 92 120)"><rect x="47" y="40" width="88" height="150" rx="18"/><rect class="art-fill" x="59" y="70" width="64" height="40" rx="6"/><path d="M80 52h22"/></g><g class="art-phone" transform="rotate(24 188 120)"><rect x="145" y="40" width="88" height="150" rx="18"/><path d="M178 52h22M160 76h44M160 90h56M160 104h34"/></g><g class="art-waves"><path d="M126 30a20 20 0 0 1 28 0"/><path d="M118 20a32 32 0 0 1 44 0"/><path d="M110 10a44 44 0 0 1 60 0"/></g></svg>`;
 
-// Shared page frame. `page` is '' for the home page or 'support/'; section links on other pages go back to the home page.
+// Shared page frame. `page` is '' for the home page, 'support/' or 'privacy/'; section links on other pages go back to the home page.
 function layout(code, { page = '', title: pageTitle, description, preload = '', main }) {
   const t = locales[code];
   const base = page ? `/${code}/` : '';
@@ -132,7 +133,7 @@ function layout(code, { page = '', title: pageTitle, description, preload = '', 
       <div class="footer-grid">
         <div class="footer-brand"><a class="brand" href="/${code}/"><img src="/assets/icon-96.png" width="32" height="32" alt=""><span>CardBal</span></a><p>${esc(t.footer.tagline)}</p></div>
         <nav aria-label="CardBal"><h2 class="footer-title">CardBal</h2><ul>${t.nav.map((label, i) => `<li><a href="${base}#${navTargets[i]}">${esc(label)}</a></li>`).join('')}<li><a href="${storeUrl(t)}">App Store</a></li><li><a href="${playUrl(t)}">Google Play</a></li></ul></nav>
-        <nav aria-label="${esc(t.footer.resources)}"><h2 class="footer-title">${esc(t.footer.resources)}</h2><ul><li><a href="/${code}/support/"${page === 'support/' ? ' aria-current="page"' : ''}>${esc(t.footer.support)}</a></li><li><a href="${privacyUrl}">${esc(t.footer.privacy)}</a></li><li><a href="${reportsUrl}">${esc(t.footer.reports)}</a></li><li><a href="${sourceUrl}">${esc(t.footer.source)}</a></li><li><a href="https://kitta.co/">Kitta ↗</a></li></ul></nav>
+        <nav aria-label="${esc(t.footer.resources)}"><h2 class="footer-title">${esc(t.footer.resources)}</h2><ul><li><a href="/${code}/support/"${page === 'support/' ? ' aria-current="page"' : ''}>${esc(t.footer.support)}</a></li><li><a href="/${code}/privacy/"${page === 'privacy/' ? ' aria-current="page"' : ''}>${esc(t.footer.privacy)}</a></li><li><a href="${reportsUrl}">${esc(t.footer.reports)}</a></li><li><a href="${sourceUrl}">${esc(t.footer.source)}</a></li><li><a href="https://kitta.co/">Kitta ↗</a></li></ul></nav>
         <nav aria-label="${esc(t.language)}"><h2 class="footer-title">${esc(t.footer.languages)}</h2><ul class="footer-langs">${languageLinks(code, page)}</ul></nav>
       </div>
       <div class="footer-legal"><p>© 2026 Kitta Ltd</p><p>${esc(t.footer.legal)}</p><a class="to-top" href="#top">${esc(t.footer.top)}${icons.arrowUp}</a></div>
@@ -348,12 +349,12 @@ function render(code) {
   });
 }
 
-// Support routes, in the order of every locale's support.routes.items.
+// Support routes, in the order of every locale's support.routes.items. `page` links stay in the visitor's language.
 const supportRoutes = [
   { cls: 'tile-reports', icon: icons.pin, href: reportsUrl },
   { cls: 'tile-telegram', icon: icons.send, href: telegramUrl },
   { cls: 'tile-source', icon: icons.code, href: `${sourceUrl}/issues` },
-  { cls: '', icon: icons.lock, href: privacyUrl }
+  { cls: '', icon: icons.lock, page: 'privacy/' }
 ];
 // Quick fixes that end with a link to a home-page section; the matching locale items carry a third entry, the link text.
 const fixTargets = ['', '', 'cards', 'service-mode', '', ''];
@@ -387,7 +388,7 @@ function renderSupport(code) {
       <div class="routes">${supportRoutes.map((route, i) => `<article class="tile${route.cls ? ` ${route.cls}` : ''} reveal">
         <span class="tile-icon">${route.icon}</span>
         <div class="tile-text"><h3>${esc(r.items[i].title)}</h3><p>${esc(r.items[i].body)}</p></div>
-        <a class="link-arrow" href="${route.href}">${esc(r.items[i].link)}${icons.arrow}</a>
+        <a class="link-arrow" href="${route.href ?? `/${code}/${route.page}`}">${esc(r.items[i].link)}${icons.arrow}</a>
       </article>`).join('')}</div>
     </div>
   </section>`;
@@ -401,6 +402,44 @@ function renderSupport(code) {
   </section>`;
 
   return layout(code, { page: 'support/', title: s.pageTitle, description: s.description, main: [desk, routes, fixes].join('\n  ') });
+}
+
+// Privacy policy: numbered sections of paragraphs (strings) and bullet lists (arrays).
+// {reports} and {email} in the text become the station-report and privacy-email links.
+const privacyLinks = {
+  reports: `<a class="faq-link" href="${reportsUrl}">cardbal.ieb.app</a>`,
+  email: `<!--email_off--><a class="faq-link" href="mailto:${privacyEmail}">${privacyEmail}</a><!--/email_off-->`
+};
+const placeholders = (text) => (String(text).match(/\{\w+\}/g) || []).sort().join(',');
+const linkify = (text) => esc(text).replace(/\{(reports|email)\}/g, (match, key) => privacyLinks[key]);
+
+function renderPrivacy(code) {
+  const t = locales[code];
+  const p = t.privacy;
+
+  const head = `<section class="hero privacy-hero" aria-labelledby="privacy-title">
+    <div class="wrap privacy-head">
+      <div class="hero-copy">
+        ${kicker('i', p.kicker)}
+        <h1 class="display" id="privacy-title">${title(p.title, 'hl')}</h1>
+        <p class="privacy-updated">${esc(p.updated).replace('{date}', `<time datetime="${privacyUpdated}">${esc(p.date)}</time>`)}</p>
+        <p class="lede">${esc(p.intro)}</p>
+      </div>
+    </div>
+  </section>`;
+
+  const doc = `<div class="section paper privacy">
+    <div class="wrap">
+      <div class="privacy-doc">${p.sections.map((section, i) => `
+        <section class="privacy-section" id="section-${i + 1}" aria-labelledby="section-${i + 1}-title">
+          <h2 id="section-${i + 1}-title"><span class="privacy-no">${String(i + 1).padStart(2, '0')}</span><span>${esc(section.title)}</span></h2>
+          <div class="privacy-body">${section.body.map((block) => Array.isArray(block) ? `<ul>${block.map((item) => `<li>${linkify(item)}</li>`).join('')}</ul>` : `<p>${linkify(block)}</p>`).join('')}</div>
+        </section>`).join('')}
+      </div>
+    </div>
+  </div>`;
+
+  return layout(code, { page: 'privacy/', title: p.pageTitle, description: p.description, main: [head, doc].join('\n  ') });
 }
 
 function renderNotFound() {
@@ -440,18 +479,28 @@ function checkShape(reference, value, where) {
 }
 for (const [code, t] of Object.entries(locales)) checkShape(locales.en, t, code);
 if (locales.en.cards.regions.length !== regions.length || locales.en.read.chapters.length !== chapters.length || locales.en.pro.items.length !== proShots.length || locales.en.nav.length !== navTargets.length) throw new Error('Locale lists do not match the page structure');
+for (const [code, t] of Object.entries(locales)) {
+  if (!t.privacy.updated.includes('{date}')) throw new Error(`Missing {date} at ${code}.privacy.updated`);
+  t.privacy.sections.forEach((section, i) => section.body.flat().forEach((text, k) => {
+    if (placeholders(text) !== placeholders(locales.en.privacy.sections[i].body.flat()[k])) throw new Error(`Link placeholders differ at ${code}.privacy.sections[${i}]`);
+  }));
+}
 if (locales.en.support.routes.items.length !== supportRoutes.length || locales.en.support.fixes.items.some((item, i) => (item.length === 3) !== Boolean(fixTargets[i]))) throw new Error('Support lists do not match the page structure');
 
 await rm(output, { recursive: true, force: true });
 await mkdir(path.join(output, 'assets'), { recursive: true });
 for (const code of Object.keys(locales)) {
   await mkdir(path.join(output, code, 'support'), { recursive: true });
+  await mkdir(path.join(output, code, 'privacy'), { recursive: true });
   await writeFile(path.join(output, code, 'index.html'), render(code));
   await writeFile(path.join(output, code, 'support', 'index.html'), renderSupport(code));
+  await writeFile(path.join(output, code, 'privacy', 'index.html'), renderPrivacy(code));
 }
 await writeFile(path.join(output, 'index.html'), render('en'));
 await mkdir(path.join(output, 'support'), { recursive: true });
 await writeFile(path.join(output, 'support', 'index.html'), renderSupport('en'));
+await mkdir(path.join(output, 'privacy'), { recursive: true });
+await writeFile(path.join(output, 'privacy', 'index.html'), renderPrivacy('en'));
 await writeFile(path.join(output, '404.html'), renderNotFound());
 await cp(path.join(root, 'src/assets'), path.join(output, 'assets'), { recursive: true, filter: (source) => !source.endsWith('manifest.json') && !source.endsWith('.DS_Store') });
 for (const asset of ['site.css', 'site.js']) await copyFile(path.join(root, 'src', asset), path.join(output, 'assets', asset));
@@ -460,9 +509,9 @@ await copyFile(path.join(root, 'src/social.png'), path.join(output, 'assets/soci
 await writeFile(path.join(output, '_headers'), `/*\n  X-Content-Type-Options: nosniff\n  X-Frame-Options: DENY\n  Referrer-Policy: strict-origin-when-cross-origin\n  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()\n  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-${bootHash}'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'; upgrade-insecure-requests\n/assets/*\n  Cache-Control: public, max-age=3600\n`);
 await writeFile(path.join(output, '_redirects'), '/zh-cn/ /zh/ 301\n/zh-hans/ /zh/ 301\n');
 await writeFile(path.join(output, 'robots.txt'), 'User-agent: *\nAllow: /\nSitemap: https://cardb.al/sitemap.xml\n');
-await writeFile(path.join(output, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${['', 'support/'].flatMap((page) => Object.keys(locales).map((code) => `<url><loc>https://cardb.al/${code}/${page}</loc>${Object.entries(locales).map(([lang, t]) => `<xhtml:link rel="alternate" hreflang="${t.htmlLang}" href="https://cardb.al/${lang}/${page}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="https://cardb.al/${page}"/></url>`)).join('')}</urlset>`);
+await writeFile(path.join(output, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${['', 'support/', 'privacy/'].flatMap((page) => Object.keys(locales).map((code) => `<url><loc>https://cardb.al/${code}/${page}</loc>${Object.entries(locales).map(([lang, t]) => `<xhtml:link rel="alternate" hreflang="${t.htmlLang}" href="https://cardb.al/${lang}/${page}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="https://cardb.al/${page}"/></url>`)).join('')}</urlset>`);
 const hash = createHash('sha256');
 for (const file of ['src/locales.mjs', 'src/site.css', 'src/site.js', 'scripts/build.mjs']) hash.update(await readFile(path.join(root, file)));
 for (const name of screenshots) hash.update(await readFile(path.join(root, 'src/assets/screenshots', `${name}.jpg`)));
 await writeFile(path.join(output, 'build-info.json'), JSON.stringify({ site: 'CardBal', hosting: 'Cloudflare Pages', locales: Object.keys(locales), revision: hash.digest('hex').slice(0, 16) }, null, 2) + '\n');
-console.log(`Built home and support pages in ${Object.keys(locales).length} languages into ${output}. Static assets only; no Functions or Worker bundle.`);
+console.log(`Built home, support and privacy pages in ${Object.keys(locales).length} languages into ${output}. Static assets only; no Functions or Worker bundle.`);
