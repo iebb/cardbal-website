@@ -396,7 +396,7 @@ html:is([lang=ja], [lang=zh-Hans], [lang=ko]) .flow li { font-family: inherit; f
 .lines { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; }
 .line { grid-column: span 2; display: flex; flex-direction: column; padding: clamp(24px, 2.4vw, 34px); border: 1px solid var(--rule-d); border-radius: 22px; background: var(--night-2); }
 .line-jp { grid-column: 1 / -1; }
-.line-kr, .line-cn { grid-column: span 3; }
+.line-kr, .line-cn, .line-hk, .line-mn, .line-fr, .line-pt { grid-column: span 3; }
 .line-head { display: flex; align-items: center; gap: 12px; }
 .line-head .badge { min-width: 38px; height: 28px; font-size: 13px; border-radius: 7px; }
 .line-head h3 { font-size: clamp(20px, 1.8vw, 26px); letter-spacing: -.025em; }
@@ -593,7 +593,6 @@ html:is([lang=ja], [lang=zh-Hans], [lang=ko]) .desk-label { font-family: inherit
   .journeys-art { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
   .trips li:nth-child(n+4) { display: grid; }
   .tile-collection, .tile-device, .tile-reports, .tile-source { grid-column: span 6; }
-  .line-kr, .line-cn, .line-hk, .line-mn, .line-fr, .line-pt { grid-column: span 3; }
   .ways-grid { grid-template-columns: minmax(0, 1fr); }
   .pro-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 64px; }
   .pro-item:nth-child(even) { margin-top: 0; }
