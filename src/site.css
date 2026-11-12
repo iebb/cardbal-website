@@ -21,6 +21,7 @@
   --hk: #a066e8;
   --mn: #19a9de;
   --fr: #f5921f;
+  --pt: #e8508a;
   --latin: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI Variable Text", "Segoe UI", "Helvetica Neue", Roboto, Arial;
   --cjk: "PingFang SC", "Hiragino Sans", "Apple SD Gothic Neo", "Noto Sans CJK SC", "Microsoft YaHei", "Malgun Gothic";
   --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, "Cascadia Mono", Consolas, "Liberation Mono", monospace;
@@ -73,6 +74,7 @@ html:lang(ja) { line-break: strict; }
 .r-hk { --c: var(--hk); --on: #fff; }
 .r-mn { --c: var(--mn); --on: var(--ink); }
 .r-fr { --c: var(--fr); --on: var(--ink); }
+.r-pt { --c: var(--pt); --on: var(--ink); }
 .badge {
   display: inline-grid; place-items: center; flex: none;
   min-width: 30px; height: 22px; padding: 0 6px; border-radius: 5px;
@@ -591,8 +593,7 @@ html:is([lang=ja], [lang=zh-Hans], [lang=ko]) .desk-label { font-family: inherit
   .journeys-art { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
   .trips li:nth-child(n+4) { display: grid; }
   .tile-collection, .tile-device, .tile-reports, .tile-source { grid-column: span 6; }
-  .line-kr, .line-cn, .line-hk, .line-mn, .line-fr { grid-column: span 3; }
-  .line-fr { grid-column: 1 / -1; }
+  .line-kr, .line-cn, .line-hk, .line-mn, .line-fr, .line-pt { grid-column: span 3; }
   .ways-grid { grid-template-columns: minmax(0, 1fr); }
   .pro-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 64px; }
   .pro-item:nth-child(even) { margin-top: 0; }
@@ -658,7 +659,7 @@ html:is([lang=ja], [lang=zh-Hans], [lang=ko]) .desk-label { font-family: inherit
   .pro-item { flex: 0 0 min(76%, 300px); scroll-snap-align: start; }
   .pro-item .phone { --pw: min(260px, 66vw); }
   .pro-note { margin-top: 32px; }
-  .line, .line-kr, .line-cn, .line-hk, .line-mn, .line-fr { grid-column: 1 / -1; }
+  .line, .line-kr, .line-cn, .line-hk, .line-mn, .line-fr, .line-pt { grid-column: 1 / -1; }
   .stations { row-gap: 22px; margin: 28px 0 24px; }
   .stations li { padding-right: 18px; font-size: 14.5px; }
   .way-art { height: 190px; }

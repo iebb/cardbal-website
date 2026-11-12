@@ -4,7 +4,7 @@ export const locales = {
   en: {
     name: 'English', htmlLang: 'en', store: 'us', ogLocale: 'en_US',
     title: 'CardBal — Transit cards, decoded. For iPhone and Android.',
-    description: 'Read supported transit and stored-value cards with your iPhone or Android phone. See balances, trip history, card details and raw data for cards from Japan, South Korea, China, Hong Kong, Mongolia and France — including Apple Wallet cards on another device in Service Mode.',
+    description: 'Read supported transit and stored-value cards with your iPhone or Android phone. See balances, trip history, card details and raw data for cards from Japan, South Korea, China, Hong Kong, Mongolia, France and Portugal — including Apple Wallet cards on another device in Service Mode.',
     skip: 'Skip to content', language: 'Choose language', menu: 'Menu', navLabel: 'Sections',
     nav: ['The read', 'Pro', 'Cards', 'Service Mode', 'FAQ'],
     download: 'Get CardBal', appStore: ['Download on the', 'App Store'], googlePlay: ['Get it on', 'Google Play'],
@@ -19,8 +19,8 @@ export const locales = {
     board: {
       label: 'Now reading', note: 'A sample of the card families CardBal reads.',
       columns: ['Card', 'Standard', 'Region'],
-      sr: 'Supported cards include Suica, PASMO, ICOCA, Rakuten Edy, T-money, Cashbee, Octopus, T-Union city cards, U-Money and Lignes d’Azur.',
-      stats: [['6', 'regions'], ['4', 'card standards'], ['300+', 'T-Union city cards'], ['iOS + Android', 'NFC phones']]
+      sr: 'Supported cards include Suica, PASMO, ICOCA, Rakuten Edy, T-money, Cashbee, Octopus, T-Union city cards, U-Money, Lignes d’Azur and navegante.',
+      stats: [['7', 'regions'], ['4', 'card standards'], ['300+', 'T-Union city cards'], ['iOS + Android', 'NFC phones']]
     },
     read: {
       kicker: 'Inside the read', title: ['From balance', 'to bytes.'],
@@ -57,15 +57,16 @@ export const locales = {
       source: { title: 'Open source.', body: 'See exactly how each card family is decoded. CardBal’s source code is public on GitHub.', link: 'View the source' }
     },
     cards: {
-      kicker: 'Network', title: ['Six regions.', 'One reader.'],
-      intro: 'Transit and stored-value cards from Tokyo to Nice — read from the physical card, or from a supported Apple Wallet card in Service Mode. Coverage keeps growing.',
+      kicker: 'Network', title: ['Seven regions.', 'One reader.'],
+      intro: 'Transit and stored-value cards from Tokyo to Lisbon — read from the physical card, or from a supported Apple Wallet card in Service Mode. Coverage keeps growing.',
       regions: [
         { name: 'Japan', detail: 'Transit IC cards nationwide, plus nanaco, Rakuten Edy and WAON e-money.', cards: ['Suica', 'PASMO', 'ICOCA', 'Kitaca', 'TOICA', 'manaca', 'SUGOCA', 'nimoca', 'Hayakaken', 'SAPICA', 'IruCa', 'OKICA', 'nanaco', 'Rakuten Edy', 'WAON'] },
         { name: 'South Korea', detail: 'T-money, EZL and Cashbee, plus compatible KS X 6924 cards.', cards: ['T-money', 'EZL', 'Cashbee'] },
         { name: 'China', detail: 'More than 300 T-Union city cards, plus City Union card families.', cards: ['Beijing', 'Shanghai', 'Guangzhou', 'Shenzhen', '300+ cities'] },
         { name: 'Hong Kong', detail: 'Octopus, with its stored balance and available card details.', cards: ['Octopus'] },
         { name: 'Mongolia', detail: 'U-Money cards, with Ulaanbaatar station data.', cards: ['U-Money'] },
-        { name: 'France', detail: 'Lignes d’Azur cards in Nice, using Calypso.', cards: ['Lignes d’Azur'] }
+        { name: 'France', detail: 'Lignes d’Azur cards in Nice, using Calypso.', cards: ['Lignes d’Azur'] },
+        { name: 'Portugal', detail: 'navegante and Lisboa Viva cards in Lisbon: Zapping balance and recent trips.', cards: ['navegante', 'Lisboa Viva'] }
       ],
       note: 'Readable balances and history depend on the card, its issuer and the data stored on it. Support can vary between card versions.'
     },
@@ -166,7 +167,7 @@ export const locales = {
   zh: {
     name: '简体中文', htmlLang: 'zh-Hans', store: 'cn', ogLocale: 'zh_CN',
     title: 'CardBal — 你的交通卡，一读就懂。',
-    description: '用 iPhone 或 Android 手机读取支持的交通卡与储值卡：查看余额、乘车记录、卡片详情与原始数据，覆盖日本、韩国、中国大陆、中国香港、蒙古国和法国，也能读取另一台设备上开启服务模式的 Apple 钱包交通卡。',
+    description: '用 iPhone 或 Android 手机读取支持的交通卡与储值卡：查看余额、乘车记录、卡片详情与原始数据，覆盖日本、韩国、中国大陆、中国香港、蒙古国、法国和葡萄牙，也能读取另一台设备上开启服务模式的 Apple 钱包交通卡。',
     skip: '跳至正文', language: '选择语言', menu: '菜单', navLabel: '页面导航',
     nav: ['读卡解析', '专业功能', '支持的卡', '服务模式', '常见问题'],
     download: '下载 CardBal', appStore: ['下载于', 'App Store'], googlePlay: ['下载于', 'Google Play'],
@@ -181,8 +182,8 @@ export const locales = {
     board: {
       label: '正在读取', note: 'CardBal 支持的部分卡片。',
       columns: ['卡片', '标准', '地区'],
-      sr: '支持的卡片包括 Suica、PASMO、ICOCA、乐天 Edy、T-money、Cashbee、八达通、交通联合城市卡、U-Money 和 Lignes d’Azur。',
-      stats: [['6', '个地区'], ['4', '种卡片标准'], ['300+', '交通联合城市卡'], ['iOS + Android', '支持 NFC 的手机']]
+      sr: '支持的卡片包括 Suica、PASMO、ICOCA、乐天 Edy、T-money、Cashbee、八达通、交通联合城市卡、U-Money、Lignes d’Azur 和 navegante。',
+      stats: [['7', '个地区'], ['4', '种卡片标准'], ['300+', '交通联合城市卡'], ['iOS + Android', '支持 NFC 的手机']]
     },
     read: {
       kicker: '读卡解析', title: ['从余额，', '到字节。'],
@@ -219,15 +220,16 @@ export const locales = {
       source: { title: '开放源代码。', body: '每种卡片如何解析，一目了然。CardBal 的源代码在 GitHub 上公开。', link: '查看源代码' }
     },
     cards: {
-      kicker: '支持网络', title: ['六个地区，', '一个读卡器。'],
-      intro: '从东京到尼斯的交通卡与储值卡，既能读取实体卡，也能读取服务模式下受支持的 Apple 钱包交通卡。支持范围还在持续扩大。',
+      kicker: '支持网络', title: ['七个地区，', '一个读卡器。'],
+      intro: '从东京到里斯本的交通卡与储值卡，既能读取实体卡，也能读取服务模式下受支持的 Apple 钱包交通卡。支持范围还在持续扩大。',
       regions: [
         { name: '日本', detail: '全国交通 IC 卡，以及 nanaco、乐天 Edy 和 WAON 电子钱包。', cards: ['Suica', 'PASMO', 'ICOCA', 'Kitaca', 'TOICA', 'manaca', 'SUGOCA', 'nimoca', 'Hayakaken', 'SAPICA', 'IruCa', 'OKICA', 'nanaco', '乐天 Edy', 'WAON'] },
         { name: '韩国', detail: 'T-money、EZL、Cashbee，以及兼容 KS X 6924 的卡片。', cards: ['T-money', 'EZL', 'Cashbee'] },
         { name: '中国大陆', detail: '300 多种交通联合城市卡，以及城市一卡通卡片体系。', cards: ['北京', '上海', '广州', '深圳', '300+ 城市'] },
         { name: '中国香港', detail: '八达通，可读取卡内余额及可用的卡片详情。', cards: ['八达通'] },
         { name: '蒙古国', detail: 'U-Money 卡与乌兰巴托公共交通站点数据。', cards: ['U-Money'] },
-        { name: '法国', detail: '尼斯 Lignes d’Azur 卡，基于 Calypso 标准。', cards: ['Lignes d’Azur'] }
+        { name: '法国', detail: '尼斯 Lignes d’Azur 卡，基于 Calypso 标准。', cards: ['Lignes d’Azur'] },
+        { name: '葡萄牙', detail: '里斯本的 navegante 与 Lisboa Viva 卡：Zapping 余额与近期乘车记录。', cards: ['navegante', 'Lisboa Viva'] }
       ],
       note: '可读取的余额与记录取决于卡片类型、发卡方和卡内存储的数据。不同卡片版本的支持情况可能有所不同。'
     },
@@ -328,7 +330,7 @@ export const locales = {
   ja: {
     name: '日本語', htmlLang: 'ja', store: 'jp', ogLocale: 'ja_JP',
     title: 'CardBal — 交通系ICカードを、読み解く。',
-    description: 'iPhoneやAndroidスマートフォンで対応する交通系ICカードや電子マネーを読み取り。残高、利用履歴、カード情報、生データまで確認できます。日本、韓国、中国本土、香港、モンゴル、フランスのカードに対応。別のデバイスのAppleウォレットにあるカードも、ヘルプモードで読み取れます。',
+    description: 'iPhoneやAndroidスマートフォンで対応する交通系ICカードや電子マネーを読み取り。残高、利用履歴、カード情報、生データまで確認できます。日本、韓国、中国本土、香港、モンゴル、フランス、ポルトガルのカードに対応。別のデバイスのAppleウォレットにあるカードも、ヘルプモードで読み取れます。',
     skip: '本文へ移動', language: '言語を選択', menu: 'メニュー', navLabel: 'ページ内の項目',
     nav: ['読み取り', 'プロ機能', '対応カード', 'ヘルプモード', 'よくある質問'],
     download: 'CardBalを入手', appStore: ['ダウンロードは', 'App Store'], googlePlay: ['ダウンロードは', 'Google Play'],
@@ -343,8 +345,8 @@ export const locales = {
     board: {
       label: '読み取り中', note: 'CardBalが対応するカードの一部です。',
       columns: ['カード', '規格', '地域'],
-      sr: '対応カードには、Suica、PASMO、ICOCA、楽天Edy、T-money、Cashbee、Octopus、交通聯合の都市カード、U-Money、Lignes d’Azurなどがあります。',
-      stats: [['6', 'つの地域'], ['4', '種類のカード規格'], ['300+', '交通聯合の都市カード'], ['iOS + Android', 'NFC対応スマホ']]
+      sr: '対応カードには、Suica、PASMO、ICOCA、楽天Edy、T-money、Cashbee、Octopus、交通聯合の都市カード、U-Money、Lignes d’Azur、naveganteなどがあります。',
+      stats: [['7', 'つの地域'], ['4', '種類のカード規格'], ['300+', '交通聯合の都市カード'], ['iOS + Android', 'NFC対応スマホ']]
     },
     read: {
       kicker: '読み取りの中身', title: ['残高から、', 'バイトまで。'],
@@ -381,15 +383,16 @@ export const locales = {
       source: { title: 'オープンソース。', body: 'カードごとの解析方法を、そのまま確認できます。CardBalのソースコードはGitHubで公開しています。', link: 'ソースコードを見る' }
     },
     cards: {
-      kicker: '対応ネットワーク', title: ['6つの地域を、', 'ひとつのリーダーで。'],
-      intro: '東京からニースまで、交通系ICカードと電子マネーに対応。実物のカードはもちろん、ヘルプモードにした対応Appleウォレットのカードも読み取れます。対応範囲は、今も広がっています。',
+      kicker: '対応ネットワーク', title: ['7つの地域を、', 'ひとつのリーダーで。'],
+      intro: '東京からリスボンまで、交通系ICカードと電子マネーに対応。実物のカードはもちろん、ヘルプモードにした対応Appleウォレットのカードも読み取れます。対応範囲は、今も広がっています。',
       regions: [
         { name: '日本', detail: '全国の交通系ICカードに加え、nanaco、楽天Edy、WAONの電子マネーにも対応。', cards: ['Suica', 'PASMO', 'ICOCA', 'Kitaca', 'TOICA', 'manaca', 'SUGOCA', 'nimoca', 'はやかけん', 'SAPICA', 'IruCa', 'OKICA', 'nanaco', '楽天Edy', 'WAON'] },
         { name: '韓国', detail: 'T-money、EZL、Cashbee、およびKS X 6924互換カード。', cards: ['T-money', 'EZL', 'Cashbee'] },
         { name: '中国本土', detail: '300種類以上の交通聯合（China T-Union）都市カードと、City Unionのカード。', cards: ['北京', '上海', '広州', '深圳', '300+都市'] },
         { name: '香港', detail: 'オクトパス（八達通）。保存された残高や読み取り可能なカード情報を確認できます。', cards: ['Octopus'] },
         { name: 'モンゴル', detail: 'U-Moneyカードと、ウランバートルの駅データ。', cards: ['U-Money'] },
-        { name: 'フランス', detail: 'ニースのLignes d’Azurカード。Calypso方式に対応。', cards: ['Lignes d’Azur'] }
+        { name: 'フランス', detail: 'ニースのLignes d’Azurカード。Calypso方式に対応。', cards: ['Lignes d’Azur'] },
+        { name: 'ポルトガル', detail: 'リスボンのnavegante・Lisboa Vivaカード。Zapping残高と最近の利用履歴。', cards: ['navegante', 'Lisboa Viva'] }
       ],
       note: '読み取れる残高や履歴は、カードの種類・発行元・カードに保存された情報によって異なります。同じ名称でも、カードのバージョンによって対応状況が異なる場合があります。'
     },
@@ -490,7 +493,7 @@ export const locales = {
   ko: {
     name: '한국어', htmlLang: 'ko', store: 'kr', ogLocale: 'ko_KR',
     title: 'CardBal — 교통카드, 제대로 읽다.',
-    description: 'iPhone이나 Android 폰으로 지원되는 교통카드와 선불카드를 읽어보세요. 일본, 한국, 중국 본토, 홍콩, 몽골, 프랑스 카드의 잔액, 이용 내역, 카드 정보, 원시 데이터를 확인하고, 다른 기기의 Apple 지갑 카드도 서비스 모드에서 읽을 수 있어요.',
+    description: 'iPhone이나 Android 폰으로 지원되는 교통카드와 선불카드를 읽어보세요. 일본, 한국, 중국 본토, 홍콩, 몽골, 프랑스, 포르투갈 카드의 잔액, 이용 내역, 카드 정보, 원시 데이터를 확인하고, 다른 기기의 Apple 지갑 카드도 서비스 모드에서 읽을 수 있어요.',
     skip: '본문으로 이동', language: '언어 선택', menu: '메뉴', navLabel: '페이지 섹션',
     nav: ['읽기', '프로 기능', '지원 카드', '서비스 모드', '자주 묻는 질문'],
     download: 'CardBal 다운로드', appStore: ['다운로드하기', 'App Store'], googlePlay: ['다운로드하기', 'Google Play'],
@@ -505,8 +508,8 @@ export const locales = {
     board: {
       label: '지금 읽는 중', note: 'CardBal이 지원하는 카드 중 일부예요.',
       columns: ['카드', '규격', '지역'],
-      sr: '지원 카드에는 Suica, PASMO, ICOCA, 라쿠텐 Edy, 티머니, 캐시비, 옥토퍼스, 중국 교통연합 도시 카드, U-Money, Lignes d’Azur 등이 있어요.',
-      stats: [['6', '개 지역'], ['4', '가지 카드 규격'], ['300+', '교통연합 도시 카드'], ['iOS + Android', 'NFC 지원 휴대폰']]
+      sr: '지원 카드에는 Suica, PASMO, ICOCA, 라쿠텐 Edy, 티머니, 캐시비, 옥토퍼스, 중국 교통연합 도시 카드, U-Money, Lignes d’Azur, navegante 등이 있어요.',
+      stats: [['7', '개 지역'], ['4', '가지 카드 규격'], ['300+', '교통연합 도시 카드'], ['iOS + Android', 'NFC 지원 휴대폰']]
     },
     read: {
       kicker: '읽기의 모든 것', title: ['잔액부터,', '바이트까지.'],
@@ -543,15 +546,16 @@ export const locales = {
       source: { title: '오픈 소스.', body: '카드별 해석 방식을 직접 확인해 보세요. CardBal의 소스 코드는 GitHub에 공개되어 있어요.', link: '소스 코드 보기' }
     },
     cards: {
-      kicker: '지원 네트워크', title: ['여섯 개 지역,', '하나의 리더.'],
-      intro: '도쿄부터 니스까지, 교통카드와 선불카드를 읽어요. 실물 카드는 물론, 서비스 모드의 지원 Apple 지갑 카드도 읽을 수 있어요. 지원 범위는 계속 넓어지고 있어요.',
+      kicker: '지원 네트워크', title: ['일곱 개 지역,', '하나의 리더.'],
+      intro: '도쿄부터 리스본까지, 교통카드와 선불카드를 읽어요. 실물 카드는 물론, 서비스 모드의 지원 Apple 지갑 카드도 읽을 수 있어요. 지원 범위는 계속 넓어지고 있어요.',
       regions: [
         { name: '일본', detail: '전국의 교통 IC 카드와 nanaco, 라쿠텐 Edy, WAON 전자화폐.', cards: ['Suica', 'PASMO', 'ICOCA', 'Kitaca', 'TOICA', 'manaca', 'SUGOCA', 'nimoca', 'Hayakaken', 'SAPICA', 'IruCa', 'OKICA', 'nanaco', '라쿠텐 Edy', 'WAON'] },
         { name: '대한민국', detail: '티머니, EZL, 캐시비 및 KS X 6924 호환 카드.', cards: ['티머니', 'EZL', '캐시비'] },
         { name: '중국 본토', detail: '300종 이상의 교통연합(T-Union) 도시 카드와 City Union 계열 카드.', cards: ['베이징', '상하이', '광저우', '선전', '300+ 도시'] },
         { name: '홍콩', detail: '옥토퍼스 카드의 저장 잔액과 확인 가능한 카드 정보.', cards: ['옥토퍼스'] },
         { name: '몽골', detail: 'U-Money 카드와 울란바토르 정류장 데이터.', cards: ['U-Money'] },
-        { name: '프랑스', detail: 'Calypso 방식을 사용하는 니스의 Lignes d’Azur 카드.', cards: ['Lignes d’Azur'] }
+        { name: '프랑스', detail: 'Calypso 방식을 사용하는 니스의 Lignes d’Azur 카드.', cards: ['Lignes d’Azur'] },
+        { name: '포르투갈', detail: '리스본의 navegante·Lisboa Viva 카드: Zapping 잔액과 최근 이용 내역.', cards: ['navegante', 'Lisboa Viva'] }
       ],
       note: '읽을 수 있는 잔액과 이용 내역은 카드, 발급사, 카드에 저장된 데이터에 따라 달라요. 카드 버전에 따라 지원 여부도 다를 수 있어요.'
     },
@@ -652,7 +656,7 @@ export const locales = {
   mn: {
     name: 'Монгол', htmlLang: 'mn', store: 'mn', ogLocale: 'mn_MN',
     title: 'CardBal — Тээврийн картаа нарийн уншаарай.',
-    description: 'iPhone эсвэл Android утсаараа дэмжигдэх тээврийн болон урьдчилсан төлбөрт картаа уншуулаарай. Япон, Өмнөд Солонгос, Хятад, Хонконг, Монгол, Францын картын үлдэгдэл, зорчилтын түүх, картын мэдээлэл, түүхий өгөгдлийг харах боломжтой. Өөр төхөөрөмжийн Apple Wallet дахь картыг үйлчилгээний горимд ч уншина.',
+    description: 'iPhone эсвэл Android утсаараа дэмжигдэх тээврийн болон урьдчилсан төлбөрт картаа уншуулаарай. Япон, Өмнөд Солонгос, Хятад, Хонконг, Монгол, Франц, Португалийн картын үлдэгдэл, зорчилтын түүх, картын мэдээлэл, түүхий өгөгдлийг харах боломжтой. Өөр төхөөрөмжийн Apple Wallet дахь картыг үйлчилгээний горимд ч уншина.',
     skip: 'Үндсэн хэсэг рүү очих', language: 'Хэл сонгох', menu: 'Цэс', navLabel: 'Хуудасны хэсгүүд',
     nav: ['Уншилт', 'Pro', 'Картууд', 'Үйлчилгээний горим', 'Түгээмэл асуулт'],
     download: 'CardBal татах', appStore: ['Татах', 'App Store'], googlePlay: ['Татах', 'Google Play'],
@@ -667,8 +671,8 @@ export const locales = {
     board: {
       label: 'Одоо уншиж байна', note: 'CardBal-ын дэмждэг картуудын заримаас.',
       columns: ['Карт', 'Стандарт', 'Бүс'],
-      sr: 'Дэмжигдэх картуудад Suica, PASMO, ICOCA, Rakuten Edy, T-money, Cashbee, Octopus, T-Union хотын картууд, U-Money, Lignes d’Azur зэрэг багтана.',
-      stats: [['6', 'бүс нутаг'], ['4', 'картын стандарт'], ['300+', 'T-Union хотын карт'], ['iOS + Android', 'NFC-тэй утас']]
+      sr: 'Дэмжигдэх картуудад Suica, PASMO, ICOCA, Rakuten Edy, T-money, Cashbee, Octopus, T-Union хотын картууд, U-Money, Lignes d’Azur, navegante зэрэг багтана.',
+      stats: [['7', 'бүс нутаг'], ['4', 'картын стандарт'], ['300+', 'T-Union хотын карт'], ['iOS + Android', 'NFC-тэй утас']]
     },
     read: {
       kicker: 'Уншилтын дотор', title: ['Үлдэгдлээс', 'байт хүртэл.'],
@@ -705,15 +709,16 @@ export const locales = {
       source: { title: 'Нээлттэй эх код.', body: 'Картын төрөл бүрийг хэрхэн тайлдгийг яг таг хараарай. CardBal-ын эх код GitHub дээр нээлттэй.', link: 'Эх кодыг харах' }
     },
     cards: {
-      kicker: 'Сүлжээ', title: ['Зургаан бүс нутаг.', 'Нэг уншигч.'],
-      intro: 'Токиогоос Ницца хүртэлх тээврийн болон урьдчилсан төлбөрт картууд — биет картаас, эсвэл үйлчилгээний горимд байгаа дэмжигдэх Apple Wallet картаас уншина. Дэмжлэгийн хүрээ өргөжсөөр байна.',
+      kicker: 'Сүлжээ', title: ['Долоон бүс нутаг.', 'Нэг уншигч.'],
+      intro: 'Токиогоос Лиссабон хүртэлх тээврийн болон урьдчилсан төлбөрт картууд — биет картаас, эсвэл үйлчилгээний горимд байгаа дэмжигдэх Apple Wallet картаас уншина. Дэмжлэгийн хүрээ өргөжсөөр байна.',
       regions: [
         { name: 'Япон', detail: 'Улс даяарх тээврийн IC картууд, мөн nanaco, Rakuten Edy, WAON цахим мөнгө.', cards: ['Suica', 'PASMO', 'ICOCA', 'Kitaca', 'TOICA', 'manaca', 'SUGOCA', 'nimoca', 'Hayakaken', 'SAPICA', 'IruCa', 'OKICA', 'nanaco', 'Rakuten Edy', 'WAON'] },
         { name: 'Өмнөд Солонгос', detail: 'T-money, EZL, Cashbee болон KS X 6924-тэй нийцтэй картууд.', cards: ['T-money', 'EZL', 'Cashbee'] },
         { name: 'Хятад', detail: '300 гаруй T-Union хотын карт болон City Union системийн картууд.', cards: ['Бээжин', 'Шанхай', 'Гуанжоу', 'Шэньжэнь', '300+ хот'] },
         { name: 'Хонконг', detail: 'Octopus картын хадгалсан үлдэгдэл болон боломжтой мэдээлэл.', cards: ['Octopus'] },
         { name: 'Монгол', detail: 'U-Money карт болон Улаанбаатарын буудлын өгөгдөл.', cards: ['U-Money'] },
-        { name: 'Франц', detail: 'Calypso ашигладаг Ниццагийн Lignes d’Azur картууд.', cards: ['Lignes d’Azur'] }
+        { name: 'Франц', detail: 'Calypso ашигладаг Ниццагийн Lignes d’Azur картууд.', cards: ['Lignes d’Azur'] },
+        { name: 'Португал', detail: 'Лиссабоны navegante болон Lisboa Viva картууд: Zapping үлдэгдэл ба сүүлийн зорчилтууд.', cards: ['navegante', 'Lisboa Viva'] }
       ],
       note: 'Уншигдах үлдэгдэл, түүх нь карт, карт гаргагч болон картанд хадгалсан өгөгдлөөс хамаарна. Картын хувилбараас шалтгаалан дэмжлэг өөр байж болно.'
     },

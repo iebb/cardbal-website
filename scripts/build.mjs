@@ -47,7 +47,8 @@ const regions = [
   { code: 'cn', std: 'T-Union', open: true },
   { code: 'hk', std: 'FeliCa' },
   { code: 'mn', std: 'KS X 6924' },
-  { code: 'fr', std: 'Calypso' }
+  { code: 'fr', std: 'Calypso' },
+  { code: 'pt', std: 'Calypso' }
 ];
 // Callouts on the wallet screenshot; y is the card row's position as a share of the screenshot height.
 const annotations = [
