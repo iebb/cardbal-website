@@ -124,12 +124,12 @@ export const locales = {
     },
     privacy: {
       pageTitle: 'Privacy Policy — CardBal',
-      description: 'How the CardBal app for iPhone and Android handles your information: what stays on your phone, what it sends off the phone, and what you can switch off.',
-      kicker: 'CardBal for iPhone and Android', title: ['Privacy', 'Policy'],
+      description: 'How the CardBal app for iPhone, Mac and Android handles your information: what stays on your phone, what it sends off the phone, and what you can switch off.',
+      kicker: 'CardBal for iPhone, Mac and Android', title: ['Privacy', 'Policy'],
       updated: 'Last updated: {date}', date: '17 November 2026',
-      intro: 'This policy explains how the CardBal app handles your information on iPhone and Android. CardBal is published by Kitta Ltd.',
+      intro: 'This policy explains how the CardBal app handles your information on iPhone, Mac and Android. CardBal is published by Kitta Ltd.',
       sections: [
-        { title: 'Most of CardBal works on your phone', body: ['CardBal reads transit cards with your phone’s NFC. Balances, trips, station names and card details are decoded on the phone and shown there. The sections below list each case where CardBal sends something off the phone, and what you can switch off.'] },
+        { title: 'Most of CardBal works on your phone', body: ['CardBal reads transit cards with your phone’s NFC. Balances, trips, station names and card details are decoded on the phone and shown there. The sections below list each case where CardBal sends something off the phone, and what you can switch off. On a Mac, CardBal reads cards with a USB NFC reader, and “phone” in this policy also means your Mac.'] },
         { title: 'Online checks with card operators', body: [
           'Some cards can’t be fully read on the phone alone. For these, CardBal connects your card to its operator’s online service to finish the read, and passes data between the two. What the operator receives and keeps is covered by the operator’s own privacy policy, not this one. CardBal saves only the result on your phone.',
           'For Octopus cards this is Octopus Online. It’s on by default. It runs the first time you scan a card, and on every scan of cards that also hold a mainland China balance, so the exchange rate stays current. You can turn it off in Settings › Privacy. Unless you turn on Allow Card Updates, CardBal blocks any change to the data stored on your card.',
@@ -148,11 +148,11 @@ export const locales = {
           'If CardBal crashes, it sends a crash report the next time you open it. A report includes where in the app the crash happened, the app version, your device model, system version and language, and a random ID created when CardBal is installed, used only to count how many installs a crash affects. There is no switch for this in the app.',
           'Both go to AirBuild (apps.air.build), the service we use to receive them. They aren’t linked to your identity and aren’t used for tracking.'
         ] },
-        { title: 'App analytics (iPhone)', body: ['CardBal uses Google Firebase Analytics to count installs, sessions and screens viewed. Firebase receives an app-instance ID, device and system details, language, and an approximate location derived from your IP address. CardBal doesn’t send your cards or trips to Firebase and doesn’t use the advertising identifier. Google processes this data under its own privacy policy. There is no switch for this in the app.'] },
+        { title: 'App analytics (iPhone and Mac)', body: ['CardBal uses Google Firebase Analytics to count installs, sessions and screens viewed. Firebase receives an app-instance ID, device and system details, language, and an approximate location derived from your IP address. CardBal doesn’t send your cards or trips to Firebase and doesn’t use the advertising identifier. Google processes this data under its own privacy policy. There is no switch for this in the app.'] },
         { title: 'Card artwork', body: ['CardBal downloads card pictures from faces.cardb.al, or from GitHub mirrors (cdn.jsdelivr.net, raw.githubusercontent.com) when it’s unreachable. The matching picture is chosen on the phone, and no card data is sent. The server sees only which picture was requested and your IP address.'] },
-        { title: 'Maps', body: ['On iPhone, maps come from Apple Maps. On Android, map tiles come from OpenStreetMap. These providers see which areas are shown and your IP address.'] },
+        { title: 'Maps', body: ['On iPhone and Mac, maps come from Apple Maps. On Android, map tiles come from OpenStreetMap. These providers see which areas are shown and your IP address.'] },
         { title: 'Backups and sync', body: [[
-          'iPhone: when iCloud is on, CardBal keeps a copy of your saved cards (including card numbers, balances, trips and Octopus numbers) and card pictures in your iCloud account. The CardBal folder is visible in the Files app.',
+          'iPhone and Mac: when iCloud is on, CardBal keeps a copy of your saved cards (including card numbers, balances, trips and Octopus numbers) and card pictures in your iCloud account. The CardBal folder is visible in the Files app, or in iCloud Drive on a Mac.',
           'Android: Android’s own backup may copy CardBal’s data to your Google account.',
           'You can also export, import and share backups yourself.'
         ]] },
@@ -292,12 +292,12 @@ export const locales = {
     },
     privacy: {
       pageTitle: '隐私政策 — CardBal',
-      description: '了解 iPhone 与 Android 版 CardBal 如何处理你的信息：哪些内容留在手机上，哪些会发送到手机之外，以及哪些功能可以关闭。',
-      kicker: 'iPhone 与 Android 版 CardBal', title: ['隐私', '政策'],
+      description: '了解 iPhone、Mac 与 Android 版 CardBal 如何处理你的信息：哪些内容留在手机上，哪些会发送到手机之外，以及哪些功能可以关闭。',
+      kicker: 'iPhone、Mac 与 Android 版 CardBal', title: ['隐私', '政策'],
       updated: '最后更新：{date}', date: '2026 年 11 月 17 日',
-      intro: '本政策说明 CardBal 应用在 iPhone 和 Android 上如何处理你的信息。CardBal 由 Kitta Ltd. 发布。',
+      intro: '本政策说明 CardBal 应用在 iPhone、Mac 和 Android 上如何处理你的信息。CardBal 由 Kitta Ltd. 发布。',
       sections: [
-        { title: 'CardBal 的大部分功能都在手机上完成', body: ['CardBal 通过手机的 NFC 读取交通卡。余额、行程、站名和卡片详情都在手机上解析并显示。以下各节逐一列出 CardBal 会把内容发送到手机之外的每种情况，以及你可以关闭哪些功能。'] },
+        { title: 'CardBal 的大部分功能都在手机上完成', body: ['CardBal 通过手机的 NFC 读取交通卡。余额、行程、站名和卡片详情都在手机上解析并显示。以下各节逐一列出 CardBal 会把内容发送到手机之外的每种情况，以及你可以关闭哪些功能。在 Mac 上，CardBal 通过 USB NFC 读卡器读取卡片，本政策中的“手机”也指你的 Mac。'] },
         { title: '与卡片运营方的在线查询', body: [
           '有些卡片无法仅靠手机完整读取。对于这类卡片，CardBal 会将你的卡片连接到其运营方的在线服务以完成读取，并在两者之间传递数据。运营方接收和保存哪些数据，适用运营方自己的隐私政策，而非本政策。CardBal 只在你的手机上保存读取结果。',
           '对于八达通卡，这项功能是“八达通在线查询”，默认开启。它会在你首次扫描某张卡时运行；对于同时存有中国大陆余额的卡片，每次扫描都会运行，以保持汇率最新。你可以在“设置 › 隐私”中将其关闭。除非你开启“允许更新卡片”，否则 CardBal 会阻止对卡内存储数据的任何更改。',
@@ -316,11 +316,11 @@ export const locales = {
           '如果 CardBal 崩溃，它会在你下次打开应用时发送崩溃报告。报告包含崩溃发生在应用中的位置、应用版本、设备型号、系统版本和语言，以及安装 CardBal 时生成的随机 ID，该 ID 仅用于统计某次崩溃影响了多少个安装。应用中没有关闭此功能的开关。',
           '两者都会发送至 AirBuild（apps.air.build），这是我们用来接收反馈和崩溃报告的服务。它们不会与你的身份关联，也不会用于跟踪。'
         ] },
-        { title: '应用分析（iPhone）', body: ['CardBal 使用 Google Firebase Analytics 统计安装量、会话数和浏览过的界面。Firebase 会收到应用实例 ID、设备与系统信息、语言，以及根据你的 IP 地址推断出的大致位置。CardBal 不会将你的卡片或行程发送给 Firebase，也不使用广告标识符。Google 依据其自身的隐私政策处理这些数据。应用中没有关闭此功能的开关。'] },
+        { title: '应用分析（iPhone 和 Mac）', body: ['CardBal 使用 Google Firebase Analytics 统计安装量、会话数和浏览过的界面。Firebase 会收到应用实例 ID、设备与系统信息、语言，以及根据你的 IP 地址推断出的大致位置。CardBal 不会将你的卡片或行程发送给 Firebase，也不使用广告标识符。Google 依据其自身的隐私政策处理这些数据。应用中没有关闭此功能的开关。'] },
         { title: '卡面图片', body: ['CardBal 从 faces.cardb.al 下载卡面图片；无法访问时，则从 GitHub 镜像（cdn.jsdelivr.net、raw.githubusercontent.com）下载。匹配哪张图片在手机上决定，不会发送任何卡片数据。服务器只能看到请求了哪张图片以及你的 IP 地址。'] },
-        { title: '地图', body: ['在 iPhone 上，地图来自 Apple 地图。在 Android 上，地图图块来自 OpenStreetMap。这些服务提供方能看到显示了哪些区域以及你的 IP 地址。'] },
+        { title: '地图', body: ['在 iPhone 和 Mac 上，地图来自 Apple 地图。在 Android 上，地图图块来自 OpenStreetMap。这些服务提供方能看到显示了哪些区域以及你的 IP 地址。'] },
         { title: '备份与同步', body: [[
-          'iPhone：开启 iCloud 时，CardBal 会在你的 iCloud 账户中保留一份已保存卡片（包括卡号、余额、行程和八达通号码）及卡面图片的副本。CardBal 文件夹可在“文件”App 中看到。',
+          'iPhone 和 Mac：开启 iCloud 时，CardBal 会在你的 iCloud 账户中保留一份已保存卡片（包括卡号、余额、行程和八达通号码）及卡面图片的副本。CardBal 文件夹可在“文件”App 中看到，在 Mac 上则位于 iCloud 云盘中。',
           'Android：Android 自带的备份功能可能会将 CardBal 的数据复制到你的 Google 账号。',
           '你也可以自行导出、导入和分享备份。'
         ]] },
@@ -460,12 +460,12 @@ export const locales = {
     },
     privacy: {
       pageTitle: 'プライバシーポリシー — CardBal',
-      description: 'iPhone・Android版CardBalアプリが情報をどのように扱うかをご説明します。端末内で完結する処理、端末の外に送信される情報、オフにできる機能について。',
-      kicker: 'iPhone・Android版CardBal', title: ['プライバシー', 'ポリシー'],
+      description: 'iPhone・Mac・Android版CardBalアプリが情報をどのように扱うかをご説明します。端末内で完結する処理、端末の外に送信される情報、オフにできる機能について。',
+      kicker: 'iPhone・Mac・Android版CardBal', title: ['プライバシー', 'ポリシー'],
       updated: '最終更新日：{date}', date: '2026年11月17日',
-      intro: 'このポリシーでは、iPhoneとAndroidでCardBalアプリが情報をどのように扱うかを説明します。CardBalはKitta Ltd.が提供しています。',
+      intro: 'このポリシーでは、iPhone、Mac、AndroidでCardBalアプリが情報をどのように扱うかを説明します。CardBalはKitta Ltd.が提供しています。',
       sections: [
-        { title: 'CardBalのほとんどの処理は端末内で行われます', body: ['CardBalは、スマートフォンのNFCで交通系ICカードを読み取ります。残高、利用履歴、駅名、カード情報は端末内で解析され、端末上に表示されます。以下では、CardBalが端末の外に何かを送信するすべてのケースと、オフにできる機能を説明します。'] },
+        { title: 'CardBalのほとんどの処理は端末内で行われます', body: ['CardBalは、スマートフォンのNFCで交通系ICカードを読み取ります。残高、利用履歴、駅名、カード情報は端末内で解析され、端末上に表示されます。以下では、CardBalが端末の外に何かを送信するすべてのケースと、オフにできる機能を説明します。Macでは、CardBalはUSB接続のNFCリーダーでカードを読み取ります。このポリシーの「端末」「スマートフォン」にはMacも含まれます。'] },
         { title: 'カード事業者へのオンライン照会', body: [
           '一部のカードは、端末だけでは完全に読み取れません。こうしたカードでは、CardBalがカードを事業者のオンラインサービスに接続して読み取りを完了し、両者の間でデータを受け渡します。事業者が受け取り、保管する情報は、本ポリシーではなく、事業者自身のプライバシーポリシーの対象です。CardBalが端末に保存するのは、読み取りの結果のみです。',
           'Octopusカードの場合、これは「オクトパスのオンライン照会」です。初期設定ではオンになっています。カードを初めてスキャンしたときに実行されるほか、中国本土の残高も持つカードでは、為替レートを最新に保つためにスキャンのたびに実行されます。「設定 › プライバシー」でオフにできます。「カードの更新を許可」をオンにしない限り、CardBalはカードに保存されたデータへの変更をすべてブロックします。',
@@ -484,11 +484,11 @@ export const locales = {
           'CardBalがクラッシュした場合、次にアプリを開いたときにクラッシュレポートを送信します。レポートには、アプリ内でクラッシュが起きた場所、アプリのバージョン、デバイスの機種、システムのバージョン、言語、そしてCardBalのインストール時に作られるランダムなIDが含まれます。このIDは、クラッシュの影響を受けたインストール数を数えるためだけに使います。アプリにはこの機能をオフにする設定はありません。',
           'どちらも、CardBalがフィードバックとクラッシュレポートの受信に使っているサービス、AirBuild（apps.air.build）に送られます。あなた個人と結び付けられることはなく、トラッキングにも使用しません。'
         ] },
-        { title: 'アプリの利用状況の分析（iPhone）', body: ['CardBalは、インストール数、セッション数、表示された画面を集計するためにGoogle Firebase Analyticsを使用しています。Firebaseが受け取るのは、アプリインスタンスID、デバイスとシステムの情報、言語、IPアドレスから推定したおおよその位置です。CardBalはカードや利用履歴をFirebaseに送信せず、広告識別子も使用しません。Googleは、このデータを同社のプライバシーポリシーに基づいて処理します。アプリにはこの機能をオフにする設定はありません。'] },
+        { title: 'アプリの利用状況の分析（iPhone・Mac）', body: ['CardBalは、インストール数、セッション数、表示された画面を集計するためにGoogle Firebase Analyticsを使用しています。Firebaseが受け取るのは、アプリインスタンスID、デバイスとシステムの情報、言語、IPアドレスから推定したおおよその位置です。CardBalはカードや利用履歴をFirebaseに送信せず、広告識別子も使用しません。Googleは、このデータを同社のプライバシーポリシーに基づいて処理します。アプリにはこの機能をオフにする設定はありません。'] },
         { title: 'カードの画像', body: ['CardBalはカードの画像をfaces.cardb.alから、接続できない場合はGitHubのミラー（cdn.jsdelivr.net、raw.githubusercontent.com）からダウンロードします。どの画像を使うかは端末内で判定し、カードのデータは送信しません。サーバーにわかるのは、リクエストされた画像とIPアドレスのみです。'] },
-        { title: '地図', body: ['iPhoneではAppleマップの地図を使用します。AndroidではOpenStreetMapの地図タイルを使用します。これらの提供元には、表示している地域とIPアドレスがわかります。'] },
+        { title: '地図', body: ['iPhoneとMacではAppleマップの地図を使用します。AndroidではOpenStreetMapの地図タイルを使用します。これらの提供元には、表示している地域とIPアドレスがわかります。'] },
         { title: 'バックアップと同期', body: [[
-          'iPhone：iCloudがオンの場合、CardBalは保存したカード（カード番号、残高、利用履歴、Octopusの番号を含む）とカードの画像のコピーをiCloudアカウントに保管します。CardBalフォルダは「ファイル」Appで確認できます。',
+          'iPhone・Mac：iCloudがオンの場合、CardBalは保存したカード（カード番号、残高、利用履歴、Octopusの番号を含む）とカードの画像のコピーをiCloudアカウントに保管します。CardBalフォルダは「ファイル」App（MacではiCloud Drive）で確認できます。',
           'Android：Androidの標準のバックアップ機能により、CardBalのデータがGoogleアカウントにコピーされる場合があります。',
           'バックアップは、自分で書き出し、読み込み、共有することもできます。'
         ]] },
@@ -628,12 +628,12 @@ export const locales = {
     },
     privacy: {
       pageTitle: '개인정보 처리방침 — CardBal',
-      description: 'iPhone·Android용 CardBal 앱이 정보를 어떻게 처리하는지 안내해요. 휴대폰에 남는 정보, 휴대폰 밖으로 보내는 정보, 그리고 끌 수 있는 기능까지.',
-      kicker: 'iPhone·Android용 CardBal', title: ['개인정보', '처리방침'],
+      description: 'iPhone·Mac·Android용 CardBal 앱이 정보를 어떻게 처리하는지 안내해요. 휴대폰에 남는 정보, 휴대폰 밖으로 보내는 정보, 그리고 끌 수 있는 기능까지.',
+      kicker: 'iPhone·Mac·Android용 CardBal', title: ['개인정보', '처리방침'],
       updated: '최종 업데이트: {date}', date: '2026년 11월 17일',
-      intro: '이 방침은 CardBal 앱이 iPhone과 Android에서 사용자의 정보를 어떻게 처리하는지 설명해요. CardBal은 Kitta Ltd.에서 제공해요.',
+      intro: '이 방침은 CardBal 앱이 iPhone, Mac, Android에서 사용자의 정보를 어떻게 처리하는지 설명해요. CardBal은 Kitta Ltd.에서 제공해요.',
       sections: [
-        { title: 'CardBal은 대부분 휴대폰 안에서 작동해요', body: ['CardBal은 휴대폰의 NFC로 교통카드를 읽어요. 잔액, 이용 내역, 역 이름, 카드 정보는 휴대폰에서 해석되고 휴대폰에 표시돼요. 아래에서는 CardBal이 휴대폰 밖으로 무언가를 보내는 모든 경우와, 끌 수 있는 기능을 하나씩 안내해요.'] },
+        { title: 'CardBal은 대부분 휴대폰 안에서 작동해요', body: ['CardBal은 휴대폰의 NFC로 교통카드를 읽어요. 잔액, 이용 내역, 역 이름, 카드 정보는 휴대폰에서 해석되고 휴대폰에 표시돼요. 아래에서는 CardBal이 휴대폰 밖으로 무언가를 보내는 모든 경우와, 끌 수 있는 기능을 하나씩 안내해요. Mac에서는 USB NFC 리더로 카드를 읽으며, 이 방침의 ‘휴대폰’에는 Mac도 포함돼요.'] },
         { title: '카드 운영사와의 온라인 조회', body: [
           '일부 카드는 휴대폰만으로는 완전히 읽을 수 없어요. 이런 카드는 CardBal이 카드를 운영사의 온라인 서비스에 연결해 읽기를 마치고, 둘 사이에서 데이터를 전달해요. 운영사가 받고 보관하는 정보는 이 방침이 아니라 운영사의 개인정보 처리방침을 따라요. CardBal은 결과만 휴대폰에 저장해요.',
           '옥토퍼스 카드에서는 ‘옥토퍼스 온라인 조회’가 이 기능이에요. 기본적으로 켜져 있어요. 카드를 처음 스캔할 때 실행되고, 중국 본토 잔액도 함께 들어 있는 카드는 환율을 최신으로 유지하기 위해 스캔할 때마다 실행돼요. 설정 › 개인정보에서 끌 수 있어요. ‘카드 업데이트 허용’을 켜지 않는 한, CardBal은 카드에 저장된 데이터의 모든 변경을 차단해요.',
@@ -652,11 +652,11 @@ export const locales = {
           'CardBal이 충돌하면 다음에 앱을 열 때 충돌 보고서를 보내요. 보고서에는 앱에서 충돌이 일어난 위치, 앱 버전, 기기 모델, 시스템 버전, 언어, 그리고 CardBal을 설치할 때 만들어지는 무작위 ID가 포함돼요. 이 ID는 충돌의 영향을 받은 설치 수를 세는 데만 쓰여요. 앱에는 이 기능을 끄는 설정이 없어요.',
           '둘 다 CardBal이 피드백과 충돌 보고서를 받는 데 사용하는 서비스인 AirBuild(apps.air.build)로 전송돼요. 사용자의 신원과 연결되지 않으며 추적에 사용되지 않아요.'
         ] },
-        { title: '앱 분석 (iPhone)', body: ['CardBal은 설치 수, 세션, 조회한 화면을 집계하기 위해 Google Firebase Analytics를 사용해요. Firebase는 앱 인스턴스 ID, 기기 및 시스템 정보, 언어, IP 주소로 추정한 대략적인 위치를 받아요. CardBal은 카드나 이용 내역을 Firebase로 보내지 않으며, 광고 식별자도 사용하지 않아요. Google은 이 데이터를 자체 개인정보 처리방침에 따라 처리해요. 앱에는 이 기능을 끄는 설정이 없어요.'] },
+        { title: '앱 분석 (iPhone·Mac)', body: ['CardBal은 설치 수, 세션, 조회한 화면을 집계하기 위해 Google Firebase Analytics를 사용해요. Firebase는 앱 인스턴스 ID, 기기 및 시스템 정보, 언어, IP 주소로 추정한 대략적인 위치를 받아요. CardBal은 카드나 이용 내역을 Firebase로 보내지 않으며, 광고 식별자도 사용하지 않아요. Google은 이 데이터를 자체 개인정보 처리방침에 따라 처리해요. 앱에는 이 기능을 끄는 설정이 없어요.'] },
         { title: '카드 이미지', body: ['CardBal은 카드 이미지를 faces.cardb.al에서 내려받고, 연결할 수 없을 때는 GitHub 미러(cdn.jsdelivr.net, raw.githubusercontent.com)에서 내려받아요. 맞는 이미지는 휴대폰에서 고르며, 카드 데이터는 보내지 않아요. 서버는 어떤 이미지를 요청했는지와 IP 주소만 알 수 있어요.'] },
-        { title: '지도', body: ['iPhone에서는 Apple 지도를 사용해요. Android에서는 OpenStreetMap의 지도 타일을 사용해요. 이 제공업체들은 어떤 지역이 표시되는지와 IP 주소를 알 수 있어요.'] },
+        { title: '지도', body: ['iPhone과 Mac에서는 Apple 지도를 사용해요. Android에서는 OpenStreetMap의 지도 타일을 사용해요. 이 제공업체들은 어떤 지역이 표시되는지와 IP 주소를 알 수 있어요.'] },
         { title: '백업과 동기화', body: [[
-          'iPhone: iCloud가 켜져 있으면 CardBal은 저장한 카드(카드 번호, 잔액, 이용 내역, 옥토퍼스 번호 포함)와 카드 이미지의 사본을 iCloud 계정에 보관해요. CardBal 폴더는 파일 앱에서 볼 수 있어요.',
+          'iPhone·Mac: iCloud가 켜져 있으면 CardBal은 저장한 카드(카드 번호, 잔액, 이용 내역, 옥토퍼스 번호 포함)와 카드 이미지의 사본을 iCloud 계정에 보관해요. CardBal 폴더는 파일 앱(Mac에서는 iCloud Drive)에서 볼 수 있어요.',
           'Android: Android 자체 백업 기능이 CardBal 데이터를 Google 계정에 복사할 수 있어요.',
           '백업을 직접 내보내고, 가져오고, 공유할 수도 있어요.'
         ]] },
@@ -796,12 +796,12 @@ export const locales = {
     },
     privacy: {
       pageTitle: 'Нууцлалын бодлого — CardBal',
-      description: 'iPhone, Android-д зориулсан CardBal апп таны мэдээллийг хэрхэн боловсруулдаг тухай: утсан дээр юу үлддэг, утаснаас гадагш юу илгээдэг, юуг унтрааж болох.',
-      kicker: 'iPhone, Android-д зориулсан CardBal', title: ['Нууцлалын', 'бодлого'],
+      description: 'iPhone, Mac, Android-д зориулсан CardBal апп таны мэдээллийг хэрхэн боловсруулдаг тухай: утсан дээр юу үлддэг, утаснаас гадагш юу илгээдэг, юуг унтрааж болох.',
+      kicker: 'iPhone, Mac, Android-д зориулсан CardBal', title: ['Нууцлалын', 'бодлого'],
       updated: 'Сүүлд шинэчилсэн: {date}', date: '2026 оны 11-р сарын 17',
-      intro: 'Энэхүү бодлого нь CardBal апп iPhone болон Android дээр таны мэдээллийг хэрхэн боловсруулдгийг тайлбарлана. CardBal-ыг Kitta Ltd. гаргадаг.',
+      intro: 'Энэхүү бодлого нь CardBal апп iPhone, Mac болон Android дээр таны мэдээллийг хэрхэн боловсруулдгийг тайлбарлана. CardBal-ыг Kitta Ltd. гаргадаг.',
       sections: [
-        { title: 'CardBal-ын ихэнх үйлдэл таны утсан дээр явагдана', body: ['CardBal таны утасны NFC-ээр тээврийн картыг уншина. Үлдэгдэл, зорчилт, буудлын нэр, картын мэдээллийг утсан дээр тайлж, тэнд нь харуулна. Доорх хэсгүүдэд CardBal утаснаас гадагш ямар нэг зүйл илгээдэг тохиолдол бүрийг, мөн юуг унтрааж болохыг жагсаав.'] },
+        { title: 'CardBal-ын ихэнх үйлдэл таны утсан дээр явагдана', body: ['CardBal таны утасны NFC-ээр тээврийн картыг уншина. Үлдэгдэл, зорчилт, буудлын нэр, картын мэдээллийг утсан дээр тайлж, тэнд нь харуулна. Доорх хэсгүүдэд CardBal утаснаас гадагш ямар нэг зүйл илгээдэг тохиолдол бүрийг, мөн юуг унтрааж болохыг жагсаав. Mac дээр CardBal USB NFC уншигчаар картыг уншдаг бөгөөд энэ бодлогод “утас” гэдэгт таны Mac мөн хамаарна.'] },
         { title: 'Картын оператортой онлайнаар шалгах', body: [
           'Зарим картыг зөвхөн утсаар бүрэн уншиж чадахгүй. Ийм картын хувьд CardBal уншилтыг дуусгахын тулд таны картыг операторын онлайн үйлчилгээнд холбож, хоёрын хооронд өгөгдөл дамжуулна. Оператор юу хүлээн авч, хадгалах нь энэ бодлогоор бус, операторын өөрийн нууцлалын бодлогоор зохицуулагдана. CardBal зөвхөн үр дүнг таны утсанд хадгална.',
           'Octopus картын хувьд энэ нь “Octopus Online” юм. Анхдагчаар асаалттай байна. Картыг анх удаа уншуулахад ажиллана. Мөн эх газрын Хятадын үлдэгдэлтэй картыг уншуулах бүрт ханшийг шинэчлэн байлгахын тулд ажиллана. Үүнийг “Settings › Privacy” хэсгээс унтрааж болно. Та “Allow Card Updates”-ыг асаахгүй л бол CardBal таны картанд хадгалагдсан өгөгдлийг өөрчлөх аливаа үйлдлийг хаана.',
@@ -820,11 +820,11 @@ export const locales = {
           'CardBal гацвал дараагийн удаа аппыг нээхэд гацалтын (crash) тайлан илгээнэ. Тайланд гацалт аппын аль хэсэгт гарсан, аппын хувилбар, төхөөрөмжийн загвар, системийн хувилбар, хэл, мөн CardBal-ыг суулгах үед үүсгэсэн санамсаргүй ID орно. Энэ ID-г зөвхөн нэг гацалт хэдэн суулгацад нөлөөлснийг тоолоход ашиглана. Аппад үүнийг унтраах тохиргоо байхгүй.',
           'Хоёулаа бидний хүлээн авахад ашигладаг AirBuild (apps.air.build) үйлчилгээ рүү илгээгдэнэ. Эдгээрийг таны хувийн мэдээлэлтэй холбохгүй бөгөөд хянахад ашиглахгүй.'
         ] },
-        { title: 'Аппын аналитик (iPhone)', body: ['CardBal суулгалт, сесс, үзсэн дэлгэцийн тоог гаргахын тулд Google Firebase Analytics ашигладаг. Firebase аппын суулгацын ID (app-instance ID), төхөөрөмж болон системийн мэдээлэл, хэл, таны IP хаягаас тооцоолсон ойролцоо байршлыг хүлээн авна. CardBal таны карт, зорчилтыг Firebase руу илгээдэггүй бөгөөд зар сурталчилгааны танигчийг ашигладаггүй. Google энэ өгөгдлийг өөрийн нууцлалын бодлогын дагуу боловсруулна. Аппад үүнийг унтраах тохиргоо байхгүй.'] },
+        { title: 'Аппын аналитик (iPhone, Mac)', body: ['CardBal суулгалт, сесс, үзсэн дэлгэцийн тоог гаргахын тулд Google Firebase Analytics ашигладаг. Firebase аппын суулгацын ID (app-instance ID), төхөөрөмж болон системийн мэдээлэл, хэл, таны IP хаягаас тооцоолсон ойролцоо байршлыг хүлээн авна. CardBal таны карт, зорчилтыг Firebase руу илгээдэггүй бөгөөд зар сурталчилгааны танигчийг ашигладаггүй. Google энэ өгөгдлийг өөрийн нууцлалын бодлогын дагуу боловсруулна. Аппад үүнийг унтраах тохиргоо байхгүй.'] },
         { title: 'Картын зураг', body: ['CardBal картын зургийг faces.cardb.al-аас, түүнд холбогдох боломжгүй үед GitHub-ын толин хуулбаруудаас (cdn.jsdelivr.net, raw.githubusercontent.com) татна. Тохирох зургийг утсан дээр сонгох бөгөөд картын өгөгдөл илгээгдэхгүй. Сервер зөвхөн аль зургийг хүссэн болон таны IP хаягийг харна.'] },
-        { title: 'Газрын зураг', body: ['iPhone дээр газрын зураг Apple Maps-аас ирнэ. Android дээр газрын зургийн хавтангууд OpenStreetMap-аас ирнэ. Эдгээр үйлчилгээ үзүүлэгч аль бүсийг харуулж буйг болон таны IP хаягийг харна.'] },
+        { title: 'Газрын зураг', body: ['iPhone болон Mac дээр газрын зураг Apple Maps-аас ирнэ. Android дээр газрын зургийн хавтангууд OpenStreetMap-аас ирнэ. Эдгээр үйлчилгээ үзүүлэгч аль бүсийг харуулж буйг болон таны IP хаягийг харна.'] },
         { title: 'Нөөцлөлт ба синк', body: [[
-          'iPhone: iCloud асаалттай үед CardBal таны хадгалсан картуудын (картын дугаар, үлдэгдэл, зорчилт, Octopus дугаар зэрэг) болон картын зургуудын хуулбарыг таны iCloud бүртгэлд хадгална. CardBal хавтас “Files” апп дотор харагдана.',
+          'iPhone, Mac: iCloud асаалттай үед CardBal таны хадгалсан картуудын (картын дугаар, үлдэгдэл, зорчилт, Octopus дугаар зэрэг) болон картын зургуудын хуулбарыг таны iCloud бүртгэлд хадгална. CardBal хавтас “Files” апп дотор, Mac дээр iCloud Drive-д харагдана.',
           'Android: Android-ын өөрийн нөөцлөлт CardBal-ын өгөгдлийг таны Google бүртгэл рүү хуулж болно.',
           'Та мөн нөөцөө өөрөө экспортлох, импортлох, хуваалцах боломжтой.'
         ]] },
