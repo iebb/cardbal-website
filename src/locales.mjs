@@ -143,6 +143,11 @@ export const locales = {
           'These are sent only when you tap Submit Report.',
           'CardBal sends the station name, report type, any station code, line, operator, city, country or notes you enter, and, if you choose, the exact coordinates of a map pin or your current location. Each report also includes a SHA-256 hash of the card ID, an app-specific device ID, the app version and the card type. Reports are stored in Cloudflare D1 so we can review requests and improve station data. The public list at {reports} shows station details and an approximate location. It doesn’t show the card ID hash, device ID, app version, notes or exact coordinates.'
         ] },
+        { title: 'Feedback and crash reports', body: [
+          'Feedback is sent only when you tap Send in Settings › Send Feedback. It includes your message, any screenshots you add (up to four), the app version, your device model, system version and language. It doesn’t include an email address, an account or a device ID.',
+          'If CardBal crashes, it sends a crash report the next time you open it. A report includes where in the app the crash happened, the app version, your device model, system version and language, and a random ID created when CardBal is installed, used only to count how many installs a crash affects. There is no switch for this in the app.',
+          'Both go to AirBuild (apps.air.build), the service we use to receive them. They aren’t linked to your identity and aren’t used for tracking.'
+        ] },
         { title: 'App analytics (iPhone)', body: ['CardBal uses Google Firebase Analytics to count installs, sessions and screens viewed. Firebase receives an app-instance ID, device and system details, language, and an approximate location derived from your IP address. CardBal doesn’t send your cards or trips to Firebase and doesn’t use the advertising identifier. Google processes this data under its own privacy policy. There is no switch for this in the app.'] },
         { title: 'Card artwork', body: ['CardBal downloads card pictures from faces.cardb.al, or from GitHub mirrors (cdn.jsdelivr.net, raw.githubusercontent.com) when it’s unreachable. The matching picture is chosen on the phone, and no card data is sent. The server sees only which picture was requested and your IP address.'] },
         { title: 'Maps', body: ['On iPhone, maps come from Apple Maps. On Android, map tiles come from OpenStreetMap. These providers see which areas are shown and your IP address.'] },
@@ -305,6 +310,11 @@ export const locales = {
         { title: '站点报告', body: [
           '只有在你轻点“提交报告”时才会发送。',
           'CardBal 会发送站名、报告类型，以及你填写的站点代码、线路、运营方、城市、国家或备注；如果你选择提供，还会发送地图标记的精确坐标或你的当前位置。每份报告还包含卡片 ID 的 SHA-256 哈希值、应用专属的设备 ID、应用版本和卡片类型。报告存储在 Cloudflare D1 中，以便我们审核请求并改进站点数据。{reports} 上的公开列表会显示站点详情和大致位置，但不会显示卡片 ID 哈希值、设备 ID、应用版本、备注或精确坐标。'
+        ] },
+        { title: '反馈与崩溃报告', body: [
+          '只有当你在“设置 › 发送反馈”中轻点“发送”时，才会发送反馈。反馈包含你的留言、你添加的截图（最多 4 张）、应用版本、设备型号、系统版本和语言，不包含电子邮件地址、账户或设备 ID。',
+          '如果 CardBal 崩溃，它会在你下次打开应用时发送崩溃报告。报告包含崩溃发生在应用中的位置、应用版本、设备型号、系统版本和语言，以及安装 CardBal 时生成的随机 ID，该 ID 仅用于统计某次崩溃影响了多少个安装。应用中没有关闭此功能的开关。',
+          '两者都会发送至 AirBuild（apps.air.build），这是我们用来接收反馈和崩溃报告的服务。它们不会与你的身份关联，也不会用于跟踪。'
         ] },
         { title: '应用分析（iPhone）', body: ['CardBal 使用 Google Firebase Analytics 统计安装量、会话数和浏览过的界面。Firebase 会收到应用实例 ID、设备与系统信息、语言，以及根据你的 IP 地址推断出的大致位置。CardBal 不会将你的卡片或行程发送给 Firebase，也不使用广告标识符。Google 依据其自身的隐私政策处理这些数据。应用中没有关闭此功能的开关。'] },
         { title: '卡面图片', body: ['CardBal 从 faces.cardb.al 下载卡面图片；无法访问时，则从 GitHub 镜像（cdn.jsdelivr.net、raw.githubusercontent.com）下载。匹配哪张图片在手机上决定，不会发送任何卡片数据。服务器只能看到请求了哪张图片以及你的 IP 地址。'] },
@@ -469,6 +479,11 @@ export const locales = {
           '「報告を送信」をタップしたときにのみ送信されます。',
           'CardBalは、駅名、報告の種類、入力された駅コード・路線・事業者・都市・国・メモに加え、選択した場合は地図のピンまたは現在地の正確な座標を送信します。各報告には、カードIDのSHA-256ハッシュ、アプリ固有のデバイスID、アプリのバージョン、カードの種類も含まれます。報告は、リクエストを確認して駅データを改善するためにCloudflare D1に保存されます。{reports}の公開リストには、駅の詳細とおおよその位置が表示されます。カードIDのハッシュ、デバイスID、アプリのバージョン、メモ、正確な座標は表示されません。'
         ] },
+        { title: 'フィードバックとクラッシュレポート', body: [
+          'フィードバックは、「設定 › フィードバックを送信」で「送信」をタップしたときにだけ送信されます。内容は、メッセージ、追加したスクリーンショット（4枚まで）、アプリのバージョン、デバイスの機種、システムのバージョン、言語です。メールアドレス、アカウント、デバイスIDは含まれません。',
+          'CardBalがクラッシュした場合、次にアプリを開いたときにクラッシュレポートを送信します。レポートには、アプリ内でクラッシュが起きた場所、アプリのバージョン、デバイスの機種、システムのバージョン、言語、そしてCardBalのインストール時に作られるランダムなIDが含まれます。このIDは、クラッシュの影響を受けたインストール数を数えるためだけに使います。アプリにはこの機能をオフにする設定はありません。',
+          'どちらも、受信に使用しているサービスであるAirBuild（apps.air.build）に送られます。個人と結び付けられることはなく、トラッキングにも使用しません。'
+        ] },
         { title: 'アプリの利用状況の分析（iPhone）', body: ['CardBalは、インストール数、セッション数、表示された画面を集計するためにGoogle Firebase Analyticsを使用しています。Firebaseが受け取るのは、アプリインスタンスID、デバイスとシステムの情報、言語、IPアドレスから推定したおおよその位置です。CardBalはカードや利用履歴をFirebaseに送信せず、広告識別子も使用しません。Googleは、このデータを同社のプライバシーポリシーに基づいて処理します。アプリにはこの機能をオフにする設定はありません。'] },
         { title: 'カードの画像', body: ['CardBalはカードの画像をfaces.cardb.alから、接続できない場合はGitHubのミラー（cdn.jsdelivr.net、raw.githubusercontent.com）からダウンロードします。どの画像を使うかは端末内で判定し、カードのデータは送信しません。サーバーにわかるのは、リクエストされた画像とIPアドレスのみです。'] },
         { title: '地図', body: ['iPhoneではAppleマップの地図を使用します。AndroidではOpenStreetMapの地図タイルを使用します。これらの提供元には、表示している地域とIPアドレスがわかります。'] },
@@ -632,6 +647,11 @@ export const locales = {
           '‘신고 제출’을 탭할 때만 전송돼요.',
           'CardBal은 역 이름과 신고 유형, 그리고 입력한 역 코드, 노선, 운영사, 도시, 국가, 메모를 보내요. 원하면 지도 핀이나 현재 위치의 정확한 좌표도 함께 보내요. 각 신고에는 카드 ID의 SHA-256 해시, 앱 전용 기기 ID, 앱 버전, 카드 유형도 포함돼요. 신고는 요청을 검토하고 역 데이터를 개선할 수 있도록 Cloudflare D1에 저장돼요. {reports}의 공개 목록에는 역 정보와 대략적인 위치가 표시돼요. 카드 ID 해시, 기기 ID, 앱 버전, 메모, 정확한 좌표는 표시되지 않아요.'
         ] },
+        { title: '피드백과 충돌 보고서', body: [
+          '피드백은 설정 › 피드백 보내기에서 보내기를 탭할 때만 전송돼요. 메시지, 첨부한 스크린샷(최대 4장), 앱 버전, 기기 모델, 시스템 버전, 언어가 포함되며, 이메일 주소, 계정, 기기 ID는 포함되지 않아요.',
+          'CardBal이 충돌하면 다음에 앱을 열 때 충돌 보고서를 보내요. 보고서에는 앱에서 충돌이 일어난 위치, 앱 버전, 기기 모델, 시스템 버전, 언어, 그리고 CardBal을 설치할 때 만들어지는 무작위 ID가 포함돼요. 이 ID는 충돌이 몇 개의 설치에 영향을 줬는지 세는 데만 쓰여요. 앱에는 이 기능을 끄는 설정이 없어요.',
+          '둘 다 수신에 사용하는 서비스인 AirBuild(apps.air.build)로 전송돼요. 신원과 연결되지 않으며 추적에 사용되지 않아요.'
+        ] },
         { title: '앱 분석 (iPhone)', body: ['CardBal은 설치 수, 세션, 조회한 화면을 집계하기 위해 Google Firebase Analytics를 사용해요. Firebase는 앱 인스턴스 ID, 기기 및 시스템 정보, 언어, IP 주소로 추정한 대략적인 위치를 받아요. CardBal은 카드나 이용 내역을 Firebase로 보내지 않으며, 광고 식별자도 사용하지 않아요. Google은 이 데이터를 자체 개인정보 처리방침에 따라 처리해요. 앱에는 이 기능을 끄는 설정이 없어요.'] },
         { title: '카드 이미지', body: ['CardBal은 카드 이미지를 faces.cardb.al에서 내려받고, 연결할 수 없을 때는 GitHub 미러(cdn.jsdelivr.net, raw.githubusercontent.com)에서 내려받아요. 맞는 이미지는 휴대폰에서 고르며, 카드 데이터는 보내지 않아요. 서버는 어떤 이미지를 요청했는지와 IP 주소만 알 수 있어요.'] },
         { title: '지도', body: ['iPhone에서는 Apple 지도를 사용해요. Android에서는 OpenStreetMap의 지도 타일을 사용해요. 이 제공업체들은 어떤 지역이 표시되는지와 IP 주소를 알 수 있어요.'] },
@@ -794,6 +814,11 @@ export const locales = {
         { title: 'Буудлын тайлан', body: [
           'Тайланг зөвхөн та “Submit Report”-ыг товшсон үед илгээнэ.',
           'CardBal буудлын нэр, тайлангийн төрөл, мөн таны оруулсан буудлын код, шугам, оператор, хот, улс эсвэл тэмдэглэлийг илгээнэ. Хэрэв та сонговол газрын зургийн тэмдэглэгээ эсвэл одоогийн байршлын тань яг координатыг мөн илгээнэ. Тайлан бүрд картын ID-ийн SHA-256 хэш, зөвхөн энэ аппад хамаарах төхөөрөмжийн ID, аппын хувилбар, картын төрөл багтана. Хүсэлтүүдийг хянаж, буудлын өгөгдлийг сайжруулахын тулд тайлангуудыг Cloudflare D1-д хадгална. {reports} дахь нийтийн жагсаалтад буудлын мэдээлэл болон ойролцоо байршил харагдана. Картын ID-ийн хэш, төхөөрөмжийн ID, аппын хувилбар, тэмдэглэл, яг координат харагдахгүй.'
+        ] },
+        { title: 'Санал хүсэлт ба гацалтын тайлан', body: [
+          'Санал хүсэлтийг зөвхөн “Settings › Send Feedback” хэсэгт “Send” дарсан үед илгээнэ. Үүнд таны мессеж, таны нэмсэн дэлгэцийн зураг (дээд тал нь 4), аппын хувилбар, төхөөрөмжийн загвар, системийн хувилбар, хэл орно. И-мэйл хаяг, бүртгэл, төхөөрөмжийн ID орохгүй.',
+          'CardBal гацвал дараагийн удаа аппыг нээхэд гацалтын (crash) тайлан илгээнэ. Тайланд гацалт аппын аль хэсэгт гарсан, аппын хувилбар, төхөөрөмжийн загвар, системийн хувилбар, хэл, мөн CardBal-ыг суулгах үед үүсгэсэн санамсаргүй ID орно. Энэ ID-г зөвхөн нэг гацалт хэдэн суулгацад нөлөөлснийг тоолоход ашиглана. Аппад үүнийг унтраах тохиргоо байхгүй.',
+          'Хоёулаа бидний хүлээн авахад ашигладаг AirBuild (apps.air.build) үйлчилгээ рүү илгээгдэнэ. Эдгээрийг таны хувийн мэдээлэлтэй холбохгүй бөгөөд хянахад ашиглахгүй.'
         ] },
         { title: 'Аппын аналитик (iPhone)', body: ['CardBal суулгалт, сесс, үзсэн дэлгэцийн тоог гаргахын тулд Google Firebase Analytics ашигладаг. Firebase аппын суулгацын ID (app-instance ID), төхөөрөмж болон системийн мэдээлэл, хэл, таны IP хаягаас тооцоолсон ойролцоо байршлыг хүлээн авна. CardBal таны карт, зорчилтыг Firebase руу илгээдэггүй бөгөөд зар сурталчилгааны танигчийг ашигладаггүй. Google энэ өгөгдлийг өөрийн нууцлалын бодлогын дагуу боловсруулна. Аппад үүнийг унтраах тохиргоо байхгүй.'] },
         { title: 'Картын зураг', body: ['CardBal картын зургийг faces.cardb.al-аас, түүнд холбогдох боломжгүй үед GitHub-ын толин хуулбаруудаас (cdn.jsdelivr.net, raw.githubusercontent.com) татна. Тохирох зургийг утсан дээр сонгох бөгөөд картын өгөгдөл илгээгдэхгүй. Сервер зөвхөн аль зургийг хүссэн болон таны IP хаягийг харна.'] },
