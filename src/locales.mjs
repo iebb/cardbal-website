@@ -126,7 +126,7 @@ export const locales = {
       pageTitle: 'Privacy Policy — CardBal',
       description: 'How the CardBal app for iPhone and Android handles your information: what stays on your phone, what it sends off the phone, and what you can switch off.',
       kicker: 'CardBal for iPhone and Android', title: ['Privacy', 'Policy'],
-      updated: 'Last updated: {date}', date: '31 October 2026',
+      updated: 'Last updated: {date}', date: '17 November 2026',
       intro: 'This policy explains how the CardBal app handles your information on iPhone and Android. CardBal is published by Kitta Ltd.',
       sections: [
         { title: 'Most of CardBal works on your phone', body: ['CardBal reads transit cards with your phone’s NFC. Balances, trips, station names and card details are decoded on the phone and shown there. The sections below list each case where CardBal sends something off the phone, and what you can switch off.'] },
@@ -294,7 +294,7 @@ export const locales = {
       pageTitle: '隐私政策 — CardBal',
       description: '了解 iPhone 与 Android 版 CardBal 如何处理你的信息：哪些内容留在手机上，哪些会发送到手机之外，以及哪些功能可以关闭。',
       kicker: 'iPhone 与 Android 版 CardBal', title: ['隐私', '政策'],
-      updated: '最后更新：{date}', date: '2026 年 10 月 31 日',
+      updated: '最后更新：{date}', date: '2026 年 11 月 17 日',
       intro: '本政策说明 CardBal 应用在 iPhone 和 Android 上如何处理你的信息。CardBal 由 Kitta Ltd. 发布。',
       sections: [
         { title: 'CardBal 的大部分功能都在手机上完成', body: ['CardBal 通过手机的 NFC 读取交通卡。余额、行程、站名和卡片详情都在手机上解析并显示。以下各节逐一列出 CardBal 会把内容发送到手机之外的每种情况，以及你可以关闭哪些功能。'] },
@@ -462,7 +462,7 @@ export const locales = {
       pageTitle: 'プライバシーポリシー — CardBal',
       description: 'iPhone・Android版CardBalアプリが情報をどのように扱うかをご説明します。端末内で完結する処理、端末の外に送信される情報、オフにできる機能について。',
       kicker: 'iPhone・Android版CardBal', title: ['プライバシー', 'ポリシー'],
-      updated: '最終更新日：{date}', date: '2026年10月31日',
+      updated: '最終更新日：{date}', date: '2026年11月17日',
       intro: 'このポリシーでは、iPhoneとAndroidでCardBalアプリが情報をどのように扱うかを説明します。CardBalはKitta Ltd.が提供しています。',
       sections: [
         { title: 'CardBalのほとんどの処理は端末内で行われます', body: ['CardBalは、スマートフォンのNFCで交通系ICカードを読み取ります。残高、利用履歴、駅名、カード情報は端末内で解析され、端末上に表示されます。以下では、CardBalが端末の外に何かを送信するすべてのケースと、オフにできる機能を説明します。'] },
@@ -482,7 +482,7 @@ export const locales = {
         { title: 'フィードバックとクラッシュレポート', body: [
           'フィードバックは、「設定 › フィードバックを送信」で「送信」をタップしたときにだけ送信されます。内容は、メッセージ、追加したスクリーンショット（4枚まで）、アプリのバージョン、デバイスの機種、システムのバージョン、言語です。メールアドレス、アカウント、デバイスIDは含まれません。',
           'CardBalがクラッシュした場合、次にアプリを開いたときにクラッシュレポートを送信します。レポートには、アプリ内でクラッシュが起きた場所、アプリのバージョン、デバイスの機種、システムのバージョン、言語、そしてCardBalのインストール時に作られるランダムなIDが含まれます。このIDは、クラッシュの影響を受けたインストール数を数えるためだけに使います。アプリにはこの機能をオフにする設定はありません。',
-          'どちらも、受信に使用しているサービスであるAirBuild（apps.air.build）に送られます。個人と結び付けられることはなく、トラッキングにも使用しません。'
+          'どちらも、CardBalがフィードバックとクラッシュレポートの受信に使っているサービス、AirBuild（apps.air.build）に送られます。あなた個人と結び付けられることはなく、トラッキングにも使用しません。'
         ] },
         { title: 'アプリの利用状況の分析（iPhone）', body: ['CardBalは、インストール数、セッション数、表示された画面を集計するためにGoogle Firebase Analyticsを使用しています。Firebaseが受け取るのは、アプリインスタンスID、デバイスとシステムの情報、言語、IPアドレスから推定したおおよその位置です。CardBalはカードや利用履歴をFirebaseに送信せず、広告識別子も使用しません。Googleは、このデータを同社のプライバシーポリシーに基づいて処理します。アプリにはこの機能をオフにする設定はありません。'] },
         { title: 'カードの画像', body: ['CardBalはカードの画像をfaces.cardb.alから、接続できない場合はGitHubのミラー（cdn.jsdelivr.net、raw.githubusercontent.com）からダウンロードします。どの画像を使うかは端末内で判定し、カードのデータは送信しません。サーバーにわかるのは、リクエストされた画像とIPアドレスのみです。'] },
@@ -630,7 +630,7 @@ export const locales = {
       pageTitle: '개인정보 처리방침 — CardBal',
       description: 'iPhone·Android용 CardBal 앱이 정보를 어떻게 처리하는지 안내해요. 휴대폰에 남는 정보, 휴대폰 밖으로 보내는 정보, 그리고 끌 수 있는 기능까지.',
       kicker: 'iPhone·Android용 CardBal', title: ['개인정보', '처리방침'],
-      updated: '최종 업데이트: {date}', date: '2026년 10월 31일',
+      updated: '최종 업데이트: {date}', date: '2026년 11월 17일',
       intro: '이 방침은 CardBal 앱이 iPhone과 Android에서 사용자의 정보를 어떻게 처리하는지 설명해요. CardBal은 Kitta Ltd.에서 제공해요.',
       sections: [
         { title: 'CardBal은 대부분 휴대폰 안에서 작동해요', body: ['CardBal은 휴대폰의 NFC로 교통카드를 읽어요. 잔액, 이용 내역, 역 이름, 카드 정보는 휴대폰에서 해석되고 휴대폰에 표시돼요. 아래에서는 CardBal이 휴대폰 밖으로 무언가를 보내는 모든 경우와, 끌 수 있는 기능을 하나씩 안내해요.'] },
@@ -649,8 +649,8 @@ export const locales = {
         ] },
         { title: '피드백과 충돌 보고서', body: [
           '피드백은 설정 › 피드백 보내기에서 보내기를 탭할 때만 전송돼요. 메시지, 첨부한 스크린샷(최대 4장), 앱 버전, 기기 모델, 시스템 버전, 언어가 포함되며, 이메일 주소, 계정, 기기 ID는 포함되지 않아요.',
-          'CardBal이 충돌하면 다음에 앱을 열 때 충돌 보고서를 보내요. 보고서에는 앱에서 충돌이 일어난 위치, 앱 버전, 기기 모델, 시스템 버전, 언어, 그리고 CardBal을 설치할 때 만들어지는 무작위 ID가 포함돼요. 이 ID는 충돌이 몇 개의 설치에 영향을 줬는지 세는 데만 쓰여요. 앱에는 이 기능을 끄는 설정이 없어요.',
-          '둘 다 수신에 사용하는 서비스인 AirBuild(apps.air.build)로 전송돼요. 신원과 연결되지 않으며 추적에 사용되지 않아요.'
+          'CardBal이 충돌하면 다음에 앱을 열 때 충돌 보고서를 보내요. 보고서에는 앱에서 충돌이 일어난 위치, 앱 버전, 기기 모델, 시스템 버전, 언어, 그리고 CardBal을 설치할 때 만들어지는 무작위 ID가 포함돼요. 이 ID는 충돌의 영향을 받은 설치 수를 세는 데만 쓰여요. 앱에는 이 기능을 끄는 설정이 없어요.',
+          '둘 다 CardBal이 피드백과 충돌 보고서를 받는 데 사용하는 서비스인 AirBuild(apps.air.build)로 전송돼요. 사용자의 신원과 연결되지 않으며 추적에 사용되지 않아요.'
         ] },
         { title: '앱 분석 (iPhone)', body: ['CardBal은 설치 수, 세션, 조회한 화면을 집계하기 위해 Google Firebase Analytics를 사용해요. Firebase는 앱 인스턴스 ID, 기기 및 시스템 정보, 언어, IP 주소로 추정한 대략적인 위치를 받아요. CardBal은 카드나 이용 내역을 Firebase로 보내지 않으며, 광고 식별자도 사용하지 않아요. Google은 이 데이터를 자체 개인정보 처리방침에 따라 처리해요. 앱에는 이 기능을 끄는 설정이 없어요.'] },
         { title: '카드 이미지', body: ['CardBal은 카드 이미지를 faces.cardb.al에서 내려받고, 연결할 수 없을 때는 GitHub 미러(cdn.jsdelivr.net, raw.githubusercontent.com)에서 내려받아요. 맞는 이미지는 휴대폰에서 고르며, 카드 데이터는 보내지 않아요. 서버는 어떤 이미지를 요청했는지와 IP 주소만 알 수 있어요.'] },
@@ -798,7 +798,7 @@ export const locales = {
       pageTitle: 'Нууцлалын бодлого — CardBal',
       description: 'iPhone, Android-д зориулсан CardBal апп таны мэдээллийг хэрхэн боловсруулдаг тухай: утсан дээр юу үлддэг, утаснаас гадагш юу илгээдэг, юуг унтрааж болох.',
       kicker: 'iPhone, Android-д зориулсан CardBal', title: ['Нууцлалын', 'бодлого'],
-      updated: 'Сүүлд шинэчилсэн: {date}', date: '2026 оны 10-р сарын 31',
+      updated: 'Сүүлд шинэчилсэн: {date}', date: '2026 оны 11-р сарын 17',
       intro: 'Энэхүү бодлого нь CardBal апп iPhone болон Android дээр таны мэдээллийг хэрхэн боловсруулдгийг тайлбарлана. CardBal-ыг Kitta Ltd. гаргадаг.',
       sections: [
         { title: 'CardBal-ын ихэнх үйлдэл таны утсан дээр явагдана', body: ['CardBal таны утасны NFC-ээр тээврийн картыг уншина. Үлдэгдэл, зорчилт, буудлын нэр, картын мэдээллийг утсан дээр тайлж, тэнд нь харуулна. Доорх хэсгүүдэд CardBal утаснаас гадагш ямар нэг зүйл илгээдэг тохиолдол бүрийг, мөн юуг унтрааж болохыг жагсаав.'] },
