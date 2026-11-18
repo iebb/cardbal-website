@@ -262,7 +262,7 @@ export const locales = {
       ]
     },
     end: { kicker: '下一站', title: ['读懂你每天', '随身携带的卡。'], body: 'CardBal 现已登陆 App Store 与 Google Play，支持 iPhone 与 Android。', meta: '需要 iOS 16 或更新版本、支持 NFC 的 iPhone，或 Android 8 或更新版本、支持 NFC 的 Android 手机。' },
-    clip: { link: '用轻 App 试一试', body: '无需安装，在 iOS 17 或更新版本的 iPhone 上直接读卡。下载完整 App 即可保存你的卡。' },
+    clip: { link: '用轻 App 试一试', body: '无需安装，在 iOS 17 或更新版本的 iPhone 上直接读卡。下载完整版 App 即可保存你的卡。' },
     support: {
       pageTitle: '支持 — CardBal',
       description: '获取 CardBal（iPhone 与 Android）的帮助：发送邮件联系支持、报告站点、反馈错误，以及解决常见的读卡问题。',
@@ -431,7 +431,7 @@ export const locales = {
       ]
     },
     end: { kicker: '次の停車駅', title: ['毎日持ち歩くカードを、', '読み解こう。'], body: 'CardBalは、App StoreとGoogle Playで。', meta: 'iOS 16以降のNFC対応iPhone、またはAndroid 8以降のNFC対応Androidスマートフォンが必要です。' },
-    clip: { link: 'App Clipで試す', body: 'インストール不要。iOS 17以降のiPhoneで、すぐにカードを読み取れます。カードを保存するには、フル版のアプリを入手してください。' },
+    clip: { link: 'App Clipで試す', body: 'インストール不要。iOS 17以降のiPhoneで、すぐにカードを読み取れます。カードを保存するには、完全版アプリをダウンロードしてください。' },
     support: {
       pageTitle: 'サポート — CardBal',
       description: 'iPhone・Android版CardBalのサポート。メールでのお問い合わせ、駅情報の報告、不具合の報告、よくある読み取りトラブルの解決方法をご案内します。',
@@ -600,7 +600,7 @@ export const locales = {
       ]
     },
     end: { kicker: '다음 정류장', title: ['늘 지니고 다니는 카드,', '제대로 읽어보세요.'], body: 'CardBal, App Store와 Google Play에서 만나보세요.', meta: 'iOS 16 이상 NFC 지원 iPhone 또는 Android 8 이상 NFC 지원 Android 폰이 필요해요.' },
-    clip: { link: '앱 클립으로 먼저 써보기', body: '설치 없이 iOS 17 이상 iPhone에서 바로 카드를 읽어보세요. 카드를 저장하려면 정식 앱을 받으세요.' },
+    clip: { link: '앱 클립으로 먼저 써보기', body: '설치 없이 iOS 17 이상 iPhone에서 바로 카드를 읽어보세요. 카드를 저장하려면 전체 앱을 다운로드하세요.' },
     support: {
       pageTitle: '고객 지원 — CardBal',
       description: 'iPhone·Android용 CardBal 고객 지원. 이메일 문의, 역 정보 신고, 버그 제보와 자주 겪는 카드 읽기 문제의 해결 방법을 안내해요.',
