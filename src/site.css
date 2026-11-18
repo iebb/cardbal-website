@@ -473,6 +473,8 @@ html:is([lang=ja], [lang=zh-Hans], [lang=ko]) .flow li { font-family: inherit; f
 html:is([lang=ja], [lang=zh-Hans], [lang=ko]) .cta-title { font-size: clamp(36px, 4.8vw, 72px); line-height: 1.16; letter-spacing: -.03em; }
 html:lang(mn) .cta-title { font-size: clamp(38px, 5vw, 76px); line-height: 1.02; }
 .cta-body { max-width: 26em; margin: 26px 0 34px; color: #3b3720; font-size: 19px; line-height: 1.55; }
+.cta-clip { display: flex; flex-direction: column; gap: 6px; max-width: 30em; margin-top: 26px; }
+.cta-clip span { color: #3b3720; font-size: 15px; line-height: 1.5; }
 .cta-meta { margin-top: 18px; color: #5a5330; font: 500 12px/1.5 var(--mono); letter-spacing: .04em; }
 .sign { justify-self: end; display: grid; justify-items: start; gap: 20px; width: min(380px, 100%); padding: 28px; border-radius: 26px; background: var(--ink); color: var(--white); box-shadow: 0 40px 80px -40px rgba(60, 45, 0, .55); transform: rotate(2deg); }
 .sign-top { display: flex; align-items: center; justify-content: space-between; width: 100%; }

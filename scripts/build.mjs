@@ -89,6 +89,7 @@ const storeUrl = (t) => `https://apps.apple.com/${t.store}/app/cardbal/id${appId
 const storeButton = (t, cls = '') => `<a class="store${cls ? ` ${cls}` : ''}" href="${storeUrl(t)}">${apple}<span><small>${esc(t.appStore[0])}</small><strong>${esc(t.appStore[1])}</strong></span></a>`;
 const playUrl = (t) => `https://play.google.com/store/apps/details?id=${playPackage}&amp;hl=${t.htmlLang}`;
 const playButton = (t, cls = '') => `<a class="store${cls ? ` ${cls}` : ''}" href="${playUrl(t)}">${play}<span><small>${esc(t.googlePlay[0])}</small><strong>${esc(t.googlePlay[1])}</strong></span></a>`;
+const clipUrl = 'https://appclip.apple.com/id?p=ad.neko.cardbal.Clip';
 const storeButtons = (t, cls = '') => `<div class="store-row">${storeButton(t, cls)}${playButton(t, cls)}</div>`;
 const stn = (number) => `<span class="stn" aria-hidden="true"><b>CB</b><i>${number}</i></span>`;
 const kicker = (number, text) => `<p class="kicker">${stn(number)}<span>${esc(text)}</span></p>`;
@@ -133,7 +134,7 @@ function layout(code, { page = '', title: pageTitle, description, preload = '', 
     <div class="wrap">
       <div class="footer-grid">
         <div class="footer-brand"><a class="brand" href="/${code}/"><img src="/assets/icon-96.png" width="32" height="32" alt=""><span>CardBal</span></a><p>${esc(t.footer.tagline)}</p></div>
-        <nav aria-label="CardBal"><h2 class="footer-title">CardBal</h2><ul>${t.nav.map((label, i) => `<li><a href="${base}#${navTargets[i]}">${esc(label)}</a></li>`).join('')}<li><a href="${storeUrl(t)}">App Store</a></li><li><a href="${playUrl(t)}">Google Play</a></li></ul></nav>
+        <nav aria-label="CardBal"><h2 class="footer-title">CardBal</h2><ul>${t.nav.map((label, i) => `<li><a href="${base}#${navTargets[i]}">${esc(label)}</a></li>`).join('')}<li><a href="${storeUrl(t)}">App Store</a></li><li><a href="${playUrl(t)}">Google Play</a></li><li><a href="${clipUrl}">App Clip</a></li></ul></nav>
         <nav aria-label="${esc(t.footer.resources)}"><h2 class="footer-title">${esc(t.footer.resources)}</h2><ul><li><a href="/${code}/support/"${page === 'support/' ? ' aria-current="page"' : ''}>${esc(t.footer.support)}</a></li><li><a href="/${code}/privacy/"${page === 'privacy/' ? ' aria-current="page"' : ''}>${esc(t.footer.privacy)}</a></li><li><a href="${reportsUrl}">${esc(t.footer.reports)}</a></li><li><a href="${sourceUrl}">${esc(t.footer.source)}</a></li><li><a href="https://kitta.co/">Kitta ↗</a></li></ul></nav>
         <nav aria-label="${esc(t.language)}"><h2 class="footer-title">${esc(t.footer.languages)}</h2><ul class="footer-langs">${languageLinks(code, page)}</ul></nav>
       </div>
@@ -331,6 +332,7 @@ function render(code) {
         <h2 class="cta-title" id="end-title">${title(t.end.title)}</h2>
         <p class="cta-body">${esc(t.end.body)}</p>
         ${storeButtons(t, 'store-dark')}
+        <p class="cta-clip"><a class="link-arrow" href="${clipUrl}">${esc(t.clip.link)}${icons.arrow}</a><span>${esc(t.clip.body)}</span></p>
         <p class="cta-meta">${esc(t.end.meta)}</p>
       </div>
       <div class="sign reveal" aria-hidden="true">

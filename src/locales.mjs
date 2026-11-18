@@ -93,6 +93,7 @@ export const locales = {
       ]
     },
     end: { kicker: 'Next stop', title: ['Read the cards', 'you already carry.'], body: 'CardBal for iPhone and Android. Download it on the App Store or Google Play.', meta: 'Requires an NFC-capable iPhone with iOS 16 or later, or an Android phone with NFC and Android 8 or later.' },
+    clip: { link: 'Try it as an App Clip', body: 'No install needed: read a card straight away on an iPhone with iOS 17 or later. Get the full app to save your cards.' },
     support: {
       pageTitle: 'Support — CardBal',
       description: 'Get help with CardBal for iPhone and Android: email support, report a station, file a bug and fix common card-reading problems.',
@@ -261,6 +262,7 @@ export const locales = {
       ]
     },
     end: { kicker: '下一站', title: ['读懂你每天', '随身携带的卡。'], body: 'CardBal 现已登陆 App Store 与 Google Play，支持 iPhone 与 Android。', meta: '需要 iOS 16 或更新版本、支持 NFC 的 iPhone，或 Android 8 或更新版本、支持 NFC 的 Android 手机。' },
+    clip: { link: '用轻 App 试一试', body: '无需安装，在 iOS 17 或更新版本的 iPhone 上直接读卡。下载完整 App 即可保存你的卡。' },
     support: {
       pageTitle: '支持 — CardBal',
       description: '获取 CardBal（iPhone 与 Android）的帮助：发送邮件联系支持、报告站点、反馈错误，以及解决常见的读卡问题。',
@@ -429,6 +431,7 @@ export const locales = {
       ]
     },
     end: { kicker: '次の停車駅', title: ['毎日持ち歩くカードを、', '読み解こう。'], body: 'CardBalは、App StoreとGoogle Playで。', meta: 'iOS 16以降のNFC対応iPhone、またはAndroid 8以降のNFC対応Androidスマートフォンが必要です。' },
+    clip: { link: 'App Clipで試す', body: 'インストール不要。iOS 17以降のiPhoneで、すぐにカードを読み取れます。カードを保存するには、フル版のアプリを入手してください。' },
     support: {
       pageTitle: 'サポート — CardBal',
       description: 'iPhone・Android版CardBalのサポート。メールでのお問い合わせ、駅情報の報告、不具合の報告、よくある読み取りトラブルの解決方法をご案内します。',
@@ -597,6 +600,7 @@ export const locales = {
       ]
     },
     end: { kicker: '다음 정류장', title: ['늘 지니고 다니는 카드,', '제대로 읽어보세요.'], body: 'CardBal, App Store와 Google Play에서 만나보세요.', meta: 'iOS 16 이상 NFC 지원 iPhone 또는 Android 8 이상 NFC 지원 Android 폰이 필요해요.' },
+    clip: { link: '앱 클립으로 먼저 써보기', body: '설치 없이 iOS 17 이상 iPhone에서 바로 카드를 읽어보세요. 카드를 저장하려면 정식 앱을 받으세요.' },
     support: {
       pageTitle: '고객 지원 — CardBal',
       description: 'iPhone·Android용 CardBal 고객 지원. 이메일 문의, 역 정보 신고, 버그 제보와 자주 겪는 카드 읽기 문제의 해결 방법을 안내해요.',
@@ -765,6 +769,7 @@ export const locales = {
       ]
     },
     end: { kicker: 'Дараагийн буудал', title: ['Өдөр бүр авч явдаг', 'картаа уншаарай.'], body: 'CardBal-ыг App Store болон Google Play-ээс татаарай.', meta: 'iOS 16+ хувилбартай NFC-тэй iPhone, эсвэл Android 8+ хувилбартай NFC-тэй Android утас шаардлагатай.' },
+    clip: { link: 'App Clip-ээр туршаад үзээрэй', body: 'Суулгах шаардлагагүй: iOS 17+ хувилбартай iPhone дээр картаа шууд уншуулна. Картаа хадгалахын тулд бүтэн аппыг татаарай.' },
     support: {
       pageTitle: 'Тусламж — CardBal',
       description: 'iPhone, Android-д зориулсан CardBal-ын тусламж: имэйлээр холбогдох, буудал мэдээлэх, алдаа илгээх, картын уншилтын түгээмэл асуудлыг шийдэх.',
