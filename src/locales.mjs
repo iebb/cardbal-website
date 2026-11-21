@@ -127,14 +127,15 @@ export const locales = {
       pageTitle: 'Privacy Policy — CardBal',
       description: 'How the CardBal app for iPhone, Mac and Android handles your information: what stays on your phone, what it sends off the phone, and what you can switch off.',
       kicker: 'CardBal for iPhone, Mac and Android', title: ['Privacy', 'Policy'],
-      updated: 'Last updated: {date}', date: '17 November 2026',
+      updated: 'Last updated: {date}', date: '21 November 2026',
       intro: 'This policy explains how the CardBal app handles your information on iPhone, Mac and Android. CardBal is published by Kitta Ltd.',
       sections: [
         { title: 'Most of CardBal works on your phone', body: ['CardBal reads transit cards with your phone’s NFC. Balances, trips, station names and card details are decoded on the phone and shown there. The sections below list each case where CardBal sends something off the phone, and what you can switch off. On a Mac, CardBal reads cards with a USB NFC reader, and “phone” in this policy also means your Mac.'] },
         { title: 'Online checks with card operators', body: [
           'Some cards can’t be fully read on the phone alone. For these, CardBal connects your card to its operator’s online service to finish the read, and passes data between the two. What the operator receives and keeps is covered by the operator’s own privacy policy, not this one. CardBal saves only the result on your phone.',
           'For Octopus cards this is Octopus Online. It’s on by default. It runs the first time you scan a card, and on every scan of cards that also hold a mainland China balance, so the exchange rate stays current. You can turn it off in Settings › Privacy. Unless you turn on Allow Card Updates, CardBal blocks any change to the data stored on your card.',
-          'For Lignes d’Azur cards, a check only happens when you tap Check Online.'
+          'For Lignes d’Azur cards, a check only happens when you tap Check Online.',
+          'For Madrid public transport cards (Tarjeta Transporte Público), this is CRTM, the Madrid transport consortium. It’s on by default and runs each time you scan one of these cards. You can turn it off in Settings › Privacy › Madrid Online. CardBal only asks CRTM to read the card, never to change it.'
         ] },
         { title: 'Help Improve Korean Cards', body: [
           'This is on by default. You can turn it off in Settings › Privacy › Help Improve Korean Cards.',
@@ -296,14 +297,15 @@ export const locales = {
       pageTitle: '隐私政策 — CardBal',
       description: '了解 iPhone、Mac 与 Android 版 CardBal 如何处理你的信息：哪些内容留在手机上，哪些会发送到手机之外，以及哪些功能可以关闭。',
       kicker: 'iPhone、Mac 与 Android 版 CardBal', title: ['隐私', '政策'],
-      updated: '最后更新：{date}', date: '2026 年 11 月 17 日',
+      updated: '最后更新：{date}', date: '2026 年 11 月 21 日',
       intro: '本政策说明 CardBal 应用在 iPhone、Mac 和 Android 上如何处理你的信息。CardBal 由 Kitta Ltd. 发布。',
       sections: [
         { title: 'CardBal 的大部分功能都在手机上完成', body: ['CardBal 通过手机的 NFC 读取交通卡。余额、行程、站名和卡片详情都在手机上解析并显示。以下各节逐一列出 CardBal 会把内容发送到手机之外的每种情况，以及你可以关闭哪些功能。在 Mac 上，CardBal 通过 USB NFC 读卡器读取卡片，本政策中的“手机”也指你的 Mac。'] },
         { title: '与卡片运营方的在线查询', body: [
           '有些卡片无法仅靠手机完整读取。对于这类卡片，CardBal 会将你的卡片连接到其运营方的在线服务以完成读取，并在两者之间传递数据。运营方接收和保存哪些数据，适用运营方自己的隐私政策，而非本政策。CardBal 只在你的手机上保存读取结果。',
           '对于八达通卡，这项功能是“八达通在线查询”，默认开启。它会在你首次扫描某张卡时运行；对于同时存有中国大陆余额的卡片，每次扫描都会运行，以保持汇率最新。你可以在“设置 › 隐私”中将其关闭。除非你开启“允许更新卡片”，否则 CardBal 会阻止对卡内存储数据的任何更改。',
-          '对于 Lignes d’Azur 卡，只有在你轻点“在线查询”时才会进行查询。'
+          '对于 Lignes d’Azur 卡，只有在你轻点“在线查询”时才会进行查询。',
+          '对于马德里公共交通卡（Tarjeta Transporte Público），这项服务由马德里交通联合体 CRTM 提供，默认开启，每次扫描这类卡片时都会运行。你可以在“设置 › 隐私 › 马德里在线读取”中将其关闭。CardBal 只请求 CRTM 读取卡片，绝不会请求更改卡片。'
         ] },
         { title: '帮助改进韩国卡片读取', body: [
           '此功能默认开启。你可以在“设置 › 隐私 › 帮助改进韩国卡片读取”中将其关闭。',
@@ -465,14 +467,15 @@ export const locales = {
       pageTitle: 'プライバシーポリシー — CardBal',
       description: 'iPhone・Mac・Android版CardBalアプリが情報をどのように扱うかをご説明します。端末内で完結する処理、端末の外に送信される情報、オフにできる機能について。',
       kicker: 'iPhone・Mac・Android版CardBal', title: ['プライバシー', 'ポリシー'],
-      updated: '最終更新日：{date}', date: '2026年11月17日',
+      updated: '最終更新日：{date}', date: '2026年11月21日',
       intro: 'このポリシーでは、iPhone、Mac、AndroidでCardBalアプリが情報をどのように扱うかを説明します。CardBalはKitta Ltd.が提供しています。',
       sections: [
         { title: 'CardBalのほとんどの処理は端末内で行われます', body: ['CardBalは、スマートフォンのNFCで交通系ICカードを読み取ります。残高、利用履歴、駅名、カード情報は端末内で解析され、端末上に表示されます。以下では、CardBalが端末の外に何かを送信するすべてのケースと、オフにできる機能を説明します。Macでは、CardBalはUSB接続のNFCリーダーでカードを読み取ります。このポリシーの「端末」「スマートフォン」にはMacも含まれます。'] },
         { title: 'カード事業者へのオンライン照会', body: [
           '一部のカードは、端末だけでは完全に読み取れません。こうしたカードでは、CardBalがカードを事業者のオンラインサービスに接続して読み取りを完了し、両者の間でデータを受け渡します。事業者が受け取り、保管する情報は、本ポリシーではなく、事業者自身のプライバシーポリシーの対象です。CardBalが端末に保存するのは、読み取りの結果のみです。',
           'Octopusカードの場合、これは「オクトパスのオンライン照会」です。初期設定ではオンになっています。カードを初めてスキャンしたときに実行されるほか、中国本土の残高も持つカードでは、為替レートを最新に保つためにスキャンのたびに実行されます。「設定 › プライバシー」でオフにできます。「カードの更新を許可」をオンにしない限り、CardBalはカードに保存されたデータへの変更をすべてブロックします。',
-          'Lignes d’Azurカードでは、「オンライン照会」をタップしたときにのみ照会が行われます。'
+          'Lignes d’Azurカードでは、「オンライン照会」をタップしたときにのみ照会が行われます。',
+          'マドリードの公共交通カード（Tarjeta Transporte Público）の場合、これはマドリード交通連合のCRTMです。初期設定ではオンになっており、このカードをスキャンするたびに実行されます。「設定 › プライバシー › マドリードのオンライン読み取り」でオフにできます。CardBalがCRTMに依頼するのはカードの読み取りだけで、カードの変更を依頼することはありません。'
         ] },
         { title: '韓国のカード読み取り改善に協力', body: [
           '初期設定ではオンになっています。「設定 › プライバシー › 韓国のカード読み取り改善に協力」でオフにできます。',
@@ -634,14 +637,15 @@ export const locales = {
       pageTitle: '개인정보 처리방침 — CardBal',
       description: 'iPhone·Mac·Android용 CardBal 앱이 정보를 어떻게 처리하는지 안내해요. 휴대폰에 남는 정보, 휴대폰 밖으로 보내는 정보, 그리고 끌 수 있는 기능까지.',
       kicker: 'iPhone·Mac·Android용 CardBal', title: ['개인정보', '처리방침'],
-      updated: '최종 업데이트: {date}', date: '2026년 11월 17일',
+      updated: '최종 업데이트: {date}', date: '2026년 11월 21일',
       intro: '이 방침은 CardBal 앱이 iPhone, Mac, Android에서 사용자의 정보를 어떻게 처리하는지 설명해요. CardBal은 Kitta Ltd.에서 제공해요.',
       sections: [
         { title: 'CardBal은 대부분 휴대폰 안에서 작동해요', body: ['CardBal은 휴대폰의 NFC로 교통카드를 읽어요. 잔액, 이용 내역, 역 이름, 카드 정보는 휴대폰에서 해석되고 휴대폰에 표시돼요. 아래에서는 CardBal이 휴대폰 밖으로 무언가를 보내는 모든 경우와, 끌 수 있는 기능을 하나씩 안내해요. Mac에서는 USB NFC 리더로 카드를 읽으며, 이 방침의 ‘휴대폰’에는 Mac도 포함돼요.'] },
         { title: '카드 운영사와의 온라인 조회', body: [
           '일부 카드는 휴대폰만으로는 완전히 읽을 수 없어요. 이런 카드는 CardBal이 카드를 운영사의 온라인 서비스에 연결해 읽기를 마치고, 둘 사이에서 데이터를 전달해요. 운영사가 받고 보관하는 정보는 이 방침이 아니라 운영사의 개인정보 처리방침을 따라요. CardBal은 결과만 휴대폰에 저장해요.',
           '옥토퍼스 카드에서는 ‘옥토퍼스 온라인 조회’가 이 기능이에요. 기본적으로 켜져 있어요. 카드를 처음 스캔할 때 실행되고, 중국 본토 잔액도 함께 들어 있는 카드는 환율을 최신으로 유지하기 위해 스캔할 때마다 실행돼요. 설정 › 개인정보에서 끌 수 있어요. ‘카드 업데이트 허용’을 켜지 않는 한, CardBal은 카드에 저장된 데이터의 모든 변경을 차단해요.',
-          'Lignes d’Azur 카드는 ‘온라인 조회’를 탭할 때만 조회해요.'
+          'Lignes d’Azur 카드는 ‘온라인 조회’를 탭할 때만 조회해요.',
+          '마드리드 대중교통 카드(Tarjeta Transporte Público)에서는 마드리드 교통 연합 CRTM이 이 기능을 맡아요. 기본적으로 켜져 있고, 이 카드를 스캔할 때마다 실행돼요. 설정 › 개인정보 › 마드리드 온라인 읽기에서 끌 수 있어요. CardBal은 CRTM에 카드 읽기만 요청하고, 카드 변경은 절대 요청하지 않아요.'
         ] },
         { title: '한국 카드 읽기 개선에 참여', body: [
           '기본적으로 켜져 있어요. 설정 › 개인정보 › 한국 카드 읽기 개선에 참여에서 끌 수 있어요.',
@@ -803,14 +807,15 @@ export const locales = {
       pageTitle: 'Нууцлалын бодлого — CardBal',
       description: 'iPhone, Mac, Android-д зориулсан CardBal апп таны мэдээллийг хэрхэн боловсруулдаг тухай: утсан дээр юу үлддэг, утаснаас гадагш юу илгээдэг, юуг унтрааж болох.',
       kicker: 'iPhone, Mac, Android-д зориулсан CardBal', title: ['Нууцлалын', 'бодлого'],
-      updated: 'Сүүлд шинэчилсэн: {date}', date: '2026 оны 11-р сарын 17',
+      updated: 'Сүүлд шинэчилсэн: {date}', date: '2026 оны 11-р сарын 21',
       intro: 'Энэхүү бодлого нь CardBal апп iPhone, Mac болон Android дээр таны мэдээллийг хэрхэн боловсруулдгийг тайлбарлана. CardBal-ыг Kitta Ltd. гаргадаг.',
       sections: [
         { title: 'CardBal-ын ихэнх үйлдэл таны утсан дээр явагдана', body: ['CardBal таны утасны NFC-ээр тээврийн картыг уншина. Үлдэгдэл, зорчилт, буудлын нэр, картын мэдээллийг утсан дээр тайлж, тэнд нь харуулна. Доорх хэсгүүдэд CardBal утаснаас гадагш ямар нэг зүйл илгээдэг тохиолдол бүрийг, мөн юуг унтрааж болохыг жагсаав. Mac дээр CardBal USB NFC уншигчаар картыг уншдаг бөгөөд энэ бодлогод “утас” гэдэгт таны Mac мөн хамаарна.'] },
         { title: 'Картын оператортой онлайнаар шалгах', body: [
           'Зарим картыг зөвхөн утсаар бүрэн уншиж чадахгүй. Ийм картын хувьд CardBal уншилтыг дуусгахын тулд таны картыг операторын онлайн үйлчилгээнд холбож, хоёрын хооронд өгөгдөл дамжуулна. Оператор юу хүлээн авч, хадгалах нь энэ бодлогоор бус, операторын өөрийн нууцлалын бодлогоор зохицуулагдана. CardBal зөвхөн үр дүнг таны утсанд хадгална.',
           'Octopus картын хувьд энэ нь “Octopus Online” юм. Анхдагчаар асаалттай байна. Картыг анх удаа уншуулахад ажиллана. Мөн эх газрын Хятадын үлдэгдэлтэй картыг уншуулах бүрт ханшийг шинэчлэн байлгахын тулд ажиллана. Үүнийг “Settings › Privacy” хэсгээс унтрааж болно. Та “Allow Card Updates”-ыг асаахгүй л бол CardBal таны картанд хадгалагдсан өгөгдлийг өөрчлөх аливаа үйлдлийг хаана.',
-          'Lignes d’Azur картын хувьд та “Check Online”-ыг товшсон үед л шалгалт хийгдэнэ.'
+          'Lignes d’Azur картын хувьд та “Check Online”-ыг товшсон үед л шалгалт хийгдэнэ.',
+          'Мадридын нийтийн тээврийн картын (Tarjeta Transporte Público) хувьд энэ нь Мадридын тээврийн консорциум CRTM юм. Анхдагчаар асаалттай бөгөөд эдгээр картын аль нэгийг уншуулах бүрт ажиллана. Үүнийг “Settings › Privacy › Madrid Online” хэсгээс унтрааж болно. CardBal зөвхөн картыг уншихыг CRTM-ээс хүсэх бөгөөд картыг өөрчлөхийг хэзээ ч хүсэхгүй.'
         ] },
         { title: '“Help Improve Korean Cards”', body: [
           'Энэ нь анхдагчаар асаалттай. Үүнийг “Settings › Privacy › Help Improve Korean Cards” хэсгээс унтрааж болно.',
